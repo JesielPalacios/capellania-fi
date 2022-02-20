@@ -1,11 +1,10 @@
 import { Fragment } from "react"
+import { AppRouter } from "./core/router/AppRouter"
 
 export const App = () => {
   return (
     <Fragment>
-     <h1>Capellanía UNAC</h1>
+     <AppRouter />
     </Fragment>
   )
 }
-
-export default App
