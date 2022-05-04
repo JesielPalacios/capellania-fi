@@ -1,5 +1,6 @@
 import { MainContainer } from './MainElements'
 
 export const Main = ({ sidebar }) => {
-  return <MainContainer id="main">{sidebar}</MainContainer>
+  console.log(sidebar)
+  return <MainContainer id="main">valor: {sidebar}</MainContainer>
 }
