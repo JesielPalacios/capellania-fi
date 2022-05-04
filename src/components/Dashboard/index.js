@@ -1,12 +1,12 @@
 import { useState } from 'react'
+import useUser from '../../core/hooks/useUser'
 
 import { Main } from './Components/Main'
 import { Sidebar } from './Components/Sidebar'
 import { DashboardContainer } from './DashboardElements'
 
 export const Dashboard = () => {
-  const [sidebar, setSidebar] = useState(false)
-  const showSidebar = () => setSidebar(!sidebar)
+  const { showSidebar } = useUser()
 
   return (
     <DashboardContainer>

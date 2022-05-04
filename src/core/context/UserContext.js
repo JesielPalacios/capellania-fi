@@ -1,0 +1,36 @@
+import { createContext, useState } from 'react'
+
+export const Context = createContext({})
+
+export const UserContextProvider = ({ children }) => {
+  const [users, setUsers] = useState([])
+  const [user, setUser] = useState([])
+  const [editing, setEditing] = useState(false)
+  const [jwt, setJWT] = useState(() => localStorage.getItem('jwt'))
+
+  const [sidebar, setSidebar] = useState(false)
+  const showSidebar = () => {
+    setSidebar(!sidebar)
+    console.log(sidebar)
+  }
+
+  return (
+    <Context.Provider
+      value={{
+        jwt,
+        setJWT,
+        users,
+        setUsers,
+        user,
+        setUser,
+        editing,
+        setEditing,
+        showSidebar
+      }}
+    >
+      {children}
+    </Context.Provider>
+  )
+}
+
+export default Context

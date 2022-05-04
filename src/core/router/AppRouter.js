@@ -1,6 +1,9 @@
 import React, { Suspense } from 'react'
-
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import { UserContextProvider } from '../context/UserContext'
+
+// Styles
 import { GlobalStyle } from '../styles/GlobalStyles'
 
 // Pages
@@ -12,18 +15,22 @@ const ErrorPage = React.lazy(() => import('../../pages/ErrorPage'))
 
 export const AppRouter = () => {
   return (
-    <Suspense fallback={<div />}>
-      <GlobalStyle />
+    <UserContextProvider>
+      <Suspense fallback={<div />}>
+        <GlobalStyle />
 
-      <Router>
-        <Switch>
-          {/* <Route exact path="/" component={<Home />} /> */}
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/" component={LogIn} />
-          {/* <Route exact path="signup" component={SignUp} /> */}
-          <Route component={ErrorPage} />
-        </Switch>
-      </Router>
-    </Suspense>
+        {/* Router */}
+        <Router>
+          <Switch>
+            {/* <Route exact path="/" component={<Home />} /> */}
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/" component={LogIn} />
+            {/* <Route exact path="signup" component={SignUp} /> */}
+            <Route component={ErrorPage} />
+          </Switch>
+        </Router>
+        {/* Router */}
+      </Suspense>
+    </UserContextProvider>
   )
 }
