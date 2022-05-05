@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { UserContextProvider } from '../context/UserContext'
 
 // Styles
-import { GlobalStyle } from '../../styles/GlobalStyles'
+import { GlobalStyle } from '../styles/GlobalStyles'
 
 // Pages
 // const Home = React.lazy(() => import('../../pages/HomePage'))
