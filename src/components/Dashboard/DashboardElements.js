@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const DashboardContainer = styled.div`
   display: grid;
-  grid-template-columns: ${({ sidebar }) => (sidebar ? '200px' : '80px')} auto;
+  grid-template-columns: ${({ sidebar }) => (sidebar ? '200px' : '80px')} auto !important;
 
   /* ${({ sidebar }) =>
     sidebar

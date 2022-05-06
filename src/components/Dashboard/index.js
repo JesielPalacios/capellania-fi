@@ -13,7 +13,7 @@ export const Dashboard = () => {
   return (
     <DashboardContainer sidebar={sidebar}>
       {/* <Sidebar showSidebar={showSidebar} /> */}
-      <Sidebar showSidebar={showSidebar} />
+      <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
       <Main sidebar={sidebar} />
     </DashboardContainer>
   )
