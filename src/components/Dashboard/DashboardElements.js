@@ -10,5 +10,7 @@ export const DashboardContainer = styled.div`
       : 'grid-template-columns: 80px auto;'} */
 
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: 100vh;
+  background: #f7f7f8;
 `

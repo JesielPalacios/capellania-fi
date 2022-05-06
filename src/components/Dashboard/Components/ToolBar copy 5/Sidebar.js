@@ -9,17 +9,17 @@ import { Profile } from './components/Profile'
 import './Sidebar.styles.css'
 
 export const Sidebar = ({ onLogin }) => {
-  const history = useHistory()
-  const { isLogged, logout } = useUser()
+  // const history = useHistory()
+  // const { isLogged, logout } = useUser()
 
-  useEffect(() => {
-    if (!isLogged) history.push('/login')
-    onLogin && onLogin()
-  }, [isLogged, history, onLogin])
+  // useEffect(() => {
+  //   if (!isLogged) history.push('/login')
+  //   onLogin && onLogin()
+  // }, [isLogged, history, onLogin])
 
   const handleClick = (e) => {
     e.preventDefault()
-    logout()
+    // logout()
   }
 
   const [sidebar, setSidebar] = useState(true)
@@ -39,7 +39,6 @@ export const Sidebar = ({ onLogin }) => {
         <HamburguerMenuIcon showSidebar={showSidebar} />
       </div>
       <ul className="nav-list">
-        {isLogged ? (
           <>
             <li
               onClick={() => {
@@ -79,6 +78,7 @@ export const Sidebar = ({ onLogin }) => {
               )
             })}
           </>
+        {/* {isLogged ? (
         ) : (
           <li>
             <NavLink
@@ -92,8 +92,8 @@ export const Sidebar = ({ onLogin }) => {
               <span className="tooltip">Iniciar sesión</span>
             </NavLink>
           </li>
-        )}
-        {isLogged ? Profile : ''}
+        )} */}
+        {/* {isLogged ? Profile : ''} */}
       </ul>
     </div>
   )
