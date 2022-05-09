@@ -1,21 +1,10 @@
 import styled from 'styled-components'
 
 export const SidebarContainer = styled.aside`
-  /* background: #ffffff;
-  background: blue;
-  cursor: pointer;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-sizing: initial;
-  transition: width 0.3s;
-  overflow-x: hidden;
-  
-  position: relative; */
-
   position: fixed;
   top: 0px;
   bottom: 0px;
-  width: 70px;
+
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 
@@ -24,7 +13,8 @@ export const SidebarContainer = styled.aside`
   background: #4d5bf9;
   transition: width 0.3s;
   overflow-x: hidden;
-  box-shadow: 10px 0 0 #fff;
+
+  ${({ sidebar }) => (sidebar ? 'width: 300px;' : 'width: 70px;')}
 `
 
 export const List = styled.ul`
@@ -42,45 +32,4 @@ export const Item = styled.li`
   width: 100%;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  ${({ sidebar }) => (sidebar ? 'background: #fff;' : '')}
-
-  b:nth-child(1) {
-    position: absolute;
-    top: -20px;
-    height: 20px;
-    width: 100%;
-    background: #fff;
-    display: none;
-  }
-
-  b:nth-child(1) {
-    position: absolute;
-    top: -20px;
-    height: 20px;
-    width: 100%;
-    background: #fff;
-    display: none;
-  }
-
-  b:nth-child(2) {
-    position: absolute;
-    bottom: -20px;
-    height: 20px;
-    width: 100%;
-    background: #fff;
-    display: none;
-  }
-
-  b:nth-child(2)::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-top-right-radius: 20px;
-    background: #4d5bf9;
-  }
-
-  /* ${({ sidebar }) => (sidebar ? 'background: #fff;' : '')} */
 `

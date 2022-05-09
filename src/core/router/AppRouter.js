@@ -9,7 +9,7 @@ import { GlobalStyle } from '../../styles/GlobalStyles'
 // Pages
 // const Home = React.lazy(() => import('../../pages/HomePage'))
 const Dashboard = React.lazy(() => import('../../pages/DashboardPage'))
-const LogIn = React.lazy(() => import('../../pages/LoginPage'))
+// const LogIn = React.lazy(() => import('../../pages/LoginPage'))
 // const SignUp = React.lazy(() => import('../../pages/SignUpPage'))
 const ErrorPage = React.lazy(() => import('../../pages/ErrorPage'))
 
@@ -23,8 +23,8 @@ export const AppRouter = () => {
         <Router>
           <Switch>
             {/* <Route exact path="/" component={<Home />} /> */}
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/" component={LogIn} />
+            <Route path="/" component={Dashboard} />
+            {/* <Route path="/" component={LogIn} /> */}
             {/* <Route exact path="signup" component={SignUp} /> */}
             <Route component={ErrorPage} />
           </Switch>
