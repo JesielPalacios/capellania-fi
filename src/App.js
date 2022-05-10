@@ -14,9 +14,9 @@ export const App = () => {
     // console.log(list.current.childNodes)
     // console.log(list.current.children)
     sidebar
-      ? (itemList.current.childNodes[index].className = 'list active') &&
+      ? (itemList.current.children[index].className = 'list active') &&
         showSidebar()
-      : (itemList.current.childNodes[index].className = 'list ') &&
+      : (itemList.current.children[index].className = 'list ') &&
         showSidebar()
     // sidebar
     //   ? (itemList.current.className = 'list active') && showSidebar()
