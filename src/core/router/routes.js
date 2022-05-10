@@ -28,30 +28,57 @@
 //   },
 // ];
 
+// export const routes = [
+//   {
+//     title: 'Dashboard',
+//     path: '/dashboard',
+//     icon: 'icon bx bx-grid-alt'
+//   },
+//   {
+//     title: 'Usuarios',
+//     path: '/usuarios',
+//     icon: 'icon bx bx-group'
+//   },
+//   {
+//     title: 'Agregar usuario',
+//     path: '/crear',
+//     icon: 'icon bx bx-user-plus'
+//   },
+//   {
+//     title: 'Servicios',
+//     path: '/servicios',
+//     icon: 'icon bx bx-cart-alt'
+//   },
+//   {
+//     title: 'Cerrar sesión',
+//     path: '/login',
+//     icon: 'icon bx bx-log-out'
+//   }
+// ]
+
 export const routes = [
   {
-    title: 'Dashboard',
-    path: '/dashboard',
-    icon: 'icon bx bx-grid-alt'
+    label: 'Usuarios',
+    icon: 'people-outline',
+    path: '/',
+    notification: 0
   },
   {
-    title: 'Usuarios',
-    path: '/usuarios',
-    icon: 'icon bx bx-group'
+    label: 'Crear usuario',
+    icon: 'person-add-outline',
+    path: '/statistics',
+    notification: 3
   },
   {
-    title: 'Agregar usuario',
-    path: '/crear',
-    icon: 'icon bx bx-user-plus'
+    label: 'Iniciar sessión',
+    icon: 'log-in-outline',
+    path: '/customers',
+    notification: 0
   },
   {
-    title: 'Servicios',
-    path: '/servicios',
-    icon: 'icon bx bx-cart-alt'
-  },
-  {
-    title: 'Cerrar sesión',
-    path: '/login',
-    icon: 'icon bx bx-log-out'
+    label: 'Cerrar sessión',
+    icon: 'log-out-outline',
+    path: '/diagrams',
+    notification: 1
   }
 ]
