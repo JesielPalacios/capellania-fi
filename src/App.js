@@ -9,6 +9,7 @@ export const App = () => {
 
   let itemList = useRef()
   let list = useRef()
+  let index2
 
   const currentItem = (index) => {
     for (let index = 0; index < itemList.current.children.length; index++) {
@@ -32,29 +33,32 @@ export const App = () => {
           {/* {console.log(list)} */}
           {/* {console.log(list.current.childNodes)} */}
           {/* {console.log(list.current.children)} */}
-          {routes.map(({ label, icon, path }, index) => (
-            <li
-              key={index}
-              ref={itemList}
-              className="list"
-              onClick={() => currentItem(index)}
-            >
-              <b></b>
-              <b></b>
-              <NavLink
-                to={path}
-                // activeStyle={{
-                //   background: '#f0eff5',
-                //   color: '#333'
-                // }}
+          {routes.map(({ label, icon, path }, index) => {
+            index2 = index
+            return (
+              <li
+                key={index2}
+                ref={itemList}
+                className="list"
+                onClick={() => currentItem(index2)}
               >
-                <span className="icon">
-                  <ion-icon name={icon}></ion-icon>
-                </span>
-                <span className="tittle">{label}</span>
-              </NavLink>
-            </li>
-          ))}
+                <b></b>
+                <b></b>
+                <NavLink
+                  to={path}
+                  // activeStyle={{
+                  //   background: '#f0eff5',
+                  //   color: '#333'
+                  // }}
+                >
+                  <span className="icon">
+                    <ion-icon name={icon}></ion-icon>
+                  </span>
+                  <span className="tittle">{label}</span>
+                </NavLink>
+              </li>
+            )
+          })}
         </ul>
       </div>
 
