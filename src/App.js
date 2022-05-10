@@ -10,22 +10,29 @@ export const App = () => {
   let itemList = useRef()
   let list = useRef()
 
-  const currentItem = () => {
+  const currentItem = (index) => {
+    // console.log(list.current.childNodes)
+    // console.log(list.current.children)
     sidebar
-      ? (itemList.current.className = 'list active') && showSidebar()
-      : (itemList.current.className = 'list ') && showSidebar()
+      ? (itemList.current.childNodes[index].className = 'list active') &&
+        showSidebar()
+      : (itemList.current.childNodes[index].className = 'list ') &&
+        showSidebar()
+    // sidebar
+    //   ? (itemList.current.className = 'list active') && showSidebar()
+    //   : (itemList.current.className = 'list ') && showSidebar()
   }
   return (
     <>
       <div className={sidebar ? 'navigation active' : 'navigation'}>
         <ul ref={list}>
-          {console.log(list)}
+          {/* {console.log(list)} */}
           {routes.map(({ label, icon, path }, index) => (
             <li
               key={index}
               ref={itemList}
               className="list"
-              onClick={currentItem}
+              onClick={() => currentItem(index)}
             >
               <b></b>
               <b></b>
