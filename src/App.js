@@ -11,15 +11,18 @@ export const App = () => {
   let list = useRef()
 
   const currentItem = (index) => {
-    for (let index = 0; index < itemList.current.children.length; index++) {
-      itemList.current.children[index].className = 'list'
-    }
+    console.log(list.current.children[index])
+    // for (let index = 0; index < itemList.current.children.length; index++) {
+    //   itemList.current.children[index].className = 'list'
+    // }
 
-    if (itemList.current.children[index].className === 'list')
-      itemList.current.children[index].className = 'list active'
-    else itemList.current.children[index].className = 'list '
+    // if (itemList.current.children[index].className === 'list') {
+    //   itemList.current.children[index].className = 'list active'
+    // } else {
+    //   itemList.current.children[index].className = 'list'
+    // }
 
-    console.log(itemList.current.childNodes[index].className)
+    // console.log(itemList.current.childNodes[index].className)
 
     // sidebar
     //   ? (itemList.current.children[index].className = 'list active') &&
