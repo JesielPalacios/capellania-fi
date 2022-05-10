@@ -7,69 +7,70 @@ import {
   SidebarContainer,
   ToggleBtn
 } from './SidebarElements'
+
 export const Sidebar = ({ showSidebar, sidebar }) => {
   // const [sidebar, setSidebar] = useState(true)
 
   // const showSidebar = () => setSidebar(!sidebar)
 
   return (
-    <div>
+    <>
       <SidebarContainer sidebar={sidebar}>
-        <List>
-          <Item>
-            <Link to="/">
-              <b></b>
-              <b></b>
-              <span class="icon">
+        <ul>
+          <li className="list active">
+            <b></b>
+            <b></b>
+            <a href="#">
+              <span className="icon">
                 <ion-icon name="people-outline"></ion-icon>
               </span>
-              <span class="tittle">Usuarios</span>
-            </Link>
-          </Item>
-          <Item>
-            <Link to="new-user">
-              <b></b>
-              <b></b>
-              <span class="icon">
+              <span className="tittle">Usuarios</span>
+            </a>
+          </li>
+          <li className="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+              <span className="icon">
                 <ion-icon name="person-add-outline"></ion-icon>
               </span>
-              <span class="tittle">Crear usuario</span>
-            </Link>
-          </Item>
-          <Item>
-            <Link to="login">
-              <b></b>
-              <b></b>
-              <span class="icon">
+              <span className="tittle">Crear usuario</span>
+            </a>
+          </li>
+          <li className="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+              <span className="icon">
                 <ion-icon name="log-in-outline"></ion-icon>
               </span>
-              <span class="tittle">Iniciar sessión</span>
-            </Link>
-          </Item>
-          <Item>
-            <Link to="logout">
-              <b></b>
-              <b></b>
-              <span class="icon">
+              <span className="tittle">Iniciar sessión</span>
+            </a>
+          </li>
+          <li className="list">
+            <b></b>
+            <b></b>
+            <a href="#">
+              <span className="icon">
                 <ion-icon name="log-out-outline"></ion-icon>
               </span>
-              <span class="tittle">Cerrar sessión</span>
-            </Link>
-          </Item>
-        </List>
+              <span className="tittle">Cerrar sessión</span>
+            </a>
+          </li>
+        </ul>
       </SidebarContainer>
 
       <ToggleBtn className="toggle" onClick={showSidebar}>
         {sidebar ? (
           <IconClose>
-            <ion-icon name="close-outline" class="close"></ion-icon>
+            <ion-icon name="close-outline" className="close"></ion-icon>
           </IconClose>
         ) : (
           <IconOpen>
-            <ion-icon name="menu-outline" class="open"></ion-icon>
+            <ion-icon name="menu-outline" className="open"></ion-icon>
           </IconOpen>
         )}
       </ToggleBtn>
-    </div>
+    </>
   )
 }
