@@ -15,7 +15,11 @@ export const App = () => {
       itemList.current.children[index].className = 'list'
     }
 
-    itemList.current.children[index].className = 'list active'
+    if (itemList.current.children[index].className === 'list')
+      itemList.current.children[index].className = 'list active'
+    else itemList.current.children[index].className = 'list '
+
+    console.log(itemList.current.childNodes[index].className)
 
     // sidebar
     //   ? (itemList.current.children[index].className = 'list active') &&
