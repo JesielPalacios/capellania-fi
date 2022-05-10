@@ -11,16 +11,15 @@ export const App = () => {
   let list = useRef()
 
   const currentItem = (index) => {
-    console.log(list.current.children[index])
-    // for (let index = 0; index < itemList.current.children.length; index++) {
-    //   itemList.current.children[index].className = 'list'
-    // }
+    for (let index = 0; index < list.current.children.length; index++) {
+      list.current.children[index].className = 'list'
+    }
 
-    // if (itemList.current.children[index].className === 'list') {
-    //   itemList.current.children[index].className = 'list active'
-    // } else {
-    //   itemList.current.children[index].className = 'list'
-    // }
+    if (list.current.children[index].className === 'list') {
+      list.current.children[index].className = 'list active'
+    } else {
+      list.current.children[index].className = 'list'
+    }
 
     // console.log(itemList.current.childNodes[index].className)
 
@@ -36,9 +35,6 @@ export const App = () => {
     <>
       <div className={sidebar ? 'navigation active' : 'navigation'}>
         <ul ref={list}>
-          {/* {console.log(list)} */}
-          {/* {console.log(list.current.childNodes)} */}
-          {/* {console.log(list.current.children)} */}
           {routes.map(({ label, icon, path }, index) => (
             <li
               key={index}
