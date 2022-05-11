@@ -8,15 +8,32 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
   let list = useRef()
 
   const currentItem = (index) => {
+    // for (let index = 0; index < list.current.children.length; index++) {
+    //   list.current.children[index].className = 'list'
+    // }
+    // if (list.current.children[index].className === 'list') {
+    //   list.current.children[index].className = 'list active'
+    // } else {
+    //   list.current.children[index].className = 'list'
+    // }
     for (let index = 0; index < list.current.children.length; index++) {
-      list.current.children[index].className = 'list'
+      // console.log(list.current.children[index].children)
+      for (
+        let indexj = 0;
+        indexj < list.current.children[index].children.length;
+        indexj++
+      ) {
+        // if (
+        //   list.current.children[index].children[indexj].className = 'a.activee'
+        // ) {
+        //   console.log(list.current.children[index].children[indexj])
+        // }
+        // console.log(list.current.children[index].children[indexj].className)
+      }
     }
-
-    if (list.current.children[index].className === 'list') {
-      list.current.children[index].className = 'list active'
-    } else {
-      list.current.children[index].className = 'list'
-    }
+    
+    // Imprime la clase de 
+    // console.log(list.current.children[index].className)
   }
 
   return (
