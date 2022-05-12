@@ -58,27 +58,51 @@
 
 export const routes = [
   {
+    label: 'Inicio',
+    icon: 'home-outline',
+    path: '/',
+    notification: 0
+  },
+  {
     label: 'Usuarios',
     icon: 'people-outline',
-    path: '/',
+    path: 'users',
     notification: 0
   },
   {
     label: 'Crear usuario',
     icon: 'person-add-outline',
-    path: '/statistics',
+    path: 'new-user',
     notification: 3
   },
   {
-    label: 'Iniciar sessión',
-    icon: 'log-in-outline',
-    path: '/customers',
-    notification: 0
+    label: 'Entrevistas',
+    icon: 'newspaper-outline',
+    path: '/interviews',
+    notification: 3
   },
+  {
+    label: 'Crear entrevista',
+    icon: 'add-circle-outline',
+    path: 'new-interview',
+    notification: 3
+  },
+  {
+    label: 'Configuración',
+    icon: 'settings-outline',
+    path: 'settings',
+    notification: 3
+  },
+  // {
+  //   label: 'Iniciar sessión',
+  //   icon: 'log-in-outline',
+  //   path: '/login',
+  //   notification: 0
+  // },
   {
     label: 'Cerrar sessión',
     icon: 'log-out-outline',
-    path: '/diagrams',
+    path: 'log-out',
     notification: 1
   }
 ]
