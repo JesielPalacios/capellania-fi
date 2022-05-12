@@ -144,5 +144,5 @@ export const Logo = styled.img`
   /* width: ${({ sidebar }) => (sidebar ? '150px' : '50px')}; */
   object-fit: cover;
   /* width: fit-content; */
-  transition: .25s;
+  transition: 0.25s;
 `
