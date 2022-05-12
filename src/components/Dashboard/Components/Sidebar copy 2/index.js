@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { routes } from '../../../../core/router/routes'
 import './styles.css'
 
@@ -8,7 +8,6 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
   let list = useRef()
   let currentItemList, currentlink, link
 
-  const [firstOpen, setFirstOpen] = useState(true)
 
   const resetItems = () => {
     for (let index = 0; index < list.current.children.length; index++) {
@@ -37,35 +36,33 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
   useEffect(() => {
     console.clear()
 
-    resetItems()
-
-    for (let i = 0; i < list.current.children.length; i++) {
-      console.log('Current anchor number: ', i + 1)
-      // console.log(list.current.children[i])
-      // console.log(list.current.children[i].children)
-      for (let j = 0; j < list.current.children[i].children.length; j++) {
-        // console.log(list.current.children[i].children[j])
-        // console.log(list.current.children[i].children[j].className)
-        // console.log(list.current.children[i].children[2])
-        currentlink = list.current.children[i].children[2]
-        // currentItemList = list.current.children[i].children[2]
-        // if (
-        //   list.current.children[index].children[indexj].className = 'a.activee'
-        // ) {
-        //   console.log(list.current.children[index].children[indexj])
-        // }
+      for (let i = 0; i < list.current.children.length; i++) {
+        console.log('Current anchor number: ', i + 1)
+        // console.log(list.current.children[i])
+        // console.log(list.current.children[i].children)
+        for (let j = 0; j < list.current.children[i].children.length; j++) {
+          // console.log(list.current.children[i].children[j])
+          // console.log(list.current.children[i].children[j].className)
+          // console.log(list.current.children[i].children[2])
+          currentlink = list.current.children[i].children[2]
+          // currentItemList = list.current.children[i].children[2]
+          // if (
+          //   list.current.children[index].children[indexj].className = 'a.activee'
+          // ) {
+          //   console.log(list.current.children[index].children[indexj])
+          // }
+        }
+        // console.log(currentlink);
+        console.log(currentlink.className)
+        if (currentlink.className === 'active')
+          currentlink.offsetParent.className = 'list active'
       }
-      // console.log(currentlink);
-      console.log(currentlink.className)
-      if (currentlink.className === 'active')
-        currentlink.offsetParent.className = 'list active'
-    }
 
     // console.log(currentItemList)
 
     // Imprime la clase de
     // console.log(list.current.children[index].className)
-  }, [resetItems])
+  }, [])
 
   return (
     <>
