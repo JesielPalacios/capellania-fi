@@ -28,30 +28,81 @@
 //   },
 // ];
 
+// export const routes = [
+//   {
+//     title: 'Dashboard',
+//     path: '/dashboard',
+//     icon: 'icon bx bx-grid-alt'
+//   },
+//   {
+//     title: 'Usuarios',
+//     path: '/usuarios',
+//     icon: 'icon bx bx-group'
+//   },
+//   {
+//     title: 'Agregar usuario',
+//     path: '/crear',
+//     icon: 'icon bx bx-user-plus'
+//   },
+//   {
+//     title: 'Servicios',
+//     path: '/servicios',
+//     icon: 'icon bx bx-cart-alt'
+//   },
+//   {
+//     title: 'Cerrar sesión',
+//     path: '/login',
+//     icon: 'icon bx bx-log-out'
+//   }
+// ]
+
 export const routes = [
   {
-    title: 'Dashboard',
-    path: '/dashboard',
-    icon: 'icon bx bx-grid-alt'
+    label: 'Inicio',
+    icon: 'home-outline',
+    path: '/',
+    notification: 0
   },
   {
-    title: 'Usuarios',
-    path: '/usuarios',
-    icon: 'icon bx bx-group'
+    label: 'Usuarios',
+    icon: 'people-outline',
+    path: 'users',
+    notification: 0
   },
   {
-    title: 'Agregar usuario',
-    path: '/crear',
-    icon: 'icon bx bx-user-plus'
+    label: 'Crear usuario',
+    icon: 'person-add-outline',
+    path: 'new-user',
+    notification: 3
   },
   {
-    title: 'Servicios',
-    path: '/servicios',
-    icon: 'icon bx bx-cart-alt'
+    label: 'Entrevistas',
+    icon: 'newspaper-outline',
+    path: '/interviews',
+    notification: 3
   },
   {
-    title: 'Cerrar sesión',
-    path: '/login',
-    icon: 'icon bx bx-log-out'
+    label: 'Crear entrevista',
+    icon: 'add-circle-outline',
+    path: 'new-interview',
+    notification: 3
+  },
+  {
+    label: 'Configuración',
+    icon: 'settings-outline',
+    path: 'settings',
+    notification: 3
+  },
+  // {
+  //   label: 'Iniciar sessión',
+  //   icon: 'log-in-outline',
+  //   path: '/login',
+  //   notification: 0
+  // },
+  {
+    label: 'Cerrar sessión',
+    icon: 'log-out-outline',
+    path: 'log-out',
+    notification: 1
   }
 ]

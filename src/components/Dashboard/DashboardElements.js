@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const DashboardContainer = styled.div`
-  /* display: grid; */
-  /* grid-template-columns: ${({ sidebar }) => (sidebar ? '200px' : '80px')} auto !important; */
+  display: grid;
+  grid-template-columns: ${({ sidebar }) => (sidebar ? '300px' : '70px')} auto !important;
 
   /* ${({ sidebar }) =>
     sidebar
@@ -13,4 +13,8 @@ export const DashboardContainer = styled.div`
   /* height: 100vh; */
   min-height: 100vh;
   background: #f7f7f8;
+  /* position: relative; */
+
+  /* transition: width 0.3s; */
+  /* overflow-x: hidden; */
 `

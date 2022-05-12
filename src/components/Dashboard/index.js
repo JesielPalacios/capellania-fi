@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { Main } from './Components/Main'
-import { Sidebar } from './Components/Sidebar copy'
+import { Sidebar } from './Components/Sidebar copy 2'
 // import { Sidebar } from './Components/ToolBar copy 5/Sidebar'
 import { DashboardContainer } from './DashboardElements'
 
@@ -14,6 +14,7 @@ export const Dashboard = () => {
     <DashboardContainer sidebar={sidebar}>
       {/* <Sidebar showSidebar={showSidebar} /> */}
       <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
+      <div></div>
       <Main sidebar={sidebar} />
     </DashboardContainer>
   )
