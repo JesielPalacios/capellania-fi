@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import styled from 'styled-components'
 import { routes } from '../../../../core/router/routes'
 import './styles.css'
 
@@ -107,6 +108,7 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
     <>
       {/* {console.log(sampleLocation.pathname)} */}
       <div className={sidebar ? 'navigation active' : 'navigation'}>
+        <Logo src="img/logo-unac.png" sidebar={sidebar} />
         <ul ref={list}>
           {routes.map(({ label, icon, path }, index) => (
             <li
@@ -135,3 +137,12 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
     </>
   )
 }
+
+export const Logo = styled.img`
+  margin-top: 5%;
+  ${({ sidebar }) => (sidebar ? 'width: 150px;' : 'width: 50px;')}
+  /* width: ${({ sidebar }) => (sidebar ? '150px' : '50px')}; */
+  object-fit: cover;
+  /* width: fit-content; */
+  transition: .25s;
+`

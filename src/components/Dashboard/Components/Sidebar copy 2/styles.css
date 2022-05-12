@@ -27,6 +27,11 @@ body {
   background: #fff;
   transition: width 0.3s;
   overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .navigation.active {
@@ -35,7 +40,7 @@ body {
 }
 
 .navigation ul {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
