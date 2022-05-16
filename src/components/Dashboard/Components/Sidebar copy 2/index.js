@@ -108,7 +108,12 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
     <>
       {/* {console.log(sampleLocation.pathname)} */}
       <div className={sidebar ? 'navigation active' : 'navigation'}>
-        <Logo src="img/logo-unac.png" sidebar={sidebar} />
+        <ToggleButton sidebar={sidebar}>
+          <ToggleIcon
+            className={sidebar ? 'bx bx-menu-alt-right' : 'bx bx-menu'}
+          />
+        </ToggleButton>
+        <LogoImg src="img/logo-unac.png" sidebar={sidebar} />
         <ul ref={list}>
           {routes.map(({ label, icon, path }, index) => (
             <li
@@ -138,11 +143,29 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
   )
 }
 
-export const Logo = styled.img`
-  margin-top: 5%;
+export const LogoImg = styled.img`
+  margin-top: ${({ sidebar }) => (sidebar ? '5%' : '70%')};
   ${({ sidebar }) => (sidebar ? 'width: 150px;' : 'width: 50px;')}
-  /* width: ${({ sidebar }) => (sidebar ? '150px' : '50px')}; */
+  /* margin-top: 50px; */
   object-fit: cover;
   /* width: fit-content; */
-  transition: 0.25s;
+  /* transition: 0.25s; */
+  transition: all 0.25s ease;
+`
+
+export const ToggleButton = styled.button`
+  border: unset;
+  position: absolute;
+  background: unset;
+  ${({ sidebar }) => (sidebar ? 'right: 0;' : '')}
+`
+
+export const ToggleIcon = styled.i`
+  color: #000;
+  margin-top: -6px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+  transition: all 0.25s ease;
 `
