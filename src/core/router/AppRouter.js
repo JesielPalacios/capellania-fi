@@ -7,7 +7,7 @@ import { UserContextProvider } from '../context/UserContext'
 import { GlobalStyle } from '../../styles/GlobalStyles'
 
 // Pages
-// const Home = React.lazy(() => import('../../pages/HomePage'))
+const Home = React.lazy(() => import('../../pages/HomePage'))
 const Dashboard = React.lazy(() => import('../../pages/DashboardPage'))
 const LogIn = React.lazy(() => import('../../pages/LoginPage'))
 // const SignUp = React.lazy(() => import('../../pages/SignUpPage'))
@@ -22,9 +22,9 @@ export const AppRouter = () => {
         {/* Router */}
         <Router>
           <Switch>
-            {/* <Route exact path="/" component={<Home />} /> */}
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/" component={LogIn} />
+            <Route exact path="home" component={<Home />} />
+            <Route path="/" component={Dashboard} />
+            <Route path="login" component={LogIn} />
             {/* <Route exact path="signup" component={SignUp} /> */}
             <Route component={ErrorPage} />
           </Switch>

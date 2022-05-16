@@ -1,21 +1,10 @@
 import styled from 'styled-components'
 
 export const SidebarContainer = styled.aside`
-  /* background: #ffffff;
-  background: blue;
-  cursor: pointer;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-sizing: initial;
-  transition: width 0.3s;
-  overflow-x: hidden;
-  
-  position: relative; */
-
   position: fixed;
   top: 0px;
   bottom: 0px;
-  width: 70px;
+
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 
@@ -24,7 +13,8 @@ export const SidebarContainer = styled.aside`
   background: #4d5bf9;
   transition: width 0.3s;
   overflow-x: hidden;
-  box-shadow: 10px 0 0 #fff;
+
+  ${({ sidebar }) => (sidebar ? 'width: 300px;' : 'width: 70px;')}
 `
 
 export const Navigation = styled.div`
