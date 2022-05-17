@@ -5,6 +5,7 @@ import { UserContextProvider } from '../context/UserContext'
 
 // Styles
 import { GlobalStyle } from '../../styles/GlobalStyles'
+import '../../styles/styles.css'
 
 // Pages
 const Home = React.lazy(() => import('../../pages/HomePage'))
@@ -22,7 +23,7 @@ export const AppRouter = () => {
         {/* Router */}
         <Router>
           <Switch>
-            <Route exact path="home" component={<Home />} />
+            <Route exact path="home" component={Home} />
             <Route path="/" component={Dashboard} />
             <Route path="login" component={LogIn} />
             {/* <Route exact path="signup" component={SignUp} /> */}

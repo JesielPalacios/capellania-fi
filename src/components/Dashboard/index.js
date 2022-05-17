@@ -1,9 +1,8 @@
 import { useState } from 'react'
 
-import { Main } from './Components/Main'
-import { Sidebar } from './Components/Sidebar copy 2'
-// import { Sidebar } from './Components/ToolBar copy 5/Sidebar'
 import { DashboardContainer } from './DashboardElements'
+import { Sidebar } from './Components/Sidebar copy 2'
+import { Main } from './Components/Main'
 
 export const Dashboard = () => {
   const [sidebar, setSidebar] = useState(true)
@@ -12,7 +11,6 @@ export const Dashboard = () => {
 
   return (
     <DashboardContainer sidebar={sidebar}>
-      {/* <Sidebar showSidebar={showSidebar} /> */}
       <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
       <Main sidebar={sidebar} />
     </DashboardContainer>
