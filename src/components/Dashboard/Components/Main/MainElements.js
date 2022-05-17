@@ -5,6 +5,8 @@ export const MainContainer = styled.section`
   transition: all 500ms ease 0s;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /*
   div {
     width: 100%;
@@ -22,6 +24,8 @@ export const SectionTittle = styled.h1`
   left: 248px;
   left: 30px;
   top: 40px;
+  top: 30px;
+  top: 20px;
 
   font-family: 'Nunito';
   font-style: normal;
@@ -32,42 +36,94 @@ export const SectionTittle = styled.h1`
 
 export const NavigationBar = styled.div`
   position: absolute;
-  width: 90%;
+  width: 95%;
   height: 45px;
+  height: 56px;
   left: 248px;
   left: 30px;
   top: 99px;
+  top: 89px;
+  top: 75px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  img {
+    position: absolute;
+    right: 20px;
+    top: 22px;
+  }
 `
 
 export const ProgressBar = styled.div`
   width: 476px;
   width: 628.594px;
-  height: 45px;
+
+  display: flex;
+  /* justify-content: space-around; */
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  background: #f0f0f1;
+  border-radius: 10px;
+  height: 100%;
+  flex-wrap: wrap;
+  gap: 12px;
+  gap: 15px;
 
   button {
     width: 200px;
+    width: 180px;
     height: 80%;
     background: unset;
     cursor: pointer;
     border-radius: 10px;
     border: none;
   }
+
   button:first-child {
     background: #ffffff;
     border: 1px solid #d6d6d7;
     box-shadow: 0px 4px 4px rgba(240, 240, 241, 0.25);
     border-radius: 10px;
   }
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #fff;
-  background: #f0f0f1;
-  border-radius: 10px;
+
+  div {
+    width: 2.5px;
+    height: 75%;
+    background: #d6d6d7;
+    border-radius: 50px;
+    border-radius: 42.797px;
+  }
 `
 
 export const SearchInput = styled.input`
+  background: #ffffff;
   border-radius: 10px;
+  border: none;
+  height: 45px;
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+
+  /* Text */
+  color: #030229;
+
+  opacity: 0.7;
+  padding: 15px;
+`
+
+export const InterviewForm = styled.form`
+  /* position: absolute; */
+  width: 1162px;
+  width: 95%;
+  height: 75%;
+  left: 248px;
+  left: 6%;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-top: 130px;
 `

@@ -105,5 +105,12 @@ export const ToggleIcon = styled.i`
     background: rgba(255, 255, 255, 0.7);
     box-shadow: rgb(0 0 0 / 10%) 0px 10px 20px,
       rgb(255 255 255 / 20%) 0px 0px 0px 0.5px inset;
+    box-shadow: rgb(0 0 0 / 20%) 0px 10px 20px,
+      rgb(255 255 255 / 20%) 0px 0px 0px 0.5px inset;
+    /* box-shadow: #2a5784 0.5px 0px 10px 20px, #2a5784 0px 0px 0px 0.5px inset; */
+    /* box-shadow: #2a5784 0.5px 0px 10px 5px, #2a5784 0px 0px 0px 0.5px inset; */
+    /* box-shadow: rgb(42 87 132) 0.5px 0px 10px 20px,
+      rgb(42 87 132) 0px 0px 0px 0.5px inset; */
+    color: #2a5784;
   }
 `

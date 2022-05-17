@@ -1,10 +1,12 @@
 import {
+  InterviewForm,
   MainContainer,
   NavigationBar,
   ProgressBar,
   SearchInput,
   SectionTittle
 } from './MainElements'
+import searchSvg from '../../../../assets/svg/Search.svg'
 
 export const Main = ({ sidebar }) => {
   return (
@@ -13,14 +15,18 @@ export const Main = ({ sidebar }) => {
       <NavigationBar>
         <ProgressBar>
           <button>Información General</button>
-          {/* <hr />| */}
+          <div />
           <button>Información Académica</button>
-          {/* <hr />| */}
+          <div />
           <button>Seguimiento</button>
         </ProgressBar>
-        <SearchInput />
+        <div>
+          <SearchInput placeholder="Buscar usuario" />
+          <img src={searchSvg} alt="icon search" />
+          {/* <img src="../../../../assets/svg/Search.svg" alt="" /> */}
+        </div>{' '}
       </NavigationBar>
-      <div></div>
+      <InterviewForm></InterviewForm>
     </MainContainer>
   )
 }
