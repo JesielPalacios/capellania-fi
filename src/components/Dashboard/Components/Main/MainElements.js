@@ -123,7 +123,54 @@ export const InterviewForm = styled.form`
   height: 75%;
   left: 248px;
   left: 6%;
+  padding: 30px;
   background: #ffffff;
   border-radius: 10px;
   margin-top: 130px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+`
+
+export const FieldWrapper = styled.div`
+  width: 238px;
+  height: 80px;
+  left: 278px;
+  top: 204px;
+  position: relative;
+`
+
+export const LabelForm = styled.label``
+
+export const FieldForm = styled.input`
+  border: unset;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 37.5%;
+  bottom: 0%;
+
+  /* position: absolute;
+  left: 8.4%;
+  right: 4.62%;
+  top: 58.75%;
+  bottom: 22.5%; */
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+
+  /* Text */
+
+  color: #030229;
+
+  opacity: 0.7;
+
+  background: #e5e9ec;
+
+  padding: 10px;
+  border-radius: 10px;
 `

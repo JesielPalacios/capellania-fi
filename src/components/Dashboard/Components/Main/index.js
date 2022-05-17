@@ -1,5 +1,9 @@
 import {
+  Field,
+  FieldForm,
+  FieldWrapper,
   InterviewForm,
+  LabelForm,
   MainContainer,
   NavigationBar,
   ProgressBar,
@@ -26,7 +30,35 @@ export const Main = ({ sidebar }) => {
           {/* <img src="../../../../assets/svg/Search.svg" alt="" /> */}
         </div>{' '}
       </NavigationBar>
-      <InterviewForm></InterviewForm>
+      <InterviewForm>
+        {fields.map(({ field, placeholder }, index) => {
+          return (
+            <FieldWrapper key={index}>
+              <LabelForm htmlFor={field}>{field}</LabelForm>
+              <FieldForm id={field} placeholder={placeholder} />
+            </FieldWrapper>
+          )
+        })}
+      </InterviewForm>
     </MainContainer>
   )
 }
+
+export const fields = [
+  {
+    field: 'Nombres',
+    placeholder: 'Nombres completos'
+  },
+  {
+    field: 'Apellidos',
+    placeholder: 'Apellidos completos'
+  },
+  {
+    field: 'Correo electrónico personal',
+    placeholder: 'Su email aquí'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: 'Su número aquí'
+  }
+]
