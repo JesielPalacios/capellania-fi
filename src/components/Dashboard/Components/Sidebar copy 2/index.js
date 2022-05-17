@@ -108,5 +108,5 @@ export const ToggleIcon = styled.i`
     box-shadow: rgb(0 0 0 / 10%) 0px 10px 20px,
       rgb(255 255 255 / 20%) 0px 0px 0px 0.5px inset;
   }
-  transition: all 500ms ease 0s;
+
 `
