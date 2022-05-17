@@ -2,7 +2,16 @@ import styled from 'styled-components'
 
 export const DashboardContainer = styled.div`
   display: grid;
-  grid-template-columns: ${({ sidebar }) => (sidebar ? '300px' : '70px')} auto !important;
+  /* grid-template-columns: ${({ sidebar }) =>
+    sidebar ? '300px' : '70px'} auto !important; */
+
+  /* grid-template-columns: ${({ sidebar }) =>
+    sidebar ? '300px' : '70px'} fit-content !important; */
+
+  grid-template-columns: ${({ sidebar }) => (sidebar ? '300px' : '70px')} ${({
+      sidebar
+    }) =>
+      sidebar ? 'auto + calc(100% - 300px) ' : 'auto + calc(100% - 130px) '};
 
   /* ${({ sidebar }) =>
     sidebar

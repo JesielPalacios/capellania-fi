@@ -14,7 +14,6 @@ export const Dashboard = () => {
     <DashboardContainer sidebar={sidebar}>
       {/* <Sidebar showSidebar={showSidebar} /> */}
       <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
-      <div></div>
       <Main sidebar={sidebar} />
     </DashboardContainer>
   )
