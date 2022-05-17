@@ -155,10 +155,10 @@ export const LogoImg = styled.img`
 
 export const ToggleButton = styled.button`
   border: unset;
-  position: absolute;
   background: unset;
+  position: absolute;
   ${({ sidebar }) => (sidebar ? 'right: 0;' : '')}
-`
+  `
 
 export const ToggleIcon = styled.i`
   color: #000;
@@ -168,4 +168,17 @@ export const ToggleIcon = styled.i`
   text-align: center;
   line-height: 60px;
   transition: all 0.25s ease;
+  /* background: unset; */
+  background: none;
+  :hover {
+    /* box-shadow: 5px 10px; */
+    /* box-shadow: 5px 10px #888888; */
+    /* border: .25px solid #000; */
+    /* background-color: rgb(255 255 255 0.5) inset; */
+    /* background: rgba(255, 255, 255, 0.1); */
+    /* color: rgba(255, 255, 255, 0.7); */
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: rgb(0 0 0 / 10%) 0px 10px 20px,
+      rgb(255 255 255 / 20%) 0px 0px 0px 0.5px inset;
+  }
 `
