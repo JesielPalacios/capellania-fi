@@ -1,12 +1,14 @@
 import React from "react";
 
 import LogoImg from "../../assets/img/logo-unac-yellow.png";
+import imgWel from "../../assets/img/Illustration.png";
 import {
   ContrasenaInput,
   ContrasenaLabel,
   EmailInput,
   EmailLabel,
   Enviar,
+  ImgWel,
   LeftSide,
   LoginCont,
   Logo,
@@ -24,7 +26,11 @@ export const Login = () => {
         <Welcome>Log in</Welcome>
         <form>
           <EmailLabel for="email">Email Address</EmailLabel>
-          <EmailInput placeholder=" example@gmail.com" type="email" id="email" />
+          <EmailInput
+            placeholder=" example@gmail.com"
+            type="email"
+            id="email"
+          />
           <ContrasenaLabel for="passw">Password</ContrasenaLabel>
           <ContrasenaInput
             placeholder=" • • • • • • •"
@@ -36,7 +42,9 @@ export const Login = () => {
           <ResetPassw>¿Reset Password?</ResetPassw>
         </form>
       </LeftSide>
-      <RightSide></RightSide>
+      <RightSide>
+        <ImgWel src={imgWel}/>
+      </RightSide>
     </LoginCont>
   );
 };

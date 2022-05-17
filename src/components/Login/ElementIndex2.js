@@ -20,13 +20,13 @@ export const Welcome = styled.h2`
 `;
 
 export const LoginCont = styled.div`
-position: relative;
+  position: relative;
   display: flex;
 `;
 
 export const LeftSide = styled.div`
   flex-direction: column;
-  align-items:center;
+  align-items: center;
 `;
 
 export const EmailLabel = styled.label`
@@ -120,9 +120,22 @@ export const Enviar = styled.button`
   top: 560px;
   border-radius: 10px;
   border: 2px;
-  background-color: #2A5784;
+  background-color: #2a5784;
 `;
 
 export const RightSide = styled.div`
   background: #e5e9ec;
+  right:0;
+  position: relative;
+  left: 25%;
+  text-align: center;
+
+`;
+
+export const ImgWel = styled.img`
+  width: 770px;
+  height: 620px;
+  left: 1190px;
+  top: 214px;
+  left: 25%;
 `;
