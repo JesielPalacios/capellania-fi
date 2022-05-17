@@ -39,6 +39,7 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
       <div className={sidebar ? 'navigation active' : 'navigation'}>
         <ToggleButton sidebar={sidebar} onClick={showSidebar}>
           <ToggleIcon
+            sidebar={sidebar}
             className={sidebar ? 'bx bx-menu-alt-right' : 'bx bx-menu'}
           />
         </ToggleButton>
@@ -90,11 +91,16 @@ export const ToggleButton = styled.button`
 
 export const ToggleIcon = styled.i`
   color: #000;
-  margin-top: -6px;
-  min-width: 50px;
+  margin-top: 6px;
+  margin-right: 6px;
+  padding: ${({ sidebar }) => (sidebar ? '10px' : '5px')};
+  ${({ sidebar }) => (sidebar ? 'margin-top: 0;' : '')}
+  ${({ sidebar }) => (sidebar ? 'margin-right: 0;' : '')}
+  border: 10px;
+  /* min-width: 50px; */
   font-size: 28px;
   text-align: center;
-  line-height: 60px;
+  /* line-height: 60px; */
   transition: all 0.25s ease;
   background: none;
   :hover {
@@ -102,4 +108,5 @@ export const ToggleIcon = styled.i`
     box-shadow: rgb(0 0 0 / 10%) 0px 10px 20px,
       rgb(255 255 255 / 20%) 0px 0px 0px 0.5px inset;
   }
+  transition: all 500ms ease 0s;
 `
