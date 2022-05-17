@@ -131,6 +131,7 @@ export const InterviewForm = styled.form`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
+  /* grid-auto-rows: minmax(100px, auto); */
 `
 
 export const FieldWrapper = styled.div`
