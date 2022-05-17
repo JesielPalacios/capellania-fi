@@ -10,6 +10,7 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
   let currentItemList, currentlink, link
 
   const sampleLocation = useLocation()
+  // Another way is to match the exact route of the link with the parameter returned by the router and thus activate the element of the row
 
   const resetItems = () => {
     for (let index = 0; index < list.current.children.length; index++) {
@@ -72,37 +73,41 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
   //   // console.log(list.current.children[index].className)
   // }
 
-  // useEffect(() => {
-  //   console.clear()
+  useEffect(() => {
+    console.clear()
 
-  //   for (let i = 0; i < list.current.children.length; i++) {
-  //     console.log('Current anchor number: ', i + 1)
-  //     // console.log(list.current.children[i])
-  //     // console.log(list.current.children[i].children)
-  //     for (let j = 0; j < list.current.children[i].children.length; j++) {
-  //       // console.log(list.current.children[i].children[j])
-  //       // console.log(list.current.children[i].children[j].className)
-  //       // console.log(list.current.children[i].children[2])
-  //       currentlink = list.current.children[i].children[2]
-  //       // currentItemList = list.current.children[i].children[2]
-  //       // if (
-  //       //   list.current.children[index].children[indexj].className = 'a.activee'
-  //       // ) {
-  //       //   console.log(list.current.children[index].children[indexj])
-  //       // }
-  //     }
-  //     // console.log(currentlink);
-  //     // console.log(currentlink.href);
-  //     // console.log(currentlink.className)
-  //     if (currentlink.className === 'active')
-  //       currentlink.offsetParent.className = 'list active'
-  //   }
+    for (let i = 0; i < list.current.children.length; i++) {
+      // console.log(list.current.children[i])
+      // console.log(list.current.children[i].children)
+      for (let j = 0; j < list.current.children[i].children.length; j++) {
+        // console.log(list.current.children[i].children[j])
+        // console.log(list.current.children[i].children[j].className)
+        // console.log(list.current.children[i].children[2])
+        currentlink = list.current.children[i].children[2]
+        // currentItemList = list.current.children[i].children[2]
+        // if (
+        //   list.current.children[index].children[indexj].className = 'a.activee'
+        // ) {
+        //   console.log(list.current.children[index].children[indexj])
+        // }
+      }
+      console.log(
+        'Current anchor number: ',
+        i + 1,
+        '- ',
+        currentlink.href,
+        currentlink.className
+      )
+      console.log(currentlink)
+      if (currentlink.className === 'active')
+        currentlink.offsetParent.className = 'list active'
+    }
 
-  //   // console.log(currentItemList)
+    // console.log(currentItemList)
 
-  //   // Imprime la clase de
-  //   // console.log(list.current.children[index].className)
-  // }, [])
+    // Imprime la clase de
+    // console.log(list.current.children[index].className)
+  }, [])
 
   return (
     <>

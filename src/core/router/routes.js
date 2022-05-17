@@ -60,7 +60,7 @@ export const routes = [
   {
     label: 'Inicio',
     icon: 'home-outline',
-    path: '/',
+    path: 'dashboard',
     notification: 0
   },
   {
@@ -78,7 +78,7 @@ export const routes = [
   {
     label: 'Entrevistas',
     icon: 'newspaper-outline',
-    path: '/interviews',
+    path: 'interviews',
     notification: 3
   },
   {
