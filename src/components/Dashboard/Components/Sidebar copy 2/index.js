@@ -108,12 +108,16 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
     <>
       {/* {console.log(sampleLocation.pathname)} */}
       <div className={sidebar ? 'navigation active' : 'navigation'}>
-        <ToggleButton sidebar={sidebar}>
+        <ToggleButton sidebar={sidebar} onClick={showSidebar}>
           <ToggleIcon
             className={sidebar ? 'bx bx-menu-alt-right' : 'bx bx-menu'}
           />
         </ToggleButton>
-        <LogoImg src="img/logo-unac.png" sidebar={sidebar} />
+        <LogoImg
+          src="img/logo-unac.png"
+          sidebar={sidebar}
+          onClick={showSidebar}
+        />
         <ul ref={list}>
           {routes.map(({ label, icon, path }, index) => (
             <li
@@ -134,11 +138,6 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
           ))}
         </ul>
       </div>
-
-      <div className="toggle" onClick={showSidebar}>
-        <ion-icon name="close-outline" className="close"></ion-icon>
-        <ion-icon name="menu-outline" className="open"></ion-icon>
-      </div>
     </>
   )
 }
@@ -146,11 +145,10 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
 export const LogoImg = styled.img`
   margin-top: ${({ sidebar }) => (sidebar ? '5%' : '70%')};
   ${({ sidebar }) => (sidebar ? 'width: 150px;' : 'width: 50px;')}
-  /* margin-top: 50px; */
   object-fit: cover;
-  /* width: fit-content; */
-  /* transition: 0.25s; */
   transition: all 0.25s ease;
+  cursor: pointer;
+  user-select: none;
 `
 
 export const ToggleButton = styled.button`
@@ -158,7 +156,8 @@ export const ToggleButton = styled.button`
   background: unset;
   position: absolute;
   ${({ sidebar }) => (sidebar ? 'right: 0;' : '')}
-  `
+  cursor: pointer;
+`
 
 export const ToggleIcon = styled.i`
   color: #000;
@@ -168,15 +167,8 @@ export const ToggleIcon = styled.i`
   text-align: center;
   line-height: 60px;
   transition: all 0.25s ease;
-  /* background: unset; */
   background: none;
   :hover {
-    /* box-shadow: 5px 10px; */
-    /* box-shadow: 5px 10px #888888; */
-    /* border: .25px solid #000; */
-    /* background-color: rgb(255 255 255 0.5) inset; */
-    /* background: rgba(255, 255, 255, 0.1); */
-    /* color: rgba(255, 255, 255, 0.7); */
     background: rgba(255, 255, 255, 0.7);
     box-shadow: rgb(0 0 0 / 10%) 0px 10px 20px,
       rgb(255 255 255 / 20%) 0px 0px 0px 0.5px inset;
