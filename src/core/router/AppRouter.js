@@ -24,11 +24,6 @@ export const AppRouter = () => {
           <Switch>
             <Route exact path="home" component={<Home />} />
             <Route path="/" component={Dashboard} />
-            <Route path="/" component={Dashboard} />
-            <Route path="/" component={Dashboard} />
-            <Route path="/" component={Dashboard} />
-            <Route path="/" component={Dashboard} />
-            <Route path="/" component={Dashboard} />
             <Route path="login" component={LogIn} />
             {/* <Route exact path="signup" component={SignUp} /> */}
             <Route component={ErrorPage} />

@@ -7,10 +7,6 @@ import './styles.css'
 export const Sidebar = ({ showSidebar, sidebar }) => {
   let itemList = useRef()
   let list = useRef()
-  let currentItemList, currentlink, link
-
-  const sampleLocation = useLocation()
-  // Another way is to match the exact route of the link with the parameter returned by the router and thus activate the element of the row
 
   const resetItems = () => {
     for (let index = 0; index < list.current.children.length; index++) {
@@ -18,100 +14,28 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
     }
   }
   const currentItem = (index) => {
-    console.clear()
-    // console.log(index)
-    // console.log(list)
-    // console.log(list.current)
-    // console.log(list.current.children)
-    // console.log(list.current.childNodes)
-    // console.log(list.current.children[index])
-
-    // Position of the anchor element
-    // console.log(list.current.children[index].children[2])
-    // console.log(list.current.children[index].children[2].offsetParent)
-
     resetItems()
 
     list.current.children[index].children[2].offsetParent.className =
       'list active'
-    // for (let i = 1; i < sampleLocation.pathname.length; i++) {
-    //  console.log(sampleLocation.pathname[i]);
-
-    // }
-
-    // console.log(sampleLocation[sampleLocation.pathname.length - 1])
   }
-
-  //   const currentItem = (index) => {
-  //   console.clear()
-  //   // for (let index = 0; index < list.current.children.length; index++) {
-  //   //   list.current.children[index].className = 'list'
-  //   // }
-  //   // if (list.current.children[index].className === 'list') {
-  //   //   list.current.children[index].className = 'list active'
-  //   // } else {
-  //   //   list.current.children[index].className = 'list'
-  //   // }
-  //   for (let i = 0; i < list.current.children.length; i++) {
-  //     console.log(list.current.children[index].children)
-  //     for (
-  //       let indexj = 0;
-  //       indexj < list.current.children[i].children.length;
-  //       indexj++
-  //     ) {
-  //       // console.log(list.current.children[index].children[indexj])
-  //       // console.log(list.current.children[i].children[indexj].className)
-  //       // if (
-  //       //   list.current.children[index].children[indexj].className = 'a.activee'
-  //       // ) {
-  //       //   console.log(list.current.children[index].children[indexj])
-  //       // }
-  //     }
-  //   }
-
-  //   // Imprime la clase de
-  //   // console.log(list.current.children[index].className)
-  // }
 
   useEffect(() => {
     console.clear()
 
+    let currentlink
+
     for (let i = 0; i < list.current.children.length; i++) {
-      // console.log(list.current.children[i])
-      // console.log(list.current.children[i].children)
       for (let j = 0; j < list.current.children[i].children.length; j++) {
-        // console.log(list.current.children[i].children[j])
-        // console.log(list.current.children[i].children[j].className)
-        // console.log(list.current.children[i].children[2])
         currentlink = list.current.children[i].children[2]
-        // currentItemList = list.current.children[i].children[2]
-        // if (
-        //   list.current.children[index].children[indexj].className = 'a.activee'
-        // ) {
-        //   console.log(list.current.children[index].children[indexj])
-        // }
       }
-      console.log(
-        'Current anchor number: ',
-        i + 1,
-        '- ',
-        currentlink.href,
-        currentlink.className
-      )
-      console.log(currentlink)
       if (currentlink.className === 'active')
         currentlink.offsetParent.className = 'list active'
     }
-
-    // console.log(currentItemList)
-
-    // Imprime la clase de
-    // console.log(list.current.children[index].className)
   }, [])
 
   return (
     <>
-      {/* {console.log(sampleLocation.pathname)} */}
       <div className={sidebar ? 'navigation active' : 'navigation'}>
         <ToggleButton sidebar={sidebar} onClick={showSidebar}>
           <ToggleIcon
