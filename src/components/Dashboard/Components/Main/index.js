@@ -13,6 +13,25 @@ import {
 } from './MainElements'
 import searchSvg from '../../../../assets/svg/Search.svg'
 
+const ShowInput = (select, field, options, placeholder) => {
+  if (select) {
+    return (
+      <SelectForm key={field}>
+        {options.map((option, index) => {
+          console.log(option, index)
+          return (
+            <option value={option} key={index}>
+              {option}
+            </option>
+          )
+        })}
+      </SelectForm>
+    )
+  } else {
+    return <FieldForm id={field} placeholder={placeholder} />
+  }
+}
+
 export const Main = ({ sidebar }) => {
   return (
     <MainContainer id="main" sidebar={sidebar}>
@@ -39,22 +58,7 @@ export const Main = ({ sidebar }) => {
               return (
                 <FieldWrapper key={index}>
                   <LabelForm htmlFor={field}>{field}</LabelForm>
-                  {select ? (
-                    <SelectForm key={field}>
-                      {options.map((option, index) => {
-                        console.log(option, index)
-                        return (
-                          <option value={option} key={index}>
-                            {option}
-                          </option>
-                        )
-                      })}
-                    </SelectForm>
-                  ) : (
-                    <>
-                      <FieldForm id={field} placeholder={placeholder} />
-                    </>
-                  )}
+                  {ShowInput(select, field, options, placeholder)}
                 </FieldWrapper>
               )
             }
@@ -94,14 +98,18 @@ export const fields = [
       'Pasaporte',
       'Visa'
     ]
+  },
+  {
+    field: 'Tipo de documento',
+    placeholder: 'Tipo de documento de identidad',
+    select: true,
+    options: [
+      'Cédula de ciudadanía - C.C.',
+      'Número de documento de identidad - NIT'
+    ]
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
   }
-  // {
-  //   field: 'Tipo de documento',
-  //   placeholder: 'Tipo de documento de identidad',
-  //   select: true,
-  //   options: [
-  //     'Cédula de ciudadanía - C.C.',
-  //     'Número de documento de identidad - NIT'
-  //   ]
-  // }
 ]
