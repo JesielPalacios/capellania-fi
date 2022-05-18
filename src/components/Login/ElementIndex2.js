@@ -27,6 +27,15 @@ export const LoginCont = styled.div`
 export const LeftSide = styled.div`
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  left: 0%;
+  box-shadow: 10px;
 `;
 
 export const EmailLabel = styled.label`
@@ -74,7 +83,6 @@ export const ContrasenaLabel = styled.label`
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
-  /* identical to box height */
 
   letter-spacing: -0.103101px;
 
@@ -95,7 +103,7 @@ export const ContrasenaInput = styled.input`
   border-radius: 10px;
 `;
 
-export const Remember = styled.input`
+export const Remember = styled.div`
   position: absolute;
   width: 154px;
   height: 19px;
@@ -124,12 +132,15 @@ export const Enviar = styled.button`
 `;
 
 export const RightSide = styled.div`
-  background: #e5e9ec;
-  right:0;
-  position: relative;
-  left: 25%;
-  text-align: center;
-
+  background-color: #e5e9ec;
+  height: 100%;
+  width: 65%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  right: 0;
 `;
 
 export const ImgWel = styled.img`
@@ -137,5 +148,5 @@ export const ImgWel = styled.img`
   height: 620px;
   left: 1190px;
   top: 214px;
-  left: 25%;
+  align-items: center;
 `;
