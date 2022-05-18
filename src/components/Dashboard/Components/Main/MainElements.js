@@ -15,6 +15,7 @@ export const MainContainer = styled.section`
     border: 1px solid #000;
   } */
   position: relative;
+  overflow: hidden;
 `
 
 export const SectionTittle = styled.h1`
@@ -116,47 +117,65 @@ export const SearchInput = styled.input`
   padding: 15px;
 `
 
-export const InterviewForm = styled.form`
-  /* position: absolute; */
-  width: 1162px;
-  width: 95%;
-  height: 75%;
-  left: 248px;
-  left: 6%;
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 10px;
-  margin-top: 130px;
+export const InterviewContainer = styled.div`
+width: 1162px;
+width: 100%;
+width: 95%;
+height: 75%;
+left: 248px;
+left: 6%;
+padding: 30px;
+background: #ffffff;
+border-radius: 10px;
+margin-top: 130px;
+overflow: hidden;
+  `
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
+export const InterviewForm = styled.form`
+  width: 100%;
+  height: 100%;
+
+  /* display: grid; */
+  display: flex;
+  /* justify-content: flex-start; */
+  flex-wrap: wrap;
+  gap: 12px;
+
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* grid-template-rows: auto; */
+  /* grid-gap: 30px; */
   /* grid-auto-rows: minmax(100px, auto); */
+  overflow: scroll;
+  overflow-x: hidden;
 `
 
 export const FieldWrapper = styled.div`
   width: 238px;
   height: 80px;
-  left: 278px;
-  top: 204px;
+  height: 100px;
+  /* left: 278px; */
+  /* top: 204px; */
   position: relative;
-`
+  /* border: 1px solid aqua; */
+  `
 
 export const LabelForm = styled.label``
 
 export const FieldForm = styled.input`
   border: unset;
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 37.5%;
-  bottom: 0%;
+  /* position: absolute; */
+  /* left: 0%; */
+  /* right: 0%; */
+  /* top: 37.5%; */
+  /* bottom: 0%; */
 
   /* position: absolute;
   left: 8.4%;
   right: 4.62%;
   top: 58.75%;
   bottom: 22.5%; */
+
+  width: 100%;
 
   font-family: 'Nunito';
   font-style: normal;
@@ -173,5 +192,6 @@ export const FieldForm = styled.input`
   background: #e5e9ec;
 
   padding: 10px;
+  margin-top: 5px;
   border-radius: 10px;
 `

@@ -2,6 +2,7 @@ import {
   Field,
   FieldForm,
   FieldWrapper,
+  InterviewContainer,
   InterviewForm,
   LabelForm,
   MainContainer,
@@ -30,16 +31,18 @@ export const Main = ({ sidebar }) => {
           {/* <img src="../../../../assets/svg/Search.svg" alt="" /> */}
         </div>{' '}
       </NavigationBar>
-      <InterviewForm>
-        {fields.map(({ field, placeholder }, index) => {
-          return (
-            <FieldWrapper key={index}>
-              <LabelForm htmlFor={field}>{field}</LabelForm>
-              <FieldForm id={field} placeholder={placeholder} />
-            </FieldWrapper>
-          )
-        })}
-      </InterviewForm>
+      <InterviewContainer>
+        <InterviewForm>
+          {fields.map(({ field, placeholder }, index) => {
+            return (
+              <FieldWrapper key={index}>
+                <LabelForm htmlFor={field}>{field}</LabelForm>
+                <FieldForm id={field} placeholder={placeholder} />
+              </FieldWrapper>
+            )
+          })}
+        </InterviewForm>
+      </InterviewContainer>
     </MainContainer>
   )
 }
@@ -55,10 +58,14 @@ export const fields = [
   },
   {
     field: 'Correo electrónico personal',
-    placeholder: 'Su email aquí'
+    placeholder: 'example@correo.com'
   },
   {
     field: 'Número de teléfono',
-    placeholder: 'Su número aquí'
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Tipo de documento',
+    placeholder: 'Tipo de documento de identidad'
   }
 ]
