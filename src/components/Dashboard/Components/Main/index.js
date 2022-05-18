@@ -16,10 +16,21 @@ import searchSvg from '../../../../assets/svg/Search.svg'
 
 export const Main = ({ sidebar }) => {
   const showSelectOptions = (optionsArray) => {
-    console.log(optionsArray.length)
+    console.log(optionsArray)
+    // console.log(optionsArray.length)
+    // -------------------------------------------------------------------------
     for (let index = 0; index < optionsArray.length; index++) {
-      // return <option value={optionsArray[index]}>{optionsArray[index]}</option>
+      return <option value={optionsArray[index]}>{optionsArray[index]}</option>
     }
+    //--------------------------------------------------------------------------
+    // optionsArray.map((option, index) => {
+    //   console.log(option, index)
+    //   return (
+    //     <option value={option} key={index}>
+    //       {option}
+    //     </option>
+    //   )
+    // })
   }
 
   return (
@@ -51,7 +62,7 @@ export const Main = ({ sidebar }) => {
                     <SelectForm key={field}>
                       {
                         showSelectOptions(options)
-                        // () => showSelectOptions(fields.options)
+                        // () => showSelectOptions(options)
                       }
                     </SelectForm>
                   ) : (
