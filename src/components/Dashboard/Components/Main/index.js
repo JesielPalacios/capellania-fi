@@ -14,28 +14,6 @@ import {
 import searchSvg from '../../../../assets/svg/Search.svg'
 
 export const Main = ({ sidebar }) => {
-  const showSelectOptions = (optionsArray) => {
-    console.log(optionsArray)
-    console.log(optionsArray.length)
-    let i
-    // -------------------------------------------------------------------------
-    for (let index = 0; index < optionsArray.length; index++) {
-      //Create a breake point here
-      console.log(optionsArray[index], index)
-      i = optionsArray[index]
-      return <option value={optionsArray[index]}>{optionsArray[index]}</option>
-    }
-    //--------------------------------------------------------------------------
-    // optionsArray.map((option, index) => {
-    //   console.log(option, index)
-    //   return (
-    //     <option value={option} key={index}>
-    //       {option}
-    //     </option>
-    //   )
-    // })
-  }
-
   return (
     <MainContainer id="main" sidebar={sidebar}>
       <SectionTittle>Registro de entrevista nueva</SectionTittle>
@@ -63,10 +41,14 @@ export const Main = ({ sidebar }) => {
                   <LabelForm htmlFor={field}>{field}</LabelForm>
                   {select ? (
                     <SelectForm key={field}>
-                      {
-                        showSelectOptions(options)
-                        // () => showSelectOptions(options)
-                      }
+                      {options.map((option, index) => {
+                        console.log(option, index)
+                        return (
+                          <option value={option} key={index}>
+                            {option}
+                          </option>
+                        )
+                      })}
                     </SelectForm>
                   ) : (
                     <>
