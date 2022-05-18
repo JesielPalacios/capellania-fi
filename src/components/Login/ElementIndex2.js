@@ -108,7 +108,7 @@ export const Remember = styled.div`
   width: 154px;
   height: 19px;
   left: 50px;
-  top: 500px;
+  top: 510px;
 `;
 
 export const ResetPassw = styled.a`
