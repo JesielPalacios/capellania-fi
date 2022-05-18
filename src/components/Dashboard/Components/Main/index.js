@@ -1,5 +1,4 @@
 import {
-  Field,
   FieldForm,
   FieldWrapper,
   InterviewContainer,
@@ -17,9 +16,13 @@ import searchSvg from '../../../../assets/svg/Search.svg'
 export const Main = ({ sidebar }) => {
   const showSelectOptions = (optionsArray) => {
     console.log(optionsArray)
-    // console.log(optionsArray.length)
+    console.log(optionsArray.length)
+    let i
     // -------------------------------------------------------------------------
     for (let index = 0; index < optionsArray.length; index++) {
+      //Create a breake point here
+      console.log(optionsArray[index], index)
+      i = optionsArray[index]
       return <option value={optionsArray[index]}>{optionsArray[index]}</option>
     }
     //--------------------------------------------------------------------------
