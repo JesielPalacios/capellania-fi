@@ -34,6 +34,7 @@ export const Main = ({ sidebar }) => {
       <InterviewContainer>
         <InterviewForm>
           {fields.map(({ field, placeholder }, index) => {
+
             return (
               <FieldWrapper key={index}>
                 <LabelForm htmlFor={field}>{field}</LabelForm>
@@ -66,6 +67,15 @@ export const fields = [
   },
   {
     field: 'Tipo de documento',
-    placeholder: 'Tipo de documento de identidad'
+    placeholder: 'Tipo de documento de identidad',
+    select: true,
+    options: [
+      'Cédula de ciudadanía - C.C.',
+      'Número de documento de identidad - NIT',
+      'Registro civil',
+      'Cédula de extranjería',
+      'Pasaporte',
+      'Visa'
+    ]
   }
 ]

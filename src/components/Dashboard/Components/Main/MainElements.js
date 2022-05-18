@@ -135,14 +135,16 @@ export const InterviewForm = styled.form`
   width: 100%;
   height: 100%;
 
-  /* display: grid; */
-  display: flex;
+  /* display: flex; */
   /* justify-content: flex-start; */
-  flex-wrap: wrap;
-  gap: 12px;
+  /* flex-wrap: wrap; */
+  /* gap: 12px; */
 
-  /* grid-template-columns: repeat(4, 1fr); */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   /* grid-template-rows: auto; */
+  grid-auto-rows: minmax(100px, auto);
+
   /* grid-gap: 30px; */
   /* grid-auto-rows: minmax(100px, auto); */
   overflow: scroll;
