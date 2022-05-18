@@ -197,3 +197,5 @@ export const FieldForm = styled.input`
   margin-top: 5px;
   border-radius: 10px;
 `
+
+export const SelectForm = styled.select``

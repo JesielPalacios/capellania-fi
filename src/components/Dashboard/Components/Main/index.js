@@ -9,14 +9,23 @@ import {
   NavigationBar,
   ProgressBar,
   SearchInput,
-  SectionTittle
+  SectionTittle,
+  SelectForm
 } from './MainElements'
 import searchSvg from '../../../../assets/svg/Search.svg'
 
 export const Main = ({ sidebar }) => {
+  const showSelectOptions = (optionsArray) => {
+    console.log(optionsArray.length)
+    for (let index = 0; index < optionsArray.length; index++) {
+      // return <option value={optionsArray[index]}>{optionsArray[index]}</option>
+    }
+  }
+
   return (
     <MainContainer id="main" sidebar={sidebar}>
       <SectionTittle>Registro de entrevista nueva</SectionTittle>
+
       <NavigationBar>
         <ProgressBar>
           <button>Información General</button>
@@ -28,20 +37,32 @@ export const Main = ({ sidebar }) => {
         <div>
           <SearchInput placeholder="Buscar usuario" />
           <img src={searchSvg} alt="icon search" />
-          {/* <img src="../../../../assets/svg/Search.svg" alt="" /> */}
-        </div>{' '}
+        </div>
       </NavigationBar>
+
       <InterviewContainer>
         <InterviewForm>
-          {fields.map(({ field, placeholder }, index) => {
-
-            return (
-              <FieldWrapper key={index}>
-                <LabelForm htmlFor={field}>{field}</LabelForm>
-                <FieldForm id={field} placeholder={placeholder} />
-              </FieldWrapper>
-            )
-          })}
+          {fields.map(
+            ({ field, placeholder, select, options }, index, fieldItem) => {
+              return (
+                <FieldWrapper key={index}>
+                  <LabelForm htmlFor={field}>{field}</LabelForm>
+                  {select ? (
+                    <SelectForm key={field}>
+                      {
+                        showSelectOptions(options)
+                        // () => showSelectOptions(fields.options)
+                      }
+                    </SelectForm>
+                  ) : (
+                    <>
+                      <FieldForm id={field} placeholder={placeholder} />
+                    </>
+                  )}
+                </FieldWrapper>
+              )
+            }
+          )}
         </InterviewForm>
       </InterviewContainer>
     </MainContainer>
@@ -78,4 +99,13 @@ export const fields = [
       'Visa'
     ]
   }
+  // {
+  //   field: 'Tipo de documento',
+  //   placeholder: 'Tipo de documento de identidad',
+  //   select: true,
+  //   options: [
+  //     'Cédula de ciudadanía - C.C.',
+  //     'Número de documento de identidad - NIT'
+  //   ]
+  // }
 ]
