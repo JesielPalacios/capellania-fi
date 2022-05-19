@@ -16,7 +16,7 @@ import searchSvg from '../../../../assets/svg/Search.svg'
 const ShowInput = (select, field, options, placeholder) => {
   if (select) {
     return (
-      <SelectForm key={field}>
+      <SelectForm id={field}>
         {options.map((option, index) => {
           console.log(option, index)
           return (
@@ -54,9 +54,9 @@ export const Main = ({ sidebar }) => {
       <InterviewContainer>
         <InterviewForm>
           {fields.map(
-            ({ field, placeholder, select, options }, index, fieldItem) => {
+            ({ field, placeholder, select, options, large }, index, fieldItem) => {
               return (
-                <FieldWrapper key={index}>
+                <FieldWrapper key={index} large={large}>
                   <LabelForm htmlFor={field}>{field}</LabelForm>
                   {ShowInput(select, field, options, placeholder)}
                 </FieldWrapper>
@@ -90,6 +90,7 @@ export const fields = [
     field: 'Tipo de documento',
     placeholder: 'Tipo de documento de identidad',
     select: true,
+    large: true,
     options: [
       'Cédula de ciudadanía - C.C.',
       'Número de documento de identidad - NIT',
@@ -111,5 +112,117 @@ export const fields = [
   {
     field: 'Número de teléfono',
     placeholder: '311 111 1111'
-  }
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
+  {
+    field: 'Número de teléfono',
+    placeholder: '311 111 1111'
+  },
 ]
