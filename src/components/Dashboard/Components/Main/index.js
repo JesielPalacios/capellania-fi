@@ -19,17 +19,16 @@ import Select from 'react-select'
 const ShowInput = (select, field, options, placeholder) => {
   if (select) {
     return (
-      // <SelectForm id={field}>
-      //   {options.map((option, index) => {
-      //     console.log(option, index)
-      //     return (
-      //       <option value={option} key={index}>
-      //         {option}
-      //       </option>
-      //     )
-      //   })}
-      // </SelectForm>
-      <SelectFormed options={options} defaultValue={options[1]} />
+      <SelectForm id={field}>
+        {options.map((option, index) => {
+          console.log(option, index)
+          return (
+            <option value={option} key={index}>
+              {option}
+            </option>
+          )
+        })}
+      </SelectForm>
     )
   } else {
     return <FieldForm id={field} placeholder={placeholder} />
@@ -100,28 +99,29 @@ export const fields = [
     placeholder: 'Tipo de documento de identidad',
     select: true,
     large: true,
-    // options: [
-    //   'Cédula de ciudadanía - C.C.',
-    //   'Número de documento de identidad - NIT',
-    //   'Registro civil',
-    //   'Cédula de extranjería',
-    //   'Pasaporte',
-    //   'Visa'
-    // ]
     options: [
-      {
-        value: 'Cédula de ciudadanía - C.C.',
-        label: 'Cédula de ciudadanía - C.C.'
-      },
-      {
-        value: 'Número de documento de identidad - NIT',
-        label: 'Número de documento de identidad - NIT'
-      },
-      { value: 'Cédula de extranjería', label: 'Cédula de extranjería' },
-      { value: 'Pasaporte', label: 'Pasaporte' },
-      { value: 'Visa', label: 'Visa' }
+      'Cédula de ciudadanía - C.C.',
+      'Número de documento de identidad - NIT',
+      'Registro civil',
+      'Cédula de extranjería',
+      'Pasaporte',
+      'Visa'
     ]
   },
+  //   options: [
+  //     {
+  //       value: 'Cédula de ciudadanía - C.C.',
+  //       label: 'Cédula de ciudadanía - C.C.'
+  //     },
+  //     {
+  //       value: 'Número de documento de identidad - NIT',
+  //       label: 'Número de documento de identidad - NIT'
+  //     },
+  //     { value: 'Cédula de extranjería', label: 'Cédula de extranjería' },
+  //     { value: 'Pasaporte', label: 'Pasaporte' },
+  //     { value: 'Visa', label: 'Visa' }
+  //   ]
+  // },
   {
     field: 'Tipo de documento',
     placeholder: 'Tipo de documento de identidad',
