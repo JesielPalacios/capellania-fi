@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Select from 'react-select'
 
 export const MainContainer = styled.section`
   margin-left: ${({ sidebar }) => (sidebar ? '240px' : '80px')};
@@ -236,4 +237,41 @@ export const SelectForm = styled.select`
   padding: 10px;
   margin-top: 5px;
   border-radius: 10px;
+`
+
+export const SelectFormed = styled(Select)`
+  border: unset;
+  /* position: absolute; */
+  /* left: 0%; */
+  /* right: 0%; */
+  /* top: 37.5%; */
+  /* bottom: 0%; */
+
+  /* position: absolute;
+  left: 8.4%;
+  right: 4.62%;
+  top: 58.75%;
+  bottom: 22.5%; */
+
+  width: 100%;
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+
+  /* Text */
+
+  color: #030229;
+
+  /* opacity: 0.7; */
+
+  background: #e5e9ec;
+
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+  /* position: relative; */
+  /* z-index: 1; */
 `

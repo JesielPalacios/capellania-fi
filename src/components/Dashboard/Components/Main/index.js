@@ -9,23 +9,27 @@ import {
   ProgressBar,
   SearchInput,
   SectionTittle,
-  SelectForm
+  SelectForm,
+  SelectFormed
 } from './MainElements'
 import searchSvg from '../../../../assets/svg/Search.svg'
+import { DDD } from './index copy'
+import Select from 'react-select'
 
 const ShowInput = (select, field, options, placeholder) => {
   if (select) {
     return (
-      <SelectForm id={field}>
-        {options.map((option, index) => {
-          console.log(option, index)
-          return (
-            <option value={option} key={index}>
-              {option}
-            </option>
-          )
-        })}
-      </SelectForm>
+      // <SelectForm id={field}>
+      //   {options.map((option, index) => {
+      //     console.log(option, index)
+      //     return (
+      //       <option value={option} key={index}>
+      //         {option}
+      //       </option>
+      //     )
+      //   })}
+      // </SelectForm>
+      <SelectFormed options={options} defaultValue={options[1]} />
     )
   } else {
     return <FieldForm id={field} placeholder={placeholder} />
@@ -38,13 +42,13 @@ export const Main = ({ sidebar }) => {
       <SectionTittle>Registro de entrevista nueva</SectionTittle>
 
       <NavigationBar>
-        <ProgressBar>
+        {/* <ProgressBar>
           <button>Información General</button>
           <div />
           <button>Información Académica</button>
           <div />
           <button>Seguimiento</button>
-        </ProgressBar>
+        </ProgressBar> */}
         <div>
           <SearchInput placeholder="Buscar usuario" />
           <img src={searchSvg} alt="icon search" />
@@ -54,7 +58,11 @@ export const Main = ({ sidebar }) => {
       <InterviewContainer>
         <InterviewForm>
           {fields.map(
-            ({ field, placeholder, select, options, large }, index, fieldItem) => {
+            (
+              { field, placeholder, select, options, large },
+              index,
+              fieldItem
+            ) => {
               return (
                 <FieldWrapper key={index} large={large}>
                   <LabelForm htmlFor={field}>{field}</LabelForm>
@@ -64,6 +72,7 @@ export const Main = ({ sidebar }) => {
             }
           )}
         </InterviewForm>
+        {/* <DDD /> */}
       </InterviewContainer>
     </MainContainer>
   )
@@ -91,13 +100,26 @@ export const fields = [
     placeholder: 'Tipo de documento de identidad',
     select: true,
     large: true,
+    // options: [
+    //   'Cédula de ciudadanía - C.C.',
+    //   'Número de documento de identidad - NIT',
+    //   'Registro civil',
+    //   'Cédula de extranjería',
+    //   'Pasaporte',
+    //   'Visa'
+    // ]
     options: [
-      'Cédula de ciudadanía - C.C.',
-      'Número de documento de identidad - NIT',
-      'Registro civil',
-      'Cédula de extranjería',
-      'Pasaporte',
-      'Visa'
+      {
+        value: 'Cédula de ciudadanía - C.C.',
+        label: 'Cédula de ciudadanía - C.C.'
+      },
+      {
+        value: 'Número de documento de identidad - NIT',
+        label: 'Número de documento de identidad - NIT'
+      },
+      { value: 'Cédula de extranjería', label: 'Cédula de extranjería' },
+      { value: 'Pasaporte', label: 'Pasaporte' },
+      { value: 'Visa', label: 'Visa' }
     ]
   },
   {
@@ -224,5 +246,5 @@ export const fields = [
   {
     field: 'Número de teléfono',
     placeholder: '311 111 1111'
-  },
+  }
 ]
