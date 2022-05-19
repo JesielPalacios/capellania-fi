@@ -240,19 +240,8 @@ export const SelectForm = styled.select`
 `
 
 export const SelectFormed = styled(Select)`
+  .Select__control {
   border: unset;
-  /* position: absolute; */
-  /* left: 0%; */
-  /* right: 0%; */
-  /* top: 37.5%; */
-  /* bottom: 0%; */
-
-  /* position: absolute;
-  left: 8.4%;
-  right: 4.62%;
-  top: 58.75%;
-  bottom: 22.5%; */
-
   width: 100%;
 
   font-family: 'Nunito';
@@ -265,13 +254,35 @@ export const SelectFormed = styled(Select)`
 
   color: #030229;
 
-  /* opacity: 0.7; */
+  opacity: 0.7;
 
   background: #e5e9ec;
 
   padding: 10px;
   margin-top: 5px;
   border-radius: 10px;
-  /* position: relative; */
-  /* z-index: 1; */
+  /* --------------------------------------------------- */
+    height: 40px;
+    width: 100%;
+    border: 1px solid #a1a1a1;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .Select__control:hover {
+    border-color: #a1a1a1;
+  }
+
+  .Select__control--is-focused {
+    box-shadow: 0 0 0 1px black;
+    outline: none;
+  }
+
+  .Select__indicator-separator {
+    display: none;
+  }
+
+  .Select__menu {
+    color: #3c3d3e;
+  }
 `
