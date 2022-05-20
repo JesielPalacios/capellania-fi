@@ -1,10 +1,22 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link as LinkRouter } from 'react-router-dom'
-import { Link as LinkScroll } from 'react-scroll'
-import { FaBeer, FaBars } from 'react-icons/fa'
+import React from "react";
+import styled from "styled-components";
+import { Link as LinkRouter } from "react-router-dom";
+import { Link as LinkScroll } from "react-scroll";
+import { FaBeer, FaBars } from "react-icons/fa";
+import useUser from "../../../../core/hooks/useUser";
+import { BiLogIn } from "react-icons/bi";
+import { HiOutlineLogin } from "react-icons/hi";
 
 export const Nabvar = ({ toggle }) => {
+  // const isLogged = false
+
+  const { isLogged, logout } = useUser();
+
+  const handleClick = e =>{
+    e.preventDefault()
+    logout()
+  }
+
   return (
     <Nav>
       <NavbarContainer>
@@ -26,13 +38,23 @@ export const Nabvar = ({ toggle }) => {
             <NavLinks to="about">About</NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to="sigup">Sig Up</NavLinks>
+            <NavLinks>
+              {isLogged ? (
+                <LinkRouter href="#" onclick={logout}>
+                  <HiOutlineLogin></HiOutlineLogin>
+                </LinkRouter>
+              ) : (
+                <LinkRouter to="/login">
+                  <BiLogIn></BiLogIn>
+                </LinkRouter>
+              )}
+            </NavLinks>
           </NavItem>
         </NavMenu>
       </NavbarContainer>
     </Nav>
-  )
-}
+  );
+};
 
 const Nav = styled.nav`
   /* background: #000; */
@@ -56,7 +78,7 @@ const Nav = styled.nav`
   @media screen and (max-widht: 960px) {
     transition: 0.8s all ease;
   }
-`
+`;
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -70,7 +92,7 @@ const NavbarContainer = styled.div`
   @media screen and (max-widht: 960px) {
     transition: 0.8s all ease;
   }
-`
+`;
 
 const NavLogo = styled(LinkRouter)`
   color: #fff;
@@ -82,7 +104,7 @@ const NavLogo = styled(LinkRouter)`
   margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
-`
+`;
 
 const MobileIcon = styled.div`
   display: none;
@@ -97,7 +119,7 @@ const MobileIcon = styled.div`
     cursor: pointer;
     color: #fff;
   }
-`
+`;
 
 const NavMenu = styled.ul`
   display: flex;
@@ -109,11 +131,11 @@ const NavMenu = styled.ul`
   @media screen and (max-widht: 768px) {
     display: none;
   }
-`
+`;
 
 const NavItem = styled.ul`
   height: 80px;
-`
+`;
 
 const NavLinks = styled(LinkScroll)`
   color: #fff;
@@ -128,4 +150,4 @@ const NavLinks = styled(LinkScroll)`
   &[aria-current] {
     border-bottom: 3px solid #01bf71;
   }
-`
+`;

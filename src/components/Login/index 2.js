@@ -18,15 +18,24 @@ import {
   Welcome,
 } from "./ElementIndex2";
 import { useLocation } from "react-router-dom";
+import useUser from "../../core/hooks/useUser";
+import { useEffect } from "react/cjs/react.development";
 
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [navigate] = useLocation();
+  const {login, isLogged} = useUser()
 
-  const Submit = (l) => {
-    l.preventDefault();
+  useEffect(()=> {
+    if (isLogged) navigate('/')
+  }, [isLogged, navigate])
+
+  const Submit = (e) => {
+    e.preventDefault();
+    login({username, password})
     // alert(`${username}, ${password}`)
+   // navigate('/')
   };
 
   return (
@@ -39,7 +48,7 @@ export const Login = () => {
           <EmailInput
             placeholder=" example@gmail.com"
             type="username"
-            onChange={(l) => setUsername(l.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
             value={username}
             id="email"
           />
@@ -47,7 +56,7 @@ export const Login = () => {
           <ContrasenaInput
             placeholder=" • • • • • • •"
             type="password"
-            onChange={(l) => setPassword(l.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             value={password}
             id="passw"
           />

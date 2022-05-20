@@ -10,7 +10,6 @@ import { GlobalStyle } from '../../styles/GlobalStyles'
 const Home = React.lazy(() => import('../../pages/HomePage'))
 const Dashboard = React.lazy(() => import('../../pages/DashboardPage'))
 const LogIn = React.lazy(() => import('../../pages/LoginPage'))
-// const SignUp = React.lazy(() => import('../../pages/SignUpPage'))
 const ErrorPage = React.lazy(() => import('../../pages/ErrorPage'))
 
 export const AppRouter = () => {
