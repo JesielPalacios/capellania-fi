@@ -16,32 +16,6 @@ import searchSvg from '../../../../assets/svg/Search.svg'
 
 const ShowInput = (select, field, options, placeholder) => {
   const customStyles = {
-    option: (provided, state) => ({
-      ...provided,
-      // borderBottom: '1px dotted pink',
-      // color: state.isSelected ? 'red' : 'blue',
-      // padding: 20
-      // border: 'none',
-      // border: 'unset',
-      width: '100%',
-
-      fontFamily: 'Nunito',
-      fontStyle: 'normal',
-      fontWeight: '600',
-      fontSize: '14px',
-      lineHeight: '19px',
-
-      color: '#030229',
-
-      opacity: '0.7',
-
-      background: '#e5e9ec',
-
-      padding: '10px',
-      marginTop: '5px',
-      borderRadius: '10px',
-      cursor: 'pointer'
-    }),
     control: () => ({
       // none of react-select's styles are passed to <Control />
       // width: 200
@@ -66,9 +40,11 @@ const ShowInput = (select, field, options, placeholder) => {
       marginTop: '5px',
       borderRadius: '10px',
 
-      hover: {
+      // ':hover': {
+      //   cursor: 'pointer'
+      // }
 
-      }
+      // height: '500px'
     }),
     singleValue: (provided, state) => {
       const opacity = state.isDisabled ? 0.5 : 1
@@ -98,7 +74,6 @@ const ShowInput = (select, field, options, placeholder) => {
         isClearable={true}
         placeholder="Escriba para buscar"
         styles={customStyles}
-        menuColor="red"
       />
     )
   } else {
@@ -112,13 +87,13 @@ export const Main = ({ sidebar }) => {
       <SectionTittle>Registro de entrevista nueva</SectionTittle>
 
       <NavigationBar>
-        {/* <ProgressBar>
+        <ProgressBar>
           <button>Información General</button>
           <div />
           <button>Información Académica</button>
           <div />
           <button>Seguimiento</button>
-        </ProgressBar> */}
+        </ProgressBar>
         <div>
           <SearchInput placeholder="Buscar usuario" />
           <img src={searchSvg} alt="icon search" />

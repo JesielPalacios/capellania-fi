@@ -140,7 +140,7 @@ export const InterviewForm = styled.form`
   /* justify-content: flex-start; */
   flex-wrap: wrap;
   gap: 12px;
-  gap: 30px;
+  /* gap: 30px; */
 
   /* display: grid; */
   /* grid-template-columns: repeat(4, 1fr); */
@@ -158,9 +158,11 @@ export const InterviewForm = styled.form`
 export const FieldWrapper = styled.div`
   /* width: 238px; */
   width: ${({large})=>large? '506px' : '238px'};
-  /* width: ${({large})=>large? '476px' : '238px'}; */
+  width: ${({large})=>large? '476px' : '238px'};
+  width: ${({large})=>large? '488px' : '238px'};
   height: 80px;
   height: 100px;
+  height: 78px;
   /* left: 278px; */
   /* top: 204px; */
   position: relative;
@@ -237,7 +239,7 @@ export const SelectForm = styled.select`
   padding: 10px;
   margin-top: 5px;
   border-radius: 10px;
-`
+  `
 
 export const SelectFormed = styled(Select)`
     /* border: none;
@@ -261,6 +263,9 @@ export const SelectFormed = styled(Select)`
   padding: 10px;
   margin-top: 5px;
   border-radius: 10px; */
+
+
+  /* height: 5px; */
   .Select__control {
   /* --------------------------------------------------- */
     /* height: 40px; */
@@ -268,6 +273,8 @@ export const SelectFormed = styled(Select)`
     border: 1px solid #a1a1a1;
     border-radius: 0;
     cursor: pointer;
+
+    /* display: inline; */
   }
 
   .Select__control:hover {
