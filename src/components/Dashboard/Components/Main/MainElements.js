@@ -240,8 +240,8 @@ export const SelectForm = styled.select`
 `
 
 export const SelectFormed = styled(Select)`
-  .Select__control {
-  border: unset;
+    /* border: none;
+    border: unset;
   width: 100%;
 
   font-family: 'Nunito';
@@ -250,7 +250,7 @@ export const SelectFormed = styled(Select)`
   font-size: 14px;
   line-height: 19px;
 
-  /* Text */
+  Text
 
   color: #030229;
 
@@ -260,10 +260,11 @@ export const SelectFormed = styled(Select)`
 
   padding: 10px;
   margin-top: 5px;
-  border-radius: 10px;
+  border-radius: 10px; */
+  .Select__control {
   /* --------------------------------------------------- */
-    height: 40px;
-    width: 100%;
+    /* height: 40px; */
+    /* width: 100%; */
     border: 1px solid #a1a1a1;
     border-radius: 0;
     cursor: pointer;
