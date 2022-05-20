@@ -1,10 +1,9 @@
 import { useCallback, useContext, useState } from 'react'
 import { Context } from '../context/UserContext'
 import loginService from '../service/login'
-// import addFavService from 'services/addFav'
 
 export default function useUser() {
-  const { favs, jwt, setFavs, setJWT } = useContext(Context)
+  const { jwt,  setJWT } = useContext(Context)
   const [state, setState] = useState({ loading: false, error: false })
 
   const login = useCallback(

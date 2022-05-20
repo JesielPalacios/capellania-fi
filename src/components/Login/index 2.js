@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import LogoImg from "../../assets/img/logo-unac-yellow.png";
 import imgWel from "../../assets/img/Illustration.png";
 import {
@@ -24,7 +23,7 @@ import { useEffect } from "react/cjs/react.development";
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [navigate] = useLocation();
+  const [, navigate] = useLocation();
   const {login, isLogged} = useUser()
 
   useEffect(()=> {
