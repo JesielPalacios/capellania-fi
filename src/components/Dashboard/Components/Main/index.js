@@ -36,7 +36,7 @@ const ShowInput = (select, field, options, placeholder) => {
 
       background: '#e5e9ec',
 
-      padding: '9px',
+      padding: '5px',
       marginTop: '5px',
       borderRadius: '10px',
 
