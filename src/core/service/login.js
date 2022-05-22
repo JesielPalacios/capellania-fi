@@ -1,7 +1,7 @@
 const ENPOINT = 'https://ecommerce-nodejs-expressjs.herokuapp.com'
 
 export default function login ({ username, password}){
-    return fetch(`${ENPOINT}/login`,{
+    return fetch(`${ENPOINT}/api/auth/login`,{
        method: 'POST',
        headers:{
            "Content-Type": 'application/json'
@@ -11,7 +11,6 @@ export default function login ({ username, password}){
         if (!res.ok) throw new Error('Response is NOT ok')
         return res.json()
     }).then(res =>{
-        const {jwt}=res
-        return jwt
+        return res.accessToken
     })
 }

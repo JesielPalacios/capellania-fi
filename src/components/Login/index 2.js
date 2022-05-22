@@ -16,25 +16,25 @@ import {
   RightSide,
   Welcome,
 } from "./ElementIndex2";
-import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import useUser from "../../core/hooks/useUser";
 import { useEffect } from "react/cjs/react.development";
 
 export const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [, navigate] = useLocation();
-  const {login, isLogged} = useUser()
+  const [username, setUsername] = useState("Anthony");
+  const [password, setPassword] = useState("asasd$123");
+  const history = useHistory();
+  const { login, isLogged } = useUser();
 
-  useEffect(()=> {
-    if (isLogged) navigate('/')
-  }, [isLogged, navigate])
+  useEffect(() => {
+    if (isLogged) history.push("/dashboard");
+  }, [isLogged,history]);
 
   const Submit = (e) => {
     e.preventDefault();
-    login({username, password})
+    login({ username, password });
     // alert(`${username}, ${password}`)
-   // navigate('/')
+    // navigate('/')
   };
 
   return (
@@ -43,15 +43,15 @@ export const Login = () => {
         <Logo src={LogoImg} />
         <Welcome>Log in</Welcome>
         <form onSubmit={Submit}>
-          <EmailLabel for="email">Email Address</EmailLabel>
+          <EmailLabel htmlFor="email">Email Address</EmailLabel>
           <EmailInput
             placeholder=" example@gmail.com"
-            type="username"
+            type="text"
             onChange={(e) => setUsername(e.target.value)}
             value={username}
             id="email"
           />
-          <ContrasenaLabel for="passw">Password</ContrasenaLabel>
+          <ContrasenaLabel htmlFor="passw">Password</ContrasenaLabel>
           <ContrasenaInput
             placeholder=" • • • • • • •"
             type="password"

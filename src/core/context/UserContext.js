@@ -6,7 +6,8 @@ export const UserContextProvider = ({ children }) => {
   const [users, setUsers] = useState([])
   const [user, setUser] = useState([])
   const [editing, setEditing] = useState(false)
-  const [jwt, setJWT] = useState(() => localStorage.getItem('jwt'))
+  // const [jwt, setJWT] = useState(() => localStorage.getItem('jwt'))
+  const [jwt, setJWT] = useState(() => sessionStorage.getItem('jwt'))
 
   return (
     <Context.Provider
