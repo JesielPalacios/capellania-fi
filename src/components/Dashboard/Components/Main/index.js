@@ -22,7 +22,7 @@ const ShowInput = (select, field, options, placeholder) => {
       border: 'none',
       // border: 'unset',
       // width: '100%',
-      // height: '45x',
+      height: '45px',
 
       fontFamily: 'Nunito',
       fontStyle: 'normal',
