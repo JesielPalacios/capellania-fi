@@ -119,18 +119,18 @@ export const SearchInput = styled.input`
 `
 
 export const InterviewContainer = styled.div`
-width: 1162px;
-width: 100%;
-width: 95%;
-height: 75%;
-left: 248px;
-left: 6%;
-padding: 30px;
-background: #ffffff;
-border-radius: 10px;
-margin-top: 130px;
-overflow: hidden;
-  `
+  width: 1162px;
+  width: 100%;
+  width: 95%;
+  height: 75%;
+  left: 248px;
+  left: 6%;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-top: 130px;
+  overflow: hidden;
+`
 
 export const InterviewForm = styled.form`
   width: 100%;
@@ -157,9 +157,9 @@ export const InterviewForm = styled.form`
 
 export const FieldWrapper = styled.div`
   /* width: 238px; */
-  width: ${({large})=>large? '506px' : '238px'};
-  width: ${({large})=>large? '476px' : '238px'};
-  width: ${({large})=>large? '488px' : '238px'};
+  width: ${({ large }) => (large ? '506px' : '238px')};
+  width: ${({ large }) => (large ? '476px' : '238px')};
+  width: ${({ large }) => (large ? '488px' : '238px')};
   height: 80px;
   height: 100px;
   height: 78px;
@@ -167,7 +167,7 @@ export const FieldWrapper = styled.div`
   /* top: 204px; */
   position: relative;
   /* border: 1px solid aqua; */
-  `
+`
 
 export const LabelForm = styled.label``
 
@@ -204,7 +204,7 @@ export const FieldForm = styled.input`
   padding: 10px;
   margin-top: 5px;
   border-radius: 10px;
-  `
+`
 
 export const SelectForm = styled.select`
   border: unset;
@@ -239,10 +239,10 @@ export const SelectForm = styled.select`
   padding: 10px;
   margin-top: 5px;
   border-radius: 10px;
-  `
+`
 
 export const SelectFormed = styled(Select)`
-    /* border: none;
+  /* border: none;
     border: unset;
   width: 100%;
 
@@ -264,10 +264,9 @@ export const SelectFormed = styled(Select)`
   margin-top: 5px;
   border-radius: 10px; */
 
-
   /* height: 5px; */
   .Select__control {
-  /* --------------------------------------------------- */
+    /* --------------------------------------------------- */
     /* height: 40px; */
     /* width: 100%; */
     border: 1px solid #a1a1a1;
@@ -293,4 +292,30 @@ export const SelectFormed = styled(Select)`
   .Select__menu {
     color: #3c3d3e;
   }
+`
+
+export const InputDateForm = styled.input`
+  border: none;
+  border: unset;
+  width: 100%;
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+
+  /* Text */
+
+  color: #030229;
+
+  opacity: 0.7;
+
+  background: #e5e9ec;
+
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+
+  height: 5px;
 `

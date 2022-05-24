@@ -14,7 +14,7 @@ import {
 } from './MainElements'
 import searchSvg from '../../../../assets/svg/Search.svg'
 
-const ShowInput = (select, field, options, placeholder) => {
+const ShowInput = (select, field, options, placeholder, type) => {
   const customStyles = {
     control: () => ({
       // none of react-select's styles are passed to <Control />
@@ -38,7 +38,7 @@ const ShowInput = (select, field, options, placeholder) => {
 
       padding: '5px',
       marginTop: '5px',
-      borderRadius: '10px',
+      borderRadius: '10px'
 
       // ':hover': {
       //   cursor: 'pointer'
@@ -77,7 +77,7 @@ const ShowInput = (select, field, options, placeholder) => {
       />
     )
   } else {
-    return <FieldForm id={field} placeholder={placeholder} />
+    return <FieldForm id={field} placeholder={placeholder} type={type} />
   }
 }
 
@@ -104,14 +104,14 @@ export const Main = ({ sidebar }) => {
         <InterviewForm>
           {fields.map(
             (
-              { field, placeholder, select, options, large },
+              { field, placeholder, select, options, large, type },
               index,
               fieldItem
             ) => {
               return (
                 <FieldWrapper key={index} large={large}>
                   <LabelForm htmlFor={field}>{field}</LabelForm>
-                  {ShowInput(select, field, options, placeholder)}
+                  {ShowInput(select, field, options, placeholder, type)}
                 </FieldWrapper>
               )
             }
@@ -126,19 +126,23 @@ export const Main = ({ sidebar }) => {
 export const fields = [
   {
     field: 'Nombres',
-    placeholder: 'Nombres completos'
+    placeholder: 'Nombres completos',
+    type: 'text'
   },
   {
     field: 'Apellidos',
-    placeholder: 'Apellidos completos'
+    placeholder: 'Apellidos completos',
+    type: 'text'
   },
   {
     field: 'Correo electrónico personal',
-    placeholder: 'example@correo.com'
+    placeholder: 'ejemplo@correo.com',
+    type: 'mail'
   },
   {
     field: 'Número de teléfono',
-    placeholder: '311 111 1111'
+    placeholder: '311 111 1111',
+    type: 'text'
   },
   {
     field: 'Tipo de documento',
@@ -167,129 +171,147 @@ export const fields = [
       { value: 'Visa', label: 'Visa' }
     ]
   },
+  // {
+  //   field: 'Tipo de documento',
+  //   placeholder: 'Tipo de documento de identidad',
+  //   select: true,
+  //   options: [
+  //     'Cédula de ciudadanía - C.C.',
+  //     'Número de documento de identidad - NIT'
+  //   ]
+  // },
   {
-    field: 'Tipo de documento',
-    placeholder: 'Tipo de documento de identidad',
+    field: 'Número de identificación',
+    placeholder: 'De diez (10) dígitos como mínimo',
+    type: 'text'
+  },
+  {
+    field: 'Fecha de nacimiento',
+    placeholder: '--/--/----',
+    type: 'date'
+  },
+  {
+    field: 'Sexo',
+    placeholder: 'Seleccione el sexo aquí',
     select: true,
     options: [
-      'Cédula de ciudadanía - C.C.',
-      'Número de documento de identidad - NIT'
+      {
+        value: 'Masculino',
+        label: 'Masculino'
+      },
+      {
+        value: 'Femenino',
+        label: 'Femenino'
+      },
+      {
+        value: 'No binario',
+        label: 'No binario'
+      }
     ]
   },
   {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
+    field: 'Dirección de residencia',
+    placeholder: 'Aquí la residencia / domicilio',
+    large: true
   },
   {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
+    field: 'Estado civil',
+    placeholder: 'Seleccione el estado civil',
+    select: true,
+    options: [
+      {
+        value: 'Soltero',
+        label: 'Soltero'
+      },
+      {
+        value: 'Casado',
+        label: 'Casado'
+      },
+      {
+        value: 'Unión libre',
+        label: 'Unión libre'
+      }
+    ]
   },
   {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
+    field: 'Estrato social',
+    placeholder: 'Seleccione el estrato',
+    select: true,
+    options: [
+      {
+        value: '1',
+        label: '1'
+      },
+      {
+        value: '2',
+        label: '2,'
+      },
+      {
+        value: '3',
+        label: '3'
+      },
+      {
+        value: '4',
+        label: '4'
+      },
+      {
+        value: '5',
+        label: '5'
+      },
+      {
+        value: '6',
+        label: '6'
+      }
+    ]
   },
   {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
+    field: 'Religión',
+    placeholder: 'Seleccione la religión',
+    select: true,
+    options: [
+      {
+        value: 'Cristiano',
+        label: 'Cristiano'
+      },
+      {
+        value: 'Católico',
+        label: 'Católico'
+      },
+      {
+        value: 'Ateo',
+        label: 'Ateo'
+      },
+      {
+        value: 'Otra denominación',
+        label: 'Otra denominación'
+      }
+    ]
   },
   {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
-  },
-  {
-    field: 'Número de teléfono',
-    placeholder: '311 111 1111'
+    field: 'Tipo de usuario',
+    placeholder: 'Seleccione el tipo de beneficiario',
+    select: true,
+    options: [
+      {
+        value: 'Estudiante de la UNAC',
+        label: 'Estudiante de la UNAC'
+      },
+      {
+        value: 'Estudiante de otra universidad',
+        label: 'Estudiante de otra universidad'
+      },
+      {
+        value: 'Docente o directivo de la UNAC',
+        label: 'Docente o directivo de la UNAC'
+      },
+      {
+        value: 'Familiar de estudiante',
+        label: 'Familiar de estudiante'
+      },
+      {
+        value: 'Miembro de la IASD',
+        label: 'Miembro de la IASD'
+      }
+    ]
   }
 ]
