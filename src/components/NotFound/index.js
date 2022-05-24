@@ -8,7 +8,9 @@ export const NotFound = () => {
       <h1>Error</h1>
       <h2>
         We're sorry!, page not found.{' '}
-        <Link to="/">
+        {/* <Link to="/"> */}
+        {/* <Link to="dashboard"> */}
+        <Link to="interviews">
           {' '}
           <button>Go to home page</button>{' '}
         </Link>{' '}
@@ -19,12 +21,12 @@ export const NotFound = () => {
 
 const Message = styled.div`
   font-size: 25px;
-  
+
   a {
     text-decoration: none;
     color: #000;
   }
-  
+
   button {
     background: unset;
     border: unset;

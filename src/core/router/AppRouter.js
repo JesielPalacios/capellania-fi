@@ -20,17 +20,15 @@ export const AppRouter = () => {
       <Suspense fallback={<div />}>
         <GlobalStyle />
 
-        {/* Router */}
         <Router>
           <Switch>
-            <Route exact path="home" component={Home} />
-            <Route path="/" component={Dashboard} />
+            <Route exact path="/home" component={Home} />
+            <Route path="/interviews" component={Dashboard} />
             <Route path="login" component={LogIn} />
             {/* <Route exact path="signup" component={SignUp} /> */}
             <Route component={ErrorPage} />
           </Switch>
         </Router>
-        {/* Router */}
       </Suspense>
     </UserContextProvider>
   )

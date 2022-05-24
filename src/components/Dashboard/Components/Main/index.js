@@ -148,7 +148,7 @@ export const fields = [
     field: 'Tipo de documento',
     placeholder: 'Tipo de documento de identidad',
     select: true,
-    large: true,
+    large: false,
     // options: [
     //   'Cédula de ciudadanía - C.C.',
     //   'Número de documento de identidad - NIT',
@@ -163,8 +163,8 @@ export const fields = [
         label: 'Cédula de ciudadanía - C.C.'
       },
       {
-        value: 'Número de documento de identidad - NIT',
-        label: 'Número de documento de identidad - NIT'
+        value: 'Tarjeta de identidad - NIT',
+        label: 'Tarjeta de identidad - NIT'
       },
       { value: 'Cédula de extranjería', label: 'Cédula de extranjería' },
       { value: 'Pasaporte', label: 'Pasaporte' },
