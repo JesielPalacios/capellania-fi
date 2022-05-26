@@ -72,6 +72,8 @@ export const ProgressBar = styled.div`
   flex-wrap: wrap;
   gap: 12px;
   gap: 15px;
+  overflow: hidden;
+  /* overflow-x: scroll; */
 
   button {
     width: 200px;
@@ -153,6 +155,23 @@ export const InterviewForm = styled.form`
   /* grid-template-areas: 'row1  row1 row1 row1'; */
   overflow: scroll;
   overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    /* width: 8px; */
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+
+  font-size: 4px important!;
 `
 
 export const FieldWrapper = styled.div`

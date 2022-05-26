@@ -27,7 +27,7 @@ const ShowInput = (select, field, options, placeholder, type) => {
       fontFamily: 'Nunito',
       fontStyle: 'normal',
       fontWeight: '600',
-      fontSize: '14px',
+      fontSize: '11px',
       lineHeight: '19px',
 
       color: '#030229',
@@ -38,7 +38,8 @@ const ShowInput = (select, field, options, placeholder, type) => {
 
       padding: '5px',
       marginTop: '5px',
-      borderRadius: '10px'
+      borderRadius: '10px',
+      display: 'flex',
 
       // ':hover': {
       //   cursor: 'pointer'
