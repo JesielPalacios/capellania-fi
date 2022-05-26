@@ -87,13 +87,13 @@ export const Main = ({ sidebar }) => {
       <SectionTittle>Registro de entrevista nueva</SectionTittle>
 
       <NavigationBar>
-        {/* <ProgressBar>
+        <ProgressBar>
           <button>Información General</button>
           <div />
           <button>Información Académica</button>
           <div />
           <button>Seguimiento</button>
-        </ProgressBar> */}
+        </ProgressBar>
         <div>
           <SearchInput placeholder="Buscar usuario" />
           <img src={searchSvg} alt="icon search" />

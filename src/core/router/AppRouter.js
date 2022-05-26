@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+// Context providers
 import { UserContextProvider } from '../context/UserContext'
 
 // Styles
@@ -24,7 +25,7 @@ export const AppRouter = () => {
           <Switch>
             <Route exact path="/home" component={Home} />
             <Route path="/interviews" component={Dashboard} />
-            <Route path="login" component={LogIn} />
+            <Route path="/login" component={LogIn} />
             {/* <Route exact path="signup" component={SignUp} /> */}
             <Route component={ErrorPage} />
           </Switch>

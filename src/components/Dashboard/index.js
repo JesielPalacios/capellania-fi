@@ -24,7 +24,7 @@ export const Dashboard = () => {
       <Router>
         <Switch>
           {/* <Route exact path="info-general" component={Home} /> */}
-          <Route exact path="/interviews/info-general">
+          <Route exact path="/interviews">
             <Main sidebar={sidebar} />
           </Route>
         </Switch>
