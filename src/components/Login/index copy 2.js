@@ -17,7 +17,6 @@ export const Login = ({ onLogin }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     login({ username: username, password: password })
-    // login(username, password)
   }
 
   return (

@@ -9,8 +9,8 @@ export const NotFound = () => {
       <h2>
         We're sorry!, page not found.{' '}
         {/* <Link to="/"> */}
-        {/* <Link to="dashboard"> */}
-        <Link to="interviews">
+        <Link to="dashboard">
+        {/* <Link to="interviews"> */}
           {' '}
           <button>Go to home page</button>{' '}
         </Link>{' '}
