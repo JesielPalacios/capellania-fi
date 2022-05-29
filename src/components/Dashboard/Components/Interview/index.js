@@ -1,5 +1,9 @@
 import { useRouteMatch, Route, Switch, useParams, Link } from 'react-router-dom'
 
+// Components
+import { Main } from '../Main'
+
+// Styles
 import {
   FieldForm,
   FieldWrapper,
@@ -86,14 +90,6 @@ const ShowInput = (select, field, options, placeholder, type) => {
   }
 }
 
-export const Main = ({ children, sidebar, title }) => {
-  return (
-    <MainContainer id="main" sidebar={sidebar}>
-      <SectionTittle>{title}</SectionTittle>
-      {children}
-    </MainContainer>
-  )
-}
 export const Interviews = ({ sidebar }) => {
   let { path, url } = useRouteMatch()
 
@@ -106,7 +102,9 @@ export const Interviews = ({ sidebar }) => {
       <br />
       <br />
     Aquí las entrevistas */}
-      <Link to="/interviews/crear-entrevista">Crear entrevista nueva</Link>
+      {/* <Link to="/interviews/crear-entrevista">Crear entrevista nueva</Link> */}
+      <Link to={`${url}/crear-entrevista`}>Crear entrevista nueva</Link>
+
       <ul>
         <li>
           <Link to={`${url}/informacion-general`}>Información general</Link>
@@ -118,14 +116,6 @@ export const Interviews = ({ sidebar }) => {
           <Link to={`${url}/seguimiento`}>Seguimiento</Link>
         </li>
       </ul>
-      <Switch>
-        <Route exact path={path}>
-          <h3>Please select a topic.</h3>
-        </Route>
-        <Route path={`${path}/:topicId`}>
-          <Topic />
-        </Route>
-      </Switch>
     </Main>
   )
 }

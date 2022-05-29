@@ -7,13 +7,12 @@ import { UserContextProvider } from '../context/UserContext'
 // Styles
 import { GlobalStyle } from '../../styles/GlobalStyles'
 import '../../styles/styles.css'
-import { NewInterview } from '../../components/Dashboard/Components/Interview'
 
 // Pages
 const Home = React.lazy(() => import('../../pages/HomePage'))
-const InterViews = React.lazy(() => import('../../pages/InterViewsPage'))
+const Dashboard = React.lazy(() => import('../../pages/DashboardPage'))
 const LogIn = React.lazy(() => import('../../pages/LoginPage'))
-// const SignUp = React.lazy(() => import('../../pages/SignUpPage'))
+const SignUp = React.lazy(() => import('../../pages/LoginPage'))
 const ErrorPage = React.lazy(() => import('../../pages/ErrorPage'))
 
 export const AppRouter = () => {
@@ -25,14 +24,12 @@ export const AppRouter = () => {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/interviews" component={InterViews} />
-            {/* <Route
-              path="/interviews/crear-entrevista"
-              component={NewInterview}
-            /> */}
-            <Route path="/interviews/:id" component={NewInterview} />
+            <Route path="/start" component={Dashboard} />
+            <Route path="/users" component={Dashboard} />
+            <Route path="/interviews" component={Dashboard} />
+            <Route path="/interviews/crear-entrevista" component={Dashboard} />
             <Route path="/login" component={LogIn} />
-            {/* <Route exact path="signup" component={SignUp} /> */}
+            <Route path="/signup" component={SignUp} />
             <Route component={ErrorPage} />
           </Switch>
         </Router>

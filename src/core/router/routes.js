@@ -60,7 +60,7 @@ export const routes = [
   {
     label: 'Inicio',
     icon: 'home-outline',
-    path: '',
+    path: '/dashboard',
     notification: 0
   },
   {
