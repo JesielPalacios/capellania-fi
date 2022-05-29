@@ -26,9 +26,11 @@ export const AppRouter = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/interviews" component={InterViews} />
-            {/* <Route path="/interviews/:id" component={NewInterview} /> */}
-            <Route path="/interviews/:id" component={<div >Hola</div>} />
-            {/* <Route path="/interview/:nueva" component={InterViews} /> */}
+            {/* <Route
+              path="/interviews/crear-entrevista"
+              component={NewInterview}
+            /> */}
+            <Route path="/interviews/:id" component={NewInterview} />
             <Route path="/login" component={LogIn} />
             {/* <Route exact path="signup" component={SignUp} /> */}
             <Route component={ErrorPage} />

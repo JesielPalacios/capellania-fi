@@ -94,7 +94,7 @@ export const Main = ({ children, sidebar, title }) => {
     </MainContainer>
   )
 }
-export const Interviews = ({ children, sidebar, title }) => {
+export const Interviews = ({ sidebar }) => {
   let { path, url } = useRouteMatch()
 
   return (
@@ -105,7 +105,8 @@ export const Interviews = ({ children, sidebar, title }) => {
       <br />
       <br />
       <br />
-      Aquí las entrevistas */}
+    Aquí las entrevistas */}
+      <Link to="/interviews/crear-entrevista">Crear entrevista nueva</Link>
       <ul>
         <li>
           <Link to={`${url}/informacion-general`}>Información general</Link>
