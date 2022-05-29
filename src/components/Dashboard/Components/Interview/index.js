@@ -1,4 +1,5 @@
 import { useRouteMatch, Route, Switch, useParams, Link } from 'react-router-dom'
+
 import {
   FieldForm,
   FieldWrapper,
@@ -14,6 +15,7 @@ import {
   SelectFormed,
   Session
 } from './MainElements'
+
 import searchSvg from '../../../../assets/svg/Search.svg'
 
 const ShowInput = (select, field, options, placeholder, type) => {
@@ -92,18 +94,37 @@ export const Main = ({ children, sidebar, title }) => {
     </MainContainer>
   )
 }
-export const Intervies = ({ children, sidebar, title }) => {
+export const Interviews = ({ children, sidebar, title }) => {
   let { path, url } = useRouteMatch()
 
   return (
     <Main title={'Entrevistas'} sidebar={sidebar}>
-      <SectionTittle>{title}</SectionTittle>
-      {/* <Link to={`${url}/crear-entrevista`}>Crear entrevista nueva</Link> */}
+      {/* <SectionTittle>{title}</SectionTittle>
+      <Link to={`${url}/crear-entrevista`}>Crear entrevista nueva</Link>
       <Link to="/interviews/crear-entrevista">Crear entrevista nueva</Link>
       <br />
       <br />
       <br />
-      Aquí las entrevistas
+      Aquí las entrevistas */}
+      <ul>
+        <li>
+          <Link to={`${url}/informacion-general`}>Información general</Link>
+        </li>
+        <li>
+          <Link to={`${url}/informacion-academica`}>Información académica</Link>
+        </li>
+        <li>
+          <Link to={`${url}/seguimiento`}>Seguimiento</Link>
+        </li>
+      </ul>
+      <Switch>
+        <Route exact path={path}>
+          <h3>Please select a topic.</h3>
+        </Route>
+        <Route path={`${path}/:topicId`}>
+          <Topic />
+        </Route>
+      </Switch>
     </Main>
   )
 }
@@ -346,35 +367,6 @@ export const NewInterview = ({ sidebar }) => {
         {/* <DDD /> */}
       </InterviewContainer>
     </Main>
-  )
-}
-
-export const Topics = () => {
-  let { path, url } = useRouteMatch()
-
-  return (
-    <div>
-      <ul>
-        <li>
-          <Link to={`${url}/informacion-general`}>Información general</Link>
-        </li>
-        <li>
-          <Link to={`${url}/informacion-academica`}>Información académica</Link>
-        </li>
-        <li>
-          <Link to={`${url}/seguimiento`}>Seguimiento</Link>
-        </li>
-      </ul>
-
-      <Switch>
-        <Route exact path={path}>
-          <h3>Please select a topic.</h3>
-        </Route>
-        <Route path={`${path}/:topicId`}>
-          <Topic />
-        </Route>
-      </Switch>
-    </div>
   )
 }
 
