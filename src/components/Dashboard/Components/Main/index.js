@@ -1,3 +1,4 @@
+import { useRouteMatch, Route, Switch, useParams, Link } from 'react-router-dom'
 import {
   FieldForm,
   FieldWrapper,
@@ -40,7 +41,7 @@ const ShowInput = (select, field, options, placeholder, type) => {
       padding: '5px',
       marginTop: '5px',
       borderRadius: '10px',
-      display: 'flex',
+      display: 'flex'
 
       // ':hover': {
       //   cursor: 'pointer'
@@ -95,11 +96,11 @@ export const Main = ({ sidebar }) => {
           <button>Información Académica</button>
           <div />
           <button>Seguimiento</button> */}
-          <Session to='/  '>Información General</Session>
+          <Session to="/  ">Información General</Session>
           <div />
-          <Session to='/info-academica'>Información Académica</Session>
+          <Session to="/info-academica">Información Académica</Session>
           <div />
-          <Session to='/seguimiento'>Seguimiento</Session>
+          <Session to="/seguimiento">Seguimiento</Session>
         </ProgressBar>
         <div>
           <SearchInput placeholder="Buscar usuario" />
@@ -322,3 +323,43 @@ export const fields = [
     ]
   }
 ]
+
+
+// export default () => {
+//   let { path, url } = useRouteMatch()
+
+//   return (
+//     <div>
+//       <ul>
+//         <li>
+//           <Link to={`${url}/informacion-general`}>Información general</Link>
+//         </li>
+//         <li>
+//           <Link to={`${url}/informacion-academica`}>Información académica</Link>
+//         </li>
+//         <li>
+//           <Link to={`${url}/seguimiento`}>Seguimiento</Link>
+//         </li>
+//       </ul>
+
+//       <Switch>
+//         <Route exact path={path}>
+//           <h3>Please select a topic.</h3>
+//         </Route>
+//         <Route path={`${path}/:topicId`}>
+//           <Topic />
+//         </Route>
+//       </Switch>
+//     </div>
+//   )
+// }
+
+// function Topic() {
+//   let { topicId } = useParams()
+
+//   return (
+//     <div>
+//       <h3>{topicId}</h3>
+//     </div>
+//   )
+// }
