@@ -1,11 +1,13 @@
 import { useRef, useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useRouteMatch } from 'react-router-dom'
 
 import { routes } from '../../../../core/router/routes'
 import { LogoImg, ToggleButton, ToggleIcon } from './SidebarElements'
 import './styles.css'
 
 export const Sidebar = ({ showSidebar, sidebar }) => {
+  let { url } = useRouteMatch()
+
   let itemList = useRef()
   let list = useRef()
 
@@ -57,7 +59,8 @@ export const Sidebar = ({ showSidebar, sidebar }) => {
             >
               <b></b>
               <b></b>
-              <NavLink to={path}>
+              {/* <NavLink to={path}> */}
+              <NavLink to={(`${url}`, path)}>
                 <span className="icon">
                   <ion-icon name={icon}></ion-icon>
                 </span>
