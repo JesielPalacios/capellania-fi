@@ -92,6 +92,21 @@ export const Main = ({ children, sidebar, title }) => {
     </MainContainer>
   )
 }
+export const Intervies = ({ children, sidebar, title }) => {
+  let { path, url } = useRouteMatch()
+
+  return (
+    <Main title={'Entrevistas'} sidebar={sidebar}>
+      <SectionTittle>{title}</SectionTittle>
+      {/* <Link to={`${url}/crear-entrevista`}>Crear entrevista nueva</Link> */}
+      <Link to="/interviews/crear-entrevista">Crear entrevista nueva</Link>
+      <br />
+      <br />
+      <br />
+      Aquí las entrevistas
+    </Main>
+  )
+}
 
 export const fields = [
   {
@@ -289,6 +304,9 @@ export const fields = [
 export const NewInterview = ({ sidebar }) => {
   return (
     <Main title={'Registro de entrevista nueva'} sidebar={sidebar}>
+      <link to="/interviews">Cancelar</link>
+      {/* <link to="/entrevistas">Cancelar</link> */}
+
       <NavigationBar>
         <ProgressBar>
           {/* <button>Información General</button>
@@ -331,41 +349,41 @@ export const NewInterview = ({ sidebar }) => {
   )
 }
 
-// export default () => {
-//   let { path, url } = useRouteMatch()
+export const Topics = () => {
+  let { path, url } = useRouteMatch()
 
-//   return (
-//     <div>
-//       <ul>
-//         <li>
-//           <Link to={`${url}/informacion-general`}>Información general</Link>
-//         </li>
-//         <li>
-//           <Link to={`${url}/informacion-academica`}>Información académica</Link>
-//         </li>
-//         <li>
-//           <Link to={`${url}/seguimiento`}>Seguimiento</Link>
-//         </li>
-//       </ul>
+  return (
+    <div>
+      <ul>
+        <li>
+          <Link to={`${url}/informacion-general`}>Información general</Link>
+        </li>
+        <li>
+          <Link to={`${url}/informacion-academica`}>Información académica</Link>
+        </li>
+        <li>
+          <Link to={`${url}/seguimiento`}>Seguimiento</Link>
+        </li>
+      </ul>
 
-//       <Switch>
-//         <Route exact path={path}>
-//           <h3>Please select a topic.</h3>
-//         </Route>
-//         <Route path={`${path}/:topicId`}>
-//           <Topic />
-//         </Route>
-//       </Switch>
-//     </div>
-//   )
-// }
+      <Switch>
+        <Route exact path={path}>
+          <h3>Please select a topic.</h3>
+        </Route>
+        <Route path={`${path}/:topicId`}>
+          <Topic />
+        </Route>
+      </Switch>
+    </div>
+  )
+}
 
-// function Topic() {
-//   let { topicId } = useParams()
+function Topic() {
+  let { topicId } = useParams()
 
-//   return (
-//     <div>
-//       <h3>{topicId}</h3>
-//     </div>
-//   )
-// }
+  return (
+    <div>
+      <h3>{topicId}</h3>
+    </div>
+  )
+}

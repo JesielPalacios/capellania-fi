@@ -7,6 +7,7 @@ import { UserContextProvider } from '../context/UserContext'
 // Styles
 import { GlobalStyle } from '../../styles/GlobalStyles'
 import '../../styles/styles.css'
+import { NewInterview } from '../../components/Dashboard/Components/Interview'
 
 // Pages
 const Home = React.lazy(() => import('../../pages/HomePage'))
@@ -25,7 +26,8 @@ export const AppRouter = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/interviews" component={InterViews} />
-            {/* <Route path="/interviews/:id" component={InterViews} /> */}
+            {/* <Route path="/interviews/:id" component={NewInterview} /> */}
+            <Route path="/interviews/:id" component={<div >Hola</div>} />
             {/* <Route path="/interview/:nueva" component={InterViews} /> */}
             <Route path="/login" component={LogIn} />
             {/* <Route exact path="signup" component={SignUp} /> */}
