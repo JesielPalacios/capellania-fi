@@ -17,15 +17,16 @@ export const Dashboard = () => {
 
   return (
     <DashboardContainer sidebar={sidebar}>
+      {console.log(path,'-', url)}
       <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
 
-      <Switch>
+      {/* <Switch> */}
         {/* <Route exact path="info-general" component={Home} /> */}
         {/* <Route path="info-general" component={Home} /> */}
-        <Route exact path="/">
+        {/* <Route exact path="/interviews"> */}
           <Main sidebar={sidebar} />
-        </Route>
-      </Switch>
+        {/* </Route> */}
+      {/* </Switch> */}
     </DashboardContainer>
   )
 }
