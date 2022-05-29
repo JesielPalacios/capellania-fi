@@ -1,0 +1,78 @@
+.sidebar .logo-details .btn {
+  position: absolute;
+  top: 10%;
+  right: 13px;
+  transform: translateY(-9%);
+  transition: all 0.4s ease;
+  /* font-size: 23px; */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.sidebar.open .logo-details .btn {
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.lbl-menu {
+  width: 25px;
+  height: 40px;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.lbl-menu #spn1,
+#spn2,
+#spn3 {
+  position: absolute;
+  content: '';
+  /* background: #4187f6; */
+  background: #fff;
+  /* width: 30px; */
+  /* width: 23px; */
+  width: 33px;
+  /* height: 7px; */
+  height: 2px;
+  /* border-radius: 5px; */
+  transition: all 400ms ease;
+}
+
+#spn2 {
+  top: 11px;
+}
+
+#spn3 {
+  top: 22px;
+}
+
+#btn-menu {
+  display: none;
+}
+
+#btn-menu:checked ~ .lbl-menu span {
+  /* height: 7px; */
+  /* width: 23px; */
+  width: 13px;
+  background: #fff;
+}
+
+#btn-menu:checked ~ .lbl-menu #spn1 {
+  transform: rotate(140deg);
+  top: 10px;
+}
+
+#btn-menu:checked ~ .lbl-menu #spn2 {
+  opacity: 0;
+}
+
+#btn-menu:checked ~ .lbl-menu #spn3 {
+  transform: rotate(-140deg);
+  /* top: 24px; */
+  top: 18.5px;
+  background: #fff;
+}

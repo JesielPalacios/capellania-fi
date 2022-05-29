@@ -1,14 +1,11 @@
 import { useState } from 'react'
-import { Route, Switch, useRouteMatch } from 'react-router-dom'
+import { Route, Switch, useRouteMatch, Link } from 'react-router-dom'
 
 import { DashboardContainer } from './DashboardElements'
 import { Sidebar } from './Components/Sidebar copy 2'
 import { Main } from './Components/Main'
 
 export const Dashboard = () => {
-  // The `path` lets us build <Route> paths that are
-  // relative to the parent route, while the `url` lets
-  // us build relative links.
   let { path, url } = useRouteMatch()
 
   const [sidebar, setSidebar] = useState(true)
@@ -17,16 +14,24 @@ export const Dashboard = () => {
 
   return (
     <DashboardContainer sidebar={sidebar}>
-      {console.log(path,'-', url)}
-      <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
-
+      <h2>Entrevistas</h2>
+      <Link to='crear-entrevista'/>
       {/* <Switch> */}
-        {/* <Route exact path="info-general" component={Home} /> */}
-        {/* <Route path="info-general" component={Home} /> */}
-        {/* <Route exact path="/interviews"> */}
-          <Main sidebar={sidebar} />
-        {/* </Route> */}
+      {/* <Route exact path="info-general" component={Home} /> */}
+      {/* <Route path="info-general" component={Home} /> */}
+      {/* <Route exact path="/interviews"> */}
+      {/* </Route> */}
       {/* </Switch> */}
+      {/* <Main sidebar={sidebar} /> */}
+
+      {/* <Switch>
+        <Route exact path={path}>
+      <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
+        </Route>
+        <Route path={`${path}/:topicId`}>
+          <Topic />
+        </Route>
+      </Switch> */}
     </DashboardContainer>
   )
 }
