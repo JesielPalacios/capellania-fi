@@ -15,13 +15,14 @@ export const Dashboard = () => {
   return (
     <DashboardContainer sidebar={sidebar}>
       <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
+          {console.log(path)}
 
       <Switch>
         <Route exact path={path}>
           <Interviews sidebar={sidebar} />
         </Route>
-        {/* <Route path={`${path}/:topicId`}> */}
-        <Route  path={`${path}crear-entrevista`}>
+        {/* <Route exact path={`${path}/:sessionId`}> */}
+        <Route path={`${path}/crear-entrevista`}>
           <NewInterview sidebar={sidebar} />
         </Route>
       </Switch>

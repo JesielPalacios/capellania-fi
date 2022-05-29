@@ -102,7 +102,8 @@ export const Interviews = ({ sidebar }) => {
       <br />
       <br />
     Aquí las entrevistas */}
-      {/* <Link to="/interviews/crear-entrevista">Crear entrevista nueva</Link> */}
+      {/* <Link to="interviews/crear-entrevista">Crear entrevista nueva</Link> */}
+      {/* <Link to="crear-entrevista">Crear entrevista nueva</Link> */}
       <Link to={`${url}/crear-entrevista`}>Crear entrevista nueva</Link>
 
       <ul>
