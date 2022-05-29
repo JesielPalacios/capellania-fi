@@ -84,49 +84,11 @@ const ShowInput = (select, field, options, placeholder, type) => {
   }
 }
 
-export const Main = ({ sidebar }) => {
+export const Main = ({ children, sidebar, title }) => {
   return (
     <MainContainer id="main" sidebar={sidebar}>
-      <SectionTittle>Registro de entrevista nueva</SectionTittle>
-
-      <NavigationBar>
-        <ProgressBar>
-          {/* <button>Información General</button>
-          <div />
-          <button>Información Académica</button>
-          <div />
-          <button>Seguimiento</button> */}
-          <Session to="/  ">Información General</Session>
-          <div />
-          <Session to="/info-academica">Información Académica</Session>
-          <div />
-          <Session to="/seguimiento">Seguimiento</Session>
-        </ProgressBar>
-        <div>
-          <SearchInput placeholder="Buscar usuario" />
-          <img src={searchSvg} alt="icon search" />
-        </div>
-      </NavigationBar>
-
-      <InterviewContainer>
-        <InterviewForm>
-          {fields.map(
-            (
-              { field, placeholder, select, options, large, type },
-              index,
-              fieldItem
-            ) => {
-              return (
-                <FieldWrapper key={index} large={large}>
-                  <LabelForm htmlFor={field}>{field}</LabelForm>
-                  {ShowInput(select, field, options, placeholder, type)}
-                </FieldWrapper>
-              )
-            }
-          )}
-        </InterviewForm>
-        {/* <DDD /> */}
-      </InterviewContainer>
+      <SectionTittle>{title}</SectionTittle>
+      {children}
     </MainContainer>
   )
 }
@@ -324,6 +286,50 @@ export const fields = [
   }
 ]
 
+export const NewInterview = ({ sidebar }) => {
+  return (
+    <Main title={'Registro de entrevista nueva'} sidebar={sidebar}>
+      <NavigationBar>
+        <ProgressBar>
+          {/* <button>Información General</button>
+          <div />
+          <button>Información Académica</button>
+          <div />
+          <button>Seguimiento</button> */}
+          <Session to="/  ">Información General</Session>
+          <div />
+          <Session to="/info-academica">Información Académica</Session>
+          <div />
+          <Session to="/seguimiento">Seguimiento</Session>
+        </ProgressBar>
+        <div>
+          <SearchInput placeholder="Buscar usuario" />
+          <img src={searchSvg} alt="icon search" />
+        </div>
+      </NavigationBar>
+
+      <InterviewContainer>
+        <InterviewForm>
+          {fields.map(
+            (
+              { field, placeholder, select, options, large, type },
+              index,
+              fieldItem
+            ) => {
+              return (
+                <FieldWrapper key={index} large={large}>
+                  <LabelForm htmlFor={field}>{field}</LabelForm>
+                  {ShowInput(select, field, options, placeholder, type)}
+                </FieldWrapper>
+              )
+            }
+          )}
+        </InterviewForm>
+        {/* <DDD /> */}
+      </InterviewContainer>
+    </Main>
+  )
+}
 
 // export default () => {
 //   let { path, url } = useRouteMatch()

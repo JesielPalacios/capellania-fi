@@ -3,7 +3,7 @@ import { Route, Switch, useRouteMatch, Link } from 'react-router-dom'
 
 import { DashboardContainer } from './DashboardElements'
 import { Sidebar } from './Components/Sidebar copy 2'
-import { Main } from './Components/Main'
+import { NewInterview } from './Components/Main'
 
 export const Dashboard = () => {
   const [sidebar, setSidebar] = useState(true)
@@ -13,7 +13,7 @@ export const Dashboard = () => {
   return (
     <DashboardContainer sidebar={sidebar}>
       <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
-      <Main sidebar={sidebar} />
+      <NewInterview sidebar={sidebar} />
     </DashboardContainer>
   )
 }
