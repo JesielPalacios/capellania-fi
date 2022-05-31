@@ -8,7 +8,7 @@ import Context, { UserContextProvider } from '../context/UserContext'
 import useUser from '../hooks/useUser'
 
 // Components
-import { Start } from '../../components/Start'
+import { Dashboard } from '../../components/Start'
 import { Interviews } from '../../components/Interviews'
 import { NewInterview } from '../../components/NewInterview'
 
@@ -21,7 +21,7 @@ import { Users } from '../../components/Users'
 
 // Pages
 const Home = React.lazy(() => import('../../pages/HomePage'))
-const Dashboard = React.lazy(() => import('../../pages/DashboardPage'))
+// const Dashboard = React.lazy(() => import('../../pages/DashboardPage'))
 const LogIn = React.lazy(() => import('../../pages/LoginPage'))
 const ErrorPage = React.lazy(() => import('../../pages/ErrorPage'))
 
@@ -42,7 +42,7 @@ export const AppRouter = (props) => {
 
             <DashboardContainer sidebar={sidebar}>
               <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
-              <Route path="/dashboard" component={Start} />
+              <Route path="/dashboard" component={Dashboard} />
               <Route path="/usuarios" component={Users} />
               <Route path="/entrevistas" component={Interviews} />
             </DashboardContainer>

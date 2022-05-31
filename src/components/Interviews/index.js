@@ -13,6 +13,8 @@ export const Interviews = (props) => {
 
   return (
     <Switch>
+      {console.log(sidebar)}
+
       <Route exact path={path}>
         <Main title={'Entrevistas'} sidebar={sidebar}>
           <h2>Entrevistas</h2>

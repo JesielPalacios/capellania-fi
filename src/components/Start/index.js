@@ -1,12 +1,12 @@
 import useUser from '../../core/hooks/useUser'
 import { Main } from '../Dashboard/Components/Main'
 
-export const Start = () => {
+export const Dashboard = () => {
   const { sidebar } = useUser()
 
   return (
-    <Main title={'Start'} sidebar={sidebar}>
-      Start
+    <Main title={'Dashboard'} sidebar={sidebar}>
+      Dashboard
     </Main>
   )
 }
