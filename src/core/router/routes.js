@@ -66,19 +66,19 @@ export const routes = [
   {
     label: 'Usuarios',
     icon: 'people-outline',
-    path: 'users',
+    path: 'usuarios',
     notification: 0
   },
   {
     label: 'Crear usuario',
     icon: 'person-add-outline',
-    path: 'new-user',
+    path: 'nuevo-usuario',
     notification: 3
   },
   {
     label: 'Entrevistas',
     icon: 'newspaper-outline',
-    path: 'interviews',
+    path: 'entrevistas',
     notification: 3
   },
   {

@@ -1,7 +1,8 @@
 import { useRouteMatch, Route, Switch, useParams, Link } from 'react-router-dom'
+import useUser from '../../core/hooks/useUser'
 
 // Components
-import { Main } from '../Main'
+import { Main } from '../Dashboard/Components/Main'
 
 // Styles
 import {
@@ -20,7 +21,7 @@ import {
   Session
 } from './MainElements'
 
-import searchSvg from '../../../../assets/svg/Search.svg'
+import searchSvg from '../../assets/svg/Search.svg'
 
 const ShowInput = (select, field, options, placeholder, type) => {
   const customStyles = {
@@ -90,33 +91,56 @@ const ShowInput = (select, field, options, placeholder, type) => {
   }
 }
 
-export const Interviews = ({ sidebar }) => {
-  let { path, url } = useRouteMatch()
+export const NewInterview = () => {
+  let { url } = useRouteMatch()
+  const { sidebar } = useUser()
 
   return (
-    <Main title={'Entrevistas'} sidebar={sidebar}>
-      {/* <SectionTittle>{title}</SectionTittle>
-      <Link to={`${url}/crear-entrevista`}>Crear entrevista nueva</Link>
-      <Link to="/interviews/crear-entrevista">Crear entrevista nueva</Link>
-      <br />
-      <br />
-      <br />
-    Aquí las entrevistas */}
-      {/* <Link to="interviews/crear-entrevista">Crear entrevista nueva</Link> */}
-      {/* <Link to="crear-entrevista">Crear entrevista nueva</Link> */}
-      <Link to={`${url}/crear-entrevista`}>Crear entrevista nueva</Link>
+    <Main title={'Registro de entrevista nueva'} sidebar={sidebar}>
+      <Link to="/entrevistas">Cancelar la creación de nueva entrevista.</Link>
 
-      <ul>
-        <li>
-          <Link to={`${url}/informacion-general`}>Información general</Link>
-        </li>
-        <li>
-          <Link to={`${url}/informacion-academica`}>Información académica</Link>
-        </li>
-        <li>
-          <Link to={`${url}/seguimiento`}>Seguimiento</Link>
-        </li>
-      </ul>
+      <NavigationBar>
+        <ProgressBar>
+          {/* <button>Información General</button>
+          <div />
+          <button>Información Académica</button>
+          <div />
+          <button>Seguimiento</button> */}
+          <Session to={`${url}/informacion-general`}>
+            Información General
+          </Session>
+          <div />
+          <Session to={`${url}/informacion-academica`}>
+            Información Académica
+          </Session>
+          <div />
+          <Session to={`${url}/seguimiento`}>Seguimiento</Session>
+        </ProgressBar>
+        <div>
+          <SearchInput placeholder="Buscar usuario" />
+          <img src={searchSvg} alt="icon search" />
+        </div>
+      </NavigationBar>
+
+      <InterviewContainer>
+        <InterviewForm>
+          {fields.map(
+            (
+              { field, placeholder, select, options, large, type },
+              index,
+              fieldItem
+            ) => {
+              return (
+                <FieldWrapper key={index} large={large}>
+                  <LabelForm htmlFor={field}>{field}</LabelForm>
+                  {ShowInput(select, field, options, placeholder, type)}
+                </FieldWrapper>
+              )
+            }
+          )}
+        </InterviewForm>
+        {/* <DDD /> */}
+      </InterviewContainer>
     </Main>
   )
 }
@@ -313,61 +337,3 @@ export const fields = [
     ]
   }
 ]
-
-export const NewInterview = ({ sidebar }) => {
-  return (
-    <Main title={'Registro de entrevista nueva'} sidebar={sidebar}>
-      <link to="/interviews">Cancelar</link>
-      {/* <link to="/entrevistas">Cancelar</link> */}
-
-      <NavigationBar>
-        <ProgressBar>
-          {/* <button>Información General</button>
-          <div />
-          <button>Información Académica</button>
-          <div />
-          <button>Seguimiento</button> */}
-          <Session to="/  ">Información General</Session>
-          <div />
-          <Session to="/info-academica">Información Académica</Session>
-          <div />
-          <Session to="/seguimiento">Seguimiento</Session>
-        </ProgressBar>
-        <div>
-          <SearchInput placeholder="Buscar usuario" />
-          <img src={searchSvg} alt="icon search" />
-        </div>
-      </NavigationBar>
-
-      <InterviewContainer>
-        <InterviewForm>
-          {fields.map(
-            (
-              { field, placeholder, select, options, large, type },
-              index,
-              fieldItem
-            ) => {
-              return (
-                <FieldWrapper key={index} large={large}>
-                  <LabelForm htmlFor={field}>{field}</LabelForm>
-                  {ShowInput(select, field, options, placeholder, type)}
-                </FieldWrapper>
-              )
-            }
-          )}
-        </InterviewForm>
-        {/* <DDD /> */}
-      </InterviewContainer>
-    </Main>
-  )
-}
-
-function Topic() {
-  let { topicId } = useParams()
-
-  return (
-    <div>
-      <h3>{topicId}</h3>
-    </div>
-  )
-}

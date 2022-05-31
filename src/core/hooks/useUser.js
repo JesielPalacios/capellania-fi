@@ -4,7 +4,7 @@ import loginService from '../../services/login'
 // import addFavService from 'services/addFav'
 
 export default function useUser() {
-  const { favs, jwt, setFavs, setJWT } = useContext(Context)
+  const { favs, jwt, setFavs, setJWT, sidebar, showSidebar } = useContext(Context)
   const [state, setState] = useState({ loading: false, error: false })
 
   const login = useCallback(
@@ -48,6 +48,8 @@ export default function useUser() {
     isLoginLoading: state.loading,
     hasLoginError: state.error,
     login,
-    logout
+    logout,
+    sidebar,
+    showSidebar
   }
 }

@@ -8,6 +8,9 @@ export const UserContextProvider = ({ children }) => {
   const [editing, setEditing] = useState(false)
   const [jwt, setJWT] = useState(() => localStorage.getItem('jwt'))
 
+  // const [sidebar, setSidebar] = useState(true)
+  // const showSidebar = () => setSidebar(!sidebar)
+
   return (
     <Context.Provider
       value={{
@@ -18,7 +21,9 @@ export const UserContextProvider = ({ children }) => {
         user,
         setUser,
         editing,
-        setEditing
+        setEditing,
+        // sidebar,
+        // showSidebar
       }}
     >
       {children}

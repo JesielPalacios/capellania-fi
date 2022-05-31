@@ -1,4 +1,4 @@
-import { MainContainer, SectionTittle } from '../Interview/MainElements'
+import { MainContainer, SectionTittle } from "../../../NewInterview/MainElements"
 
 export const Main = ({ children, sidebar, title }) => {
   return (
