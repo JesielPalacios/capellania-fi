@@ -46,10 +46,10 @@ export const Interviews = (props) => {
       </Route>
 
       <Route path={`${path}/:interviewId`}>
-        {/* {console.log(interviewId)} */}
-        {/* <Main title={'Entrevistas'} sidebar={sidebar}> */}
-        <h2>Entrevista #{interviewId}</h2>
-        {/* </Main> */}
+        <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
+          {console.log(interviewId)}
+          <h2>Entrevista #{interviewId}</h2>
+        </Main>
       </Route>
     </Switch>
   )

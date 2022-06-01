@@ -1,3 +1,11 @@
+import useUser from '../../core/hooks/useUser'
+import { DashboardContainer } from './DashboardElements'
+
+export const Dashboard2 = ({ children }) => {
+  const { sidebar } = useUser()
+
+  return <DashboardContainer sidebar={sidebar}>{children}</DashboardContainer>
+}
 // import { useState } from 'react'
 // import { Route, Switch, useRouteMatch, Link } from 'react-router-dom'
 

@@ -1,15 +1,18 @@
 import { useRef, useState, useEffect } from 'react'
 import { NavLink, useRouteMatch } from 'react-router-dom'
+import useUser from '../../../../core/hooks/useUser'
 
 import { routes } from '../../../../core/router/routes'
 import { LogoImg, ToggleButton, ToggleIcon } from './SidebarElements'
 import './styles.css'
 
-export const Sidebar = ({ showSidebar, sidebar }) => {
+export const Sidebar = () => {
   let { url } = useRouteMatch()
 
   let itemList = useRef()
   let list = useRef()
+
+  const { sidebar, showSidebar } = useUser()
 
   const resetItems = () => {
     for (let index = 0; index < list.current.children.length; index++) {

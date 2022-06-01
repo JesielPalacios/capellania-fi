@@ -2,10 +2,7 @@ import React, { Suspense, useState, useContext } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // Context providers
-import Context, { UserContextProvider } from '../context/UserContext'
-
-// Hooks
-import useUser from '../hooks/useUser'
+import { UserContextProvider } from '../context/UserContext'
 
 // Components
 import { Dashboard } from '../../components/Start'
@@ -18,21 +15,16 @@ import { Sidebar } from '../../components/Dashboard/Components/Sidebar copy 2'
 import { DashboardContainer } from '../../components/Dashboard/DashboardElements'
 import '../../styles/styles.css'
 import { Users } from '../../components/Users'
+import { Dashboard2 } from '../../components/Dashboard'
 
 // Pages
 const Home = React.lazy(() => import('../../pages/HomePage'))
-// const Dashboard = React.lazy(() => import('../../pages/DashboardPage'))
 const LogIn = React.lazy(() => import('../../pages/LoginPage'))
 const ErrorPage = React.lazy(() => import('../../pages/ErrorPage'))
 
-export const AppRouter = (props) => {
-  // const { sidebar, showSidebar } = useContext(Context)
-  const { sidebar, showSidebar } = useUser()
-
+export const AppRouter = () => {
   return (
     <UserContextProvider>
-      {console.log(sidebar)}
-
       <Suspense fallback={<div />}>
         <GlobalStyle />
 
@@ -40,12 +32,12 @@ export const AppRouter = (props) => {
           <Switch>
             <Route exact path="/" component={Home} />
 
-            <DashboardContainer sidebar={sidebar}>
-              <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
+            <Dashboard2>
+              <Sidebar />
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/usuarios" component={Users} />
               <Route path="/entrevistas" component={Interviews} />
-            </DashboardContainer>
+            </Dashboard2>
 
             <Route path="/login" component={LogIn} />
             <Route component={ErrorPage} />

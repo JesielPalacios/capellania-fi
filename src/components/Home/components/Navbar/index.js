@@ -26,7 +26,7 @@ export const Nabvar = ({ toggle }) => {
             <NavLinks to="about">About</NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to="sigup">Sig Up</NavLinks>
+            <LinkRouter to="/entrevistas">Sig Up</LinkRouter>
           </NavItem>
         </NavMenu>
       </NavbarContainer>

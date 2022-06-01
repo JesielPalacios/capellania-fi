@@ -93,39 +93,57 @@ export const ProgressBar = styled.div`
     border-radius: 10px;
   }
 
+  */
   div {
     width: 2.5px;
     height: 75%;
     background: #d6d6d7;
     border-radius: 50px;
     border-radius: 42.797px;
-  } */
+  }
 `
 
 export const Session = styled(NavLinkRouter)`
-  /* button { */
-    width: 200px;
-    width: 180px;
-    height: 80%;
-    background: unset;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-  /* } */
+  width: 200px;
+  width: 180px;
+  height: 80%;
+  background: unset;
+  border-radius: 10px;
+  border: none;
 
-  button:first-child {
+  /* &.active { */
+  &[aria-current] {
     background: #ffffff;
     border: 1px solid #d6d6d7;
     box-shadow: 0px 4px 4px rgba(240, 240, 241, 0.25);
     border-radius: 10px;
+    font-weight: 800;
+    transition: all 0.5s ease;
   }
 
-  div {
-    width: 2.5px;
-    height: 75%;
-    background: #d6d6d7;
-    border-radius: 50px;
-    border-radius: 42.797px;
+  transition: all 0.5s ease;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+  color: #030229;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  :hover {
+    background: rgba(240, 240, 241, 0.25);
+
+    border: 1px solid #d6d6d7;
+    box-shadow: 0px 4px 4px rgba(240, 240, 241, 0.25);
+    border-radius: 10px;
+    font-weight: 800;
+    transition: all 0.5s ease;
   }
 `
 
