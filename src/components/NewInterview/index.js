@@ -110,8 +110,6 @@ export const NewInterview = () => {
 
   return (
     <Main title={'Registro de entrevista nueva'} sidebar={sidebar}>
-      <Link to="/entrevistas">Cancelar la creación de nueva entrevista.</Link>
-
       <NavigationBar>
         <ProgressBar>
           {/* <button>Información General</button>
@@ -178,11 +176,15 @@ export const NewInterview = () => {
         </InterviewForm>
 
         <NavigationButtons>
-          <NavigationButton color="#605bff">
+          <NavigationButton to="/entrevistas" color="#605bff">
             Cancelar nuevo registro
           </NavigationButton>
-          {flag ? '' : <NavigationButton>Paso anterior</NavigationButton>}
-          <NavigationButton>Siguiente paso</NavigationButton>
+          {flag ? (
+            ''
+          ) : (
+            <NavigationButton to="/entrevistas">Paso anterior</NavigationButton>
+          )}
+          <NavigationButton to="/entrevistas">Siguiente paso</NavigationButton>
         </NavigationButtons>
       </InterviewContainer>
     </Main>

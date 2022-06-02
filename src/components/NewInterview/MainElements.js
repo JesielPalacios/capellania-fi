@@ -401,7 +401,7 @@ export const NavigationButtons = styled.div`
   align-items: center;
 `
 
-export const NavigationButton = styled.div`
+export const NavigationButton = styled(NavLinkRouter)`
   width: 238px;
   height: 45px;
   left: 1142px;
