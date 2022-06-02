@@ -78,7 +78,7 @@ export const routes = [
   {
     label: 'Entrevistas',
     icon: 'newspaper-outline',
-    path: 'entrevistas',
+    path: '/entrevistas',
     notification: 3
   },
   {

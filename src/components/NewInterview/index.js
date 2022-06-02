@@ -1,4 +1,11 @@
-import { useRouteMatch, Route, Switch, useParams, Link } from 'react-router-dom'
+import {
+  useRouteMatch,
+  useParams,
+  Redirect,
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom'
 import useUser from '../../core/hooks/useUser'
 
 // Components
@@ -13,6 +20,8 @@ import {
   LabelForm,
   MainContainer,
   NavigationBar,
+  NavigationButton,
+  NavigationButtons,
   ProgressBar,
   SearchInput,
   SectionTittle,
@@ -92,8 +101,9 @@ const ShowInput = (select, field, options, placeholder, type) => {
 }
 
 export const NewInterview = () => {
-  let { url } = useRouteMatch()
+  let { path, url } = useRouteMatch()
   const { sidebar } = useUser()
+  const { interviewStep } = useParams()
 
   return (
     <Main title={'Registro de entrevista nueva'} sidebar={sidebar}>
@@ -124,22 +134,47 @@ export const NewInterview = () => {
 
       <InterviewContainer>
         <InterviewForm>
-          {fields.map(
-            (
-              { field, placeholder, select, options, large, type },
-              index,
-              fieldItem
-            ) => {
-              return (
-                <FieldWrapper key={index} large={large}>
-                  <LabelForm htmlFor={field}>{field}</LabelForm>
-                  {ShowInput(select, field, options, placeholder, type)}
-                </FieldWrapper>
-              )
-            }
-          )}
+          <Switch>
+            <Route exact path={path}>
+              <Redirect to={`${path}/informacion-general`} />
+            </Route>
+
+            <Route path={`${path}/informacion-general`}>
+              {fields.map(
+                (
+                  { field, placeholder, select, options, large, type },
+                  index,
+                  fieldItem
+                ) => {
+                  return (
+                    <FieldWrapper key={index} large={large}>
+                      <LabelForm htmlFor={field}>{field}</LabelForm>
+                      {ShowInput(select, field, options, placeholder, type)}
+                    </FieldWrapper>
+                  )
+                }
+              )}
+            </Route>
+
+            <Route path={`${path}/informacion-academica`}>
+              informacion-academica
+            </Route>
+
+            <Route path={`${path}/seguimiento`}>seguimiento</Route>
+          </Switch>
         </InterviewForm>
+
         {/* <DDD /> */}
+
+        <NavigationButtons>
+          <NavigationButton>Cancelar nuevo registro</NavigationButton>
+          {interviewStep === 'informacion-general' ? (
+            ''
+          ) : (
+            <NavigationButton>Paso anterior</NavigationButton>
+          )}
+          <NavigationButton>Siguiente paso</NavigationButton>
+        </NavigationButtons>
       </InterviewContainer>
     </Main>
   )
@@ -1146,5 +1181,5 @@ export const fields = [
         label: 'Miembro de la IASD'
       }
     ]
-  },
+  }
 ]

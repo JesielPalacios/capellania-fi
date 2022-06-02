@@ -384,3 +384,26 @@ export const InputDateForm = styled.input`
 
   height: 5px;
 `
+
+export const NavigationButtons = styled.div`
+  position: absolute;
+  /* width: 506px; */
+  height: 45px;
+  /* left: 874px; */
+  /* top: 795px; */
+
+  bottom: 30px;
+  right: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const NavigationButton = styled.div`
+  width: 238px;
+  height: 45px;
+  left: 1142px;
+  top: 795px;
+  border: 2px solid #000;
+`
