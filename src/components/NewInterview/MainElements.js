@@ -437,4 +437,5 @@ export const NavigationButton = styled(NavLinkRouter)`
   /* transition: all 0.5s ease; */
 
   margin-left: 10px;
+  text-decoration: none;
 `
