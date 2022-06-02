@@ -393,6 +393,7 @@ export const NavigationButtons = styled.div`
   /* top: 795px; */
 
   bottom: 30px;
+  bottom: 10px;
   right: 80px;
 
   display: flex;
@@ -405,5 +406,35 @@ export const NavigationButton = styled.div`
   height: 45px;
   left: 1142px;
   top: 795px;
-  border: 2px solid #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: ${({ color }) => (color ? color : '#fff')};
+  ${({ color }) => (color ? '' : 'background: #605bff;')}
+  /* ${({ color }) =>
+    color
+      ? `opacity: 0.1; border: 1px solid #605BFF;`
+      : 'background: #605bff;'} */
+  ${({ color }) =>
+    color
+      ? 'border: 2.5px solid rgb(96 91 255 / 10%);'
+      : 'background: #605bff;'}
+  border-radius: 10px;
+
+  :hover {
+    border: 2.5px solid #605bff;
+    transition: all 0.2s ease;
+  }
+  /* transition: all 0.5s ease; */
+
+  margin-left: 10px;
 `

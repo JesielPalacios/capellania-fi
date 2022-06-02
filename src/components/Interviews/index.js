@@ -3,7 +3,7 @@ import useUser from '../../core/hooks/useUser'
 import { Main } from '../Dashboard/Components/Main'
 import { NewInterview } from '../NewInterview'
 
-export const Interviews = (props) => {
+export const Interviews = () => {
   // The `path` lets us build <Route> paths that are
   // relative to the parent route, while the `url` lets
   // us build relative links.
@@ -13,8 +13,6 @@ export const Interviews = (props) => {
 
   return (
     <Switch>
-      {console.log(sidebar)}
-
       <Route exact path={path}>
         <Main title={'Entrevistas'} sidebar={sidebar}>
           <h2>Entrevistas</h2>
@@ -49,6 +47,7 @@ export const Interviews = (props) => {
         <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
           {console.log(interviewId)}
           <h2>Entrevista #{interviewId}</h2>
+          {/* Create a componnet here for the intervie profile page  */}
         </Main>
       </Route>
     </Switch>

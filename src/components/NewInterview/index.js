@@ -101,9 +101,12 @@ const ShowInput = (select, field, options, placeholder, type) => {
 }
 
 export const NewInterview = () => {
-  let { path, url } = useRouteMatch()
+  let match,
+    { path, url } = useRouteMatch()
   const { sidebar } = useUser()
   const { interviewStep } = useParams()
+  // const interviewStep = useParams()
+  let flag
 
   return (
     <Main title={'Registro de entrevista nueva'} sidebar={sidebar}>
@@ -148,6 +151,7 @@ export const NewInterview = () => {
                 ) => {
                   return (
                     <FieldWrapper key={index} large={large}>
+                      {(flag = false)}
                       <LabelForm htmlFor={field}>{field}</LabelForm>
                       {ShowInput(select, field, options, placeholder, type)}
                     </FieldWrapper>
@@ -157,22 +161,27 @@ export const NewInterview = () => {
             </Route>
 
             <Route path={`${path}/informacion-academica`}>
-              informacion-academica
+              <h2>
+                informacion-academica
+                {console.log(match)}
+                {(flag = true)}
+              </h2>
             </Route>
 
-            <Route path={`${path}/seguimiento`}>seguimiento</Route>
+            <Route path={`${path}/seguimiento`}>
+              <h2>
+                seguimiento
+                {(flag = true)}
+              </h2>
+            </Route>
           </Switch>
         </InterviewForm>
 
-        {/* <DDD /> */}
-
         <NavigationButtons>
-          <NavigationButton>Cancelar nuevo registro</NavigationButton>
-          {interviewStep === 'informacion-general' ? (
-            ''
-          ) : (
-            <NavigationButton>Paso anterior</NavigationButton>
-          )}
+          <NavigationButton color="#605bff">
+            Cancelar nuevo registro
+          </NavigationButton>
+          {flag ? '' : <NavigationButton>Paso anterior</NavigationButton>}
           <NavigationButton>Siguiente paso</NavigationButton>
         </NavigationButtons>
       </InterviewContainer>

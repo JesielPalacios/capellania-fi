@@ -66,13 +66,13 @@ export const routes = [
   {
     label: 'Usuarios',
     icon: 'people-outline',
-    path: 'usuarios',
+    path: '/usuarios',
     notification: 0
   },
   {
     label: 'Crear usuario',
     icon: 'person-add-outline',
-    path: 'nuevo-usuario',
+    path: '/nuevo-usuario',
     notification: 3
   },
   {
@@ -84,13 +84,13 @@ export const routes = [
   {
     label: 'Crear entrevista',
     icon: 'add-circle-outline',
-    path: 'new-interview',
+    path: '/entrevistas/crear-entrevista',
     notification: 3
   },
   {
     label: 'Configuración',
     icon: 'settings-outline',
-    path: 'settings',
+    path: '/settings',
     notification: 3
   },
   // {
@@ -102,7 +102,7 @@ export const routes = [
   {
     label: 'Cerrar sessión',
     icon: 'log-out-outline',
-    path: 'log-out',
+    path: '/log-out',
     notification: 1
   }
 ]
