@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { MdArrowForward, MdKeyboardArrowRight } from 'react-icons/md'
 
 export const HeroContainer = styled.div`
@@ -38,6 +38,9 @@ export const VideoBg = styled.video`
   -o-object-fit: cover;
   object-fit: cover;
   background: #232a34;
+  /* opacity: 0.1; */
+  /* opacity: 0.9; */
+  opacity: 0.5;
 `
 export const HeroContent = styled.div`
   z-index: 3;
@@ -55,10 +58,10 @@ export const HeroH1 = styled.h1`
   height: fit-content;
 
   @media screen and (max-wodth: 768px) {
-    font-size: 40px
+    font-size: 40px;
   }
   @media screen and (max-wodth: 480px) {
-    font-size: 32px
+    font-size: 32px;
   }
 `
 
@@ -70,10 +73,10 @@ export const HeroP = styled.p`
   max-width: 600px;
 
   @media screen and (max-wodth: 768px) {
-    font-size: 24px
+    font-size: 24px;
   }
   @media screen and (max-wodth: 480px) {
-    font-size: 18px
+    font-size: 18px;
   }
 `
 export const HeroBtnWrapper = styled.div`
