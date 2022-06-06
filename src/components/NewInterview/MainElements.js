@@ -225,9 +225,10 @@ export const FieldWrapper = styled.div`
   width: ${({ large }) => (large ? '506px' : '238px')};
   width: ${({ large }) => (large ? '476px' : '238px')};
   width: ${({ large }) => (large ? '488px' : '238px')};
-  height: 80px;
-  height: 100px;
-  height: 78px;
+  /* height: 80px; */
+  /* height: 100px; */
+  /* height: 78px; */
+  height: ${({ height }) => (height ? `${height}` : '78px;')};
   /* left: 278px; */
   /* top: 204px; */
   position: relative;
