@@ -45,7 +45,7 @@ export const Interviews = () => {
 
       <Route path={`${path}/:interviewId`}>
         <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
-          {console.log(interviewId)}
+          {/* {console.log(interviewId)} */}
           <h2>Entrevista #{interviewId}</h2>
           {/* Create a componnet here for the intervie profile page  */}
         </Main>

@@ -126,7 +126,7 @@ export const NewInterview = () => {
             Información Académica
           </Session>
           <div />
-          <Session to={`${url}/seguimiento`}>Seguimiento</Session>
+          <Session to={`${url}/seguimiento`}>Seguimiento de entrevista</Session>
         </ProgressBar>
         <div>
           <SearchInput placeholder="Buscar usuario" />
@@ -144,12 +144,13 @@ export const NewInterview = () => {
             <Route path={`${path}/informacion-general`}>
               {fields.map(
                 (
-                  { field, placeholder, select, options, large, type },
+                  { field, placeholder, select, options, large, type, fill },
                   index,
                   fieldItem
                 ) => {
                   return (
-                    <FieldWrapper key={index} large={large}>
+                    <FieldWrapper key={index} large={large} fill={fill}>
+                      {console.log(fieldItem)}
                       {(flag = false)}
                       <LabelForm htmlFor={field}>{field}</LabelForm>
                       {ShowInput(select, field, options, placeholder, type)}
@@ -160,16 +161,17 @@ export const NewInterview = () => {
             </Route>
 
             <Route path={`${path}/informacion-academica`}>
-              {console.log(match)}
-              {(flag = true)}
+              {/* {console.log(match)} */}
+              {/* {(flag = true)} */}
               {academicInfo.map(
                 (
-                  { field, placeholder, select, options, large, type },
+                  { field, placeholder, select, options, large, type, fill },
                   index,
                   fieldItem
                 ) => {
                   return (
-                    <FieldWrapper key={index} large={large}>
+                    <FieldWrapper key={index} large={large} fill={fill}>
+                      {/* {console.log(fieldItem)} */}
                       {(flag = false)}
                       <LabelForm htmlFor={field}>{field}</LabelForm>
                       {ShowInput(select, field, options, placeholder, type)}

@@ -34,7 +34,7 @@ export const Hero = () => {
         </HeroP>
         <HeroBtnWrapper>
           <Button
-            to="signup"
+            to="about"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"
