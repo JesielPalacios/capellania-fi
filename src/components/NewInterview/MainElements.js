@@ -232,6 +232,8 @@ export const FieldWrapper = styled.div`
   /* top: 204px; */
   position: relative;
   /* border: 1px solid aqua; */
+
+  ${({ fill }) => (fill ? 'opacity: 0;' : '')}
 `
 
 export const LabelForm = styled.label``

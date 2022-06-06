@@ -194,6 +194,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -221,6 +222,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -248,6 +250,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -275,6 +278,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -302,6 +306,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -329,6 +334,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -356,6 +362,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -383,6 +390,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -410,6 +418,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -437,6 +446,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -464,6 +474,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -491,6 +502,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -518,6 +530,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -545,6 +558,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -572,6 +586,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -599,6 +614,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -626,6 +642,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -653,6 +670,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -680,6 +698,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -707,6 +726,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -734,6 +754,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -761,6 +782,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -788,6 +810,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -815,6 +838,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -842,6 +866,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -869,6 +894,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -896,6 +922,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -923,6 +950,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
@@ -950,33 +978,7 @@ export const fields = [
     field: 'Tipo de usuario',
     placeholder: 'Seleccione el tipo de beneficiario',
     select: true,
-    options: [
-      {
-        value: 'Estudiante de la UNAC',
-        label: 'Estudiante de la UNAC'
-      },
-      {
-        value: 'Estudiante de otra universidad',
-        label: 'Estudiante de otra universidad'
-      },
-      {
-        value: 'Docente o directivo de la UNAC',
-        label: 'Docente o directivo de la UNAC'
-      },
-      {
-        value: 'Familiar de estudiante',
-        label: 'Familiar de estudiante'
-      },
-      {
-        value: 'Miembro de la IASD',
-        label: 'Miembro de la IASD'
-      }
-    ]
-  },
-  {
-    field: 'Tipo de usuario',
-    placeholder: 'Seleccione el tipo de beneficiario',
-    select: true,
+    fill: true,
     options: [
       {
         value: 'Estudiante de la UNAC',
