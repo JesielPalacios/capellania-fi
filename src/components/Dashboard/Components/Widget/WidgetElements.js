@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Widgetconta = styled.div`
   display: flex;
   justify-content: space-between;
+  background-color: #fff;
   flex: 1;
   padding: 10px;
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);

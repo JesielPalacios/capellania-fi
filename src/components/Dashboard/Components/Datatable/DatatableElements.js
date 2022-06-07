@@ -1,33 +1,33 @@
 import styled from "styled-components";
 export const Datatableconta = styled.div`
-height: 600px;
-padding: 20px;
+  height: 600px;
+  padding: 20px;
 
-.datatableTitle {
-  width: 100%;
-  font-size: 24px;
-  color: gray;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-  .link {
-    text-decoration: none;
-    color: green;
-    font-size: 16px;
-    font-weight: 400;
-    border: 1px solid green;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  .datatableTitle {
+    width: 100%;
+    font-size: 24px;
+    color: gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .link {
+      text-decoration: none;
+      color: green;
+      font-size: 16px;
+      font-weight: 400;
+      border: 1px solid green;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
 
   .cellWithImg {
     display: flex;
     align-items: center;
-    
+
     .cellImg {
       width: 32px;
       height: 32px;
@@ -36,11 +36,11 @@ padding: 20px;
       margin-right: 20px;
     }
   }
-  
+
   .cellWithStatus {
     padding: 5px;
     border-radius: 5px;
-    
+
     &.active {
       background-color: rgba(0, 128, 0, 0.05);
       color: green;
@@ -54,12 +54,12 @@ padding: 20px;
       color: crimson;
     }
   }
-  
+
   .cellAction {
     display: flex;
     align-items: center;
     gap: 15px;
-    
+
     .viewButton {
       padding: 2px 5px;
       border-radius: 5px;
@@ -67,7 +67,7 @@ padding: 20px;
       border: 1px dotted rgba(0, 0, 139, 0.596);
       cursor: pointer;
     }
-    
+
     .deleteButton {
       padding: 2px 5px;
       border-radius: 5px;
@@ -76,4 +76,4 @@ padding: 20px;
       cursor: pointer;
     }
   }
-` 
+`;

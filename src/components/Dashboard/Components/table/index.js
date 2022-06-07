@@ -12,52 +12,52 @@ export const List = () => {
   const rows = [
     {
       id: 1143155,
-      product: "Acer Nitro 5",
+      product: "AE",
       img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "John Smith",
       date: "1 March",
-      amount: 785,
-      method: "Cash on Delivery",
+      amount: 1,
+      method: "Estudiante",
       status: "Approved",
     },
     {
       id: 2235235,
-      product: "Playstation 5",
+      product: "CP",
       img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
       customer: "Michael Doe",
       date: "1 March",
-      amount: 900,
-      method: "Online Payment",
+      amount: 3,
+      method: "Egresado",
       status: "Pending",
     },
     {
       id: 2342353,
-      product: "Redragon S101",
+      product: "II",
       img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "John Smith",
       date: "1 March",
-      amount: 35,
-      method: "Cash on Delivery",
+      amount: 10,
+      method: "Estudiante",
       status: "Pending",
     },
     {
       id: 2357741,
-      product: "Razer Blade 15",
+      product: "IS",
       img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "Jane Smith",
       date: "1 March",
-      amount: 920,
-      method: "Online",
+      amount: 8,
+      method: "Directivo",
       status: "Approved",
     },
     {
       id: 2342355,
-      product: "ASUS ROG Strix",
+      product: "LT",
       img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "Harold Carol",
       date: "1 March",
-      amount: 2000,
-      method: "Online",
+      amount: 5,
+      method: "Profesor",
       status: "Pending",
     },
   ];
@@ -66,12 +66,12 @@ export const List = () => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell className="tableCell">Tracking ID</TableCell>
-            <TableCell className="tableCell">Product</TableCell>
-            <TableCell className="tableCell">Customer</TableCell>
-            <TableCell className="tableCell">Date</TableCell>
-            <TableCell className="tableCell">Amount</TableCell>
-            <TableCell className="tableCell">Payment Method</TableCell>
+            <TableCell className="tableCell">Seguimiento ID</TableCell>
+            <TableCell className="tableCell">Carrera</TableCell>
+            <TableCell className="tableCell">Usuario</TableCell>
+            <TableCell className="tableCell">Fecha</TableCell>
+            <TableCell className="tableCell">Semestre</TableCell>
+            <TableCell className="tableCell">Tipo</TableCell>
             <TableCell className="tableCell">Status</TableCell>
           </TableRow>
         </TableHead>

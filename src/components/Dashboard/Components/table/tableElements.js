@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Tableconta = styled.div`
+background-color: #fff;
 .cellWrapper {
   display: flex;
   align-items: center;
