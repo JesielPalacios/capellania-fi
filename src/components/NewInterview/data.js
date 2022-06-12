@@ -1083,3 +1083,78 @@ export const academicInfo = [
     type: 'text'
   }
 ]
+
+export const trackingInfo = [
+  {
+    field: 'Tipo problemática / tema',
+    placeholder: 'Seleccione tipo de problemática / tema',
+    select: true,
+    large: true,
+    height: '174px;',
+    options: [
+      {
+        value: 'Académico - Universitario',
+        label: 'Académico - Universitario'
+      },
+      {
+        value: 'Conflictos familiares',
+        label: 'Conflictos familiares'
+      },
+      {
+        value: 'Auxilio matrícula',
+        label: 'Auxilio matrícula'
+      },
+      {
+        value: 'Bautismo por primera vez en la IASD',
+        label: 'Bautismo por primera vez en la IASD'
+      },
+      {
+        value: 'Bautismo por más de una vez en la IASD',
+        label: 'Bautismo por más de una vez en la IASD'
+      },
+      {
+        value: 'Deserción de la iglesia',
+        label: 'Deserción de la iglesia'
+      },
+      {
+        value: 'Salud',
+        label: 'Salud'
+      },
+      {
+        value: 'Deportes',
+        label: 'Deportes'
+      },
+      {
+        value: 'Clubes Adventista',
+        label: 'Clubes Adventista'
+      },
+      {
+        value: 'Deportes',
+        label: 'Deportes'
+      },
+      {
+        value: 'Ministerios Adventista',
+        label: 'Ministerios Adventista'
+      },
+      {
+        value: 'Violación',
+        label: 'Violación'
+      },
+      {
+        value: 'Asesinato',
+        label: 'Asesinato'
+      }
+    ]
+  },
+  {
+    field: 'Descripción',
+    placeholder:
+      'Describa los detalles de la problemática o el tema de la entrevista ',
+    type: 'text'
+  },
+  {
+    field: 'Acciones',
+    placeholder: 'Describa las acciones a tomar. ',
+    type: 'text'
+  }
+]

@@ -25,9 +25,9 @@ export const Widget = ({ type }) => {
   switch (type) {
     case "user":
       data = {
-        title: "USERS",
+        title: "Usuarios",
         isMoney: false,
-        link: "See all users",
+        link: "Todos los usuarios",
         icon: (
           <MdPersonOutline
             className="icon"
@@ -41,9 +41,9 @@ export const Widget = ({ type }) => {
       break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "Total de entrevista",
         isMoney: false,
-        link: "View all orders",
+        link: "Todas las entrevistas",
         icon: (
           <MdOutlineShoppingCart
             className="icon"
@@ -57,9 +57,9 @@ export const Widget = ({ type }) => {
       break;
     case "earning":
       data = {
-        title: "EARNINGS",
+        title: "Entrevista pendientes de revision",
         isMoney: true,
-        link: "View net earnings",
+        link: "Ver entrevistas pendientes",
         icon: (
           <MdOutlineMonetizationOn
             className="icon"
@@ -70,9 +70,9 @@ export const Widget = ({ type }) => {
       break;
     case "balance":
       data = {
-        title: "BALANCE",
+        title: "Entrevistas verificadas",
         isMoney: true,
-        link: "See details",
+        link: "Ver Entrevistas verificadas",
         icon: (
           <MdOutlineAccountBalanceWallet
             className="icon"

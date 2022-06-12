@@ -110,7 +110,7 @@ export const userRows = [
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "snow@gmail.com",
     status: "pending",
-    age: 65,
+    age: 25,
   },
   {
     id: 10,
@@ -118,6 +118,6 @@ export const userRows = [
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "snow@gmail.com",
     status: "active",
-    age: 65,
+    age: 35,
   },
 ];

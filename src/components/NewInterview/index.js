@@ -31,9 +31,9 @@ import {
 } from './MainElements'
 
 import searchSvg from '../../assets/svg/Search.svg'
-import { academicInfo, fields } from './data'
+import { academicInfo, fields, trackingInfo } from './data'
 
-const ShowInput = (select, field, options, placeholder, type) => {
+const ShowInput = (select, field, options, placeholder, type, height) => {
   const customStyles = {
     control: () => ({
       // none of react-select's styles are passed to <Control />
@@ -97,7 +97,14 @@ const ShowInput = (select, field, options, placeholder, type) => {
       />
     )
   } else {
-    return <FieldForm id={field} placeholder={placeholder} type={type} />
+    return (
+      <FieldForm
+        id={field}
+        placeholder={placeholder}
+        type={type}
+        height={height}
+      />
+    )
   }
 }
 
@@ -150,7 +157,6 @@ export const NewInterview = () => {
                 ) => {
                   return (
                     <FieldWrapper key={index} large={large} fill={fill}>
-                      {console.log(fieldItem)}
                       {(flag = false)}
                       <LabelForm htmlFor={field}>{field}</LabelForm>
                       {ShowInput(select, field, options, placeholder, type)}
@@ -171,7 +177,6 @@ export const NewInterview = () => {
                 ) => {
                   return (
                     <FieldWrapper key={index} large={large} fill={fill}>
-                      {/* {console.log(fieldItem)} */}
                       {(flag = false)}
                       <LabelForm htmlFor={field}>{field}</LabelForm>
                       {ShowInput(select, field, options, placeholder, type)}
@@ -182,10 +187,43 @@ export const NewInterview = () => {
             </Route>
 
             <Route path={`${path}/seguimiento`}>
-              <h2>
-                seguimiento
-                {(flag = true)}
-              </h2>
+              {/* {(flag = true)} */}
+              {trackingInfo.map(
+                (
+                  {
+                    field,
+                    placeholder,
+                    select,
+                    options,
+                    large,
+                    type,
+                    fill,
+                    height
+                  },
+                  index,
+                  fieldItem
+                ) => {
+                  return (
+                    <FieldWrapper
+                      key={index}
+                      large={large}
+                      fill={fill}
+                      height={height}
+                    >
+                      {(flag = false)}
+                      <LabelForm htmlFor={field}>{field}</LabelForm>
+                      {ShowInput(
+                        select,
+                        field,
+                        options,
+                        placeholder,
+                        type,
+                        height
+                      )}
+                    </FieldWrapper>
+                  )
+                }
+              )}
             </Route>
           </Switch>
         </InterviewForm>

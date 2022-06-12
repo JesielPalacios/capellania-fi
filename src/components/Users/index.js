@@ -7,11 +7,13 @@ export const Users = () => {
   const { sidebar } = useUser();
 
   return (
+    <Main title={"Usuarios"} sidebar={sidebar} >
       <UserCont>
-    <Main title={"Usuarios"} sidebar={sidebar} />
+   
         <div className="Tarject">
           <Datatable />
         </div>
       </UserCont>
+      </Main>
   );
 };
