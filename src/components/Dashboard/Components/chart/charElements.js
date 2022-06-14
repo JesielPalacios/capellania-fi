@@ -7,6 +7,7 @@ export const Chartconta = styled.div`
   padding: 10px;
   color: gray;
   background-color: #fff;
+  border-radius: 10px;
 
   .title {
     margin-bottom: 20px;
@@ -15,4 +16,4 @@ export const Chartconta = styled.div`
   .chartGrid {
     stroke: rgb(228, 225, 225);
   }
-`;
+`

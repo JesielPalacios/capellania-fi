@@ -54,7 +54,7 @@ export const Navbar = ({ toggle }) => {
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to='/inicio'>Iniciar sección</NavBtnLink>
+            <NavBtnLink to='/dashboard'>Iniciar sección</NavBtnLink>
           </NavBtn>
         </NavbarContainer>
       </Nav>

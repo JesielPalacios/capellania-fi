@@ -1,18 +1,20 @@
-import "./StarElements.js";
-import useUser from "../../core/hooks/useUser";
-import { Main } from "../Dashboard/Components/Main";
-import { Widget } from "../Dashboard/Components/Widget/index";
-import { Featured } from "../Dashboard/Components/featured/index";
-import { List } from "../Dashboard/Components/table/index";
-import { Chart } from "../Dashboard/Components/chart/index";
-import { Home } from "./StarElements.js";
+import './StarElements.js'
+import useUser from '../../core/hooks/useUser'
+import { Main } from '../Dashboard/Components/Main'
+import { Widget } from '../Dashboard/Components/Widget/index'
+import { Featured } from '../Dashboard/Components/featured/index'
+import { List } from '../Dashboard/Components/table/index'
+import { Chart } from '../Dashboard/Components/chart/index'
+import { Home } from './StarElements.js'
 
 export const Dashboard = () => {
-  const { sidebar } = useUser();
+  const { sidebar } = useUser()
 
   return (
+    // <Main title={'Dashboard'} sidebar={sidebar}>
+    // </Main>
     <Home>
-      <Main title={"Dashboard"} sidebar={sidebar} />
+      <Main title={'Dashboard'} sidebar={sidebar} />
       <div className="homeContainer">
         <div className="widgets">
           <Widget type="user" />
@@ -30,6 +32,5 @@ export const Dashboard = () => {
         </div>
       </div>
     </Home>
-
-  );
-};
+  )
+}
