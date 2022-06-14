@@ -40,7 +40,7 @@ export const homeObjThree = {
   topLine: 'Contacto',
   headline: 'Comunicate con nosotros',
   description: 'Si visitas nuestras pagina oficial de la universidad encontraras nuestros correos donde nos puedes enviar tu informacion y el dia en que te quieres comunicar con nosotros.',
-  buttonLabel: 'Vamos!',
+  buttonLabel: '¡Vamos!',
   imgStart: false,
   img: 'img/homepageimg/svg-3.svg',
   alt: 'car',
