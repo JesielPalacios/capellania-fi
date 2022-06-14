@@ -26,7 +26,7 @@ export const Hero = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
-        <HeroH1>Sistema Virtual de Administración y Gestión Social UNAC</HeroH1>
+        <HeroH1>Sistema Virtual de Gestión y Administración </HeroH1>
         <HeroP>
           Por una educación adventista rica en valores y gestión social para los
           estudiantes de la Corporación Universitaria Adventista de Colombia

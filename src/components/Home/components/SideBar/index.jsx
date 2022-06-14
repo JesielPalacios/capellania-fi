@@ -15,7 +15,7 @@ export const Sidebar = ({isOpen,toggle}) => {
           <SidebarLink to='contac' onClick={toggle}>Contacto</SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
-          <SidebarRoute to='/dashboard'>Iniciar sección</SidebarRoute>
+          <SidebarRoute to='/dashboard'>Iniciar sesión</SidebarRoute>
         </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>

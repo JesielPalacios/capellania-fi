@@ -27,7 +27,7 @@ export const Navbar = ({ toggle }) => {
     <IconContext.Provider value={{ color: '#fff'}}>
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
-          <NavLogo to='/' onClick={toggleHome}>SVAGS</NavLogo>
+          <NavLogo to='/' onClick={toggleHome}>SVGA CAPELLANÍA</NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
@@ -54,7 +54,7 @@ export const Navbar = ({ toggle }) => {
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to='/dashboard'>Iniciar sección</NavBtnLink>
+            <NavBtnLink to='/dashboard'>Iniciar sesión</NavBtnLink>
           </NavBtn>
         </NavbarContainer>
       </Nav>

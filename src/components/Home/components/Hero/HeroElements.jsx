@@ -40,7 +40,7 @@ export const VideoBg = styled.video`
   background: #232a34;
   /* opacity: 0.1; */
   /* opacity: 0.9; */
-  opacity: 0.5;
+  /* opacity: 0.5; */
 `
 export const HeroContent = styled.div`
   z-index: 3;

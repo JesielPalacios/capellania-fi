@@ -50,9 +50,9 @@ export const Footer = () => {
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to='/' onClick={toggleHome}>
-              SVAGS
+              SVGA CAPELLANÍA
             </SocialLogo>
-            <WebsiteRights>SVAGS © {new Date().getFullYear()} All rights reserved.</WebsiteRights>
+            <WebsiteRights>SVGA CAPELLANÍA © {new Date().getFullYear()} All rights reserved.</WebsiteRights>
             <SocialIcons>
               <SocialIconLink href='/' target='_blank' arial-label='Facebook'>
                 <FaFacebook />
