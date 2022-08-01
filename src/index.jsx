@@ -13,7 +13,8 @@ import reportWebVitals from './reportWebVitals'
 import { App } from './App.jsx'
 
 const client = new ApolloClient({
-  uri: 'https://flyby-gateway.herokuapp.com/',
+  // uri: 'https://flyby-gateway.herokuapp.com/',
+  uri: 'http://localhost:4000',
   cache: new InMemoryCache()
 })
 

@@ -28,10 +28,9 @@ export const AppRouter = () => {
     <UserContextProvider>
       <Suspense fallback={<div />}>
         <GlobalStyle />
-
-        <Router>
-          <Switch>
-            {/* <Route exact path="/" component={Home} />
+        {/* <Router> */}
+        {/* <Switch> */}
+        {/* <Route exact path="/" component={Home} />
 
             <Dashboard2>
               <Sidebar />
@@ -39,11 +38,11 @@ export const AppRouter = () => {
               <Route path="/usuarios" component={Users} />
               <Route path="/entrevistas" component={Interviews} />
             </Dashboard2> */}
-
-            <Route path="/login" component={LogIn} />
-            <Route component={ErrorPage} />
-          </Switch>
-        </Router>
+        {/* <Route path="/login" component={LogIn} /> */}
+        {/* <Route component={ErrorPage} /> */}
+        {/* </Switch> */}
+        {/* </Router> */}
+        <LogIn />
       </Suspense>
     </UserContextProvider>
   )

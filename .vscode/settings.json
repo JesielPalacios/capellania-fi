@@ -1,0 +1,4 @@
+{
+    // The type of image used in rendering preview. Supported values are: `jpeg` (default) and `png`
+    "browser-preview.format": "png",
+}
