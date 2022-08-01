@@ -1,7 +1,6 @@
-import React from 'react'
-// import { React } from 'react'
+// import React from 'react'
+import { React } from 'react'
 import ReactDOM from 'react-dom'
-// import * as ReactDOM from 'react-dom'
 // import { StrictMode } from 'react'
 // // import ReactDOM from 'react-dom/client'
 // // import * as ReactDOM from 'react-dom/client'
@@ -11,17 +10,18 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import reportWebVitals from './reportWebVitals'
 
 import { App } from './App.jsx'
-
-const client = new ApolloClient({
-  uri: 'https://flyby-gateway.herokuapp.com/',
-  cache: new InMemoryCache()
-})
+// import './index.css'
 
 // // Supported in React 18+
 // // const root = ReactDOM.createRoot(document.getElementById('root'))
 // const rootElement = document.getElementById('app')
 // const root = createRoot(rootElement)
 // // const root = ReactDOM.createRoot(rootElement)
+
+const client = new ApolloClient({
+  uri: 'https://flyby-gateway.herokuapp.com/',
+  cache: new InMemoryCache()
+})
 
 // root.render(
 //   <StrictMode>
@@ -31,21 +31,12 @@ const client = new ApolloClient({
 //   </StrictMode>
 // )
 
-// ReactDOM.createRoot(document.getElementById('app')).render(
-//   <React.StrictMode>
-//     <ApolloProvider client={client}>
-//       <App />
-//     </ApolloProvider>
-//   </React.StrictMode>,
-// )
-
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('app')).render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
-  </React.StrictMode>,
-  document.getElementById('app')
+  </React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function
