@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { AppRouter } from './core/router/AppRouter'
+import { AppRouter } from './AppRouter'
 
 export const App = () => {
   return (

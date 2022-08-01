@@ -1,11 +1,11 @@
-import './StarElements.js'
+import './StarElements.jsx'
 import useUser from '../../core/hooks/useUser'
 import { Main } from '../Dashboard/Components/Main'
 import { Widget } from '../Dashboard/Components/Widget/index'
 import { Featured } from '../Dashboard/Components/featured/index'
 import { List } from '../Dashboard/Components/table/index'
 import { Chart } from '../Dashboard/Components/chart/index'
-import { Home } from './StarElements.js'
+import { Home } from './StarElements.jsx'
 
 export const Dashboard = () => {
   const { sidebar } = useUser()

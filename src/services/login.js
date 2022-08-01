@@ -1,5 +1,5 @@
-const API = process.env.REACT_APP_HOTS_DEVELOPMENT_WEB
-const ENDPOINT = process.env.REACT_APP_ENDPOINT_LOGIN
+const API = 'process.env.REACT_APP_HOTS_DEVELOPMENT_WEB'
+const ENDPOINT = 'process.env.REACT_APP_ENDPOINT_LOGIN'
 
 export default function login({ username, password }) {
   return fetch(`${API}/${ENDPOINT}`, {

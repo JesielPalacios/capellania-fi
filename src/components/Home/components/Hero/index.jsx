@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Video from '../../../../assets/videos/featured_video.mp4'
+// import Video from '../../../../assets/videos/featured_video.mp4'
 import {
   HeroContainer,
   HeroBg,
@@ -23,7 +23,8 @@ export const Hero = () => {
   return (
     <HeroContainer id="home">
       <HeroBg>
-        <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
+        {/* <VideoBg autoPlay loop muted src={Video} type="video/mp4" /> */}
+        <VideoBg autoPlay loop muted src='videos/featured_video.mp4' type="video/mp4" />
       </HeroBg>
       <HeroContent>
         <HeroH1>Sistema Virtual de Gestión y Administración </HeroH1>

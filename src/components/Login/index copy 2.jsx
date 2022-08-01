@@ -4,8 +4,8 @@ import useUser from '../../core/hooks/useUser'
 
 export const Login = ({ onLogin }) => {
   const history = useHistory()
-  const [username, setUsername] = useState(`${process.env.REACT_APP_TEST_USR}`)
-  const [password, setPassword] = useState(`${process.env.REACT_APP_TEST_PASS}`)
+  const [username, setUsername] = useState(`${'process.env.REACT_APP_TEST_USR'}`)
+  const [password, setPassword] = useState(`${'process.env.REACT_APP_TEST_PASS'}`)
 
   const { login, isLogged, loadingUser, errorLogin } = useUser()
 

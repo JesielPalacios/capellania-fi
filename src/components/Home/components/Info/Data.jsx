@@ -20,7 +20,7 @@ export const homeObjTwo = {
   lightBg: true,
   lightText: false,
   lighttextDesc: false,
-  topLine: 'Estadisticas',
+  topLine: 'Estadísticas',
   headline: 'Que hacemos',
   description: 'Por medio de la secciones que tenemos con nuestros beneficiarios, hacemos un conteo para hacer eventos sobre los temas hablamos con ellos',
   buttonLabel: 'Mas información',
