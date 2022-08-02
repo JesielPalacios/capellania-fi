@@ -31,19 +31,13 @@ export const AppRouter = () => {
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />
-
-            <Dashboard2>
-              <Sidebar />
-              <Route path='/dashboard' component={Dashboard} />
-              <Route path='/usuarios' component={Users} />
-              <Route path='/entrevistas' component={Interviews} />
-            </Dashboard2>
+            <Route path='/dashboard' component={Dashboard2} />
+            <Route path='/usuarios' component={Dashboard2} />
+            <Route path='/entrevistas' component={Dashboard2} />
             <Route path='/login' component={LogIn} />
             <Route component={ErrorPage} />
           </Switch>
         </Router>
-
-        <LogIn />
       </Suspense>
     </UserContextProvider>
   )
