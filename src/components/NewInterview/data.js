@@ -1158,3 +1158,16 @@ export const trackingInfo = [
     type: 'text'
   }
 ]
+
+export const loginInfo = [
+  {
+    field: 'Correo',
+    placeholder: 'Su correo electrónico aquí ',
+    type: 'text'
+  },
+  {
+    field: 'Contraseña',
+    placeholder: 'Su contraseña electrónico aquí. ',
+    type: 'text'
+  }
+]
