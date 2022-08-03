@@ -28,11 +28,11 @@ export const Hero = () => {
       </HeroBg>
       <HeroContent>
         <HeroH1>Sistema Virtual de Gestión y Administración </HeroH1>
-        {/* <HeroP>
+        <HeroP>
           Por una educación adventista rica en valores y gestión social para los
           estudiantes de la Corporación Universitaria Adventista de Colombia
           UNAC
-        </HeroP> */}
+        </HeroP>
         <HeroBtnWrapper>
           <Button
             to="about"
