@@ -87,9 +87,9 @@ export const Login = () => {
         </form>
       </Section>
       <Section flex={6} background='#FAFAFA'>
-        <div id='featuredLogin'>
-          <FeaturedLogin src={featured_login} alt='' srcset='' />
-        </div>
+        <FeaturedLogin>
+          <img src={featured_login} alt='' srcset='' />
+        </FeaturedLogin>
       </Section>
     </LoginContainer>
   )
@@ -190,13 +190,28 @@ export const LogoImg = styled.img`
   /* height: 248px; */
 `
 
-export const FeaturedLogin = styled.img`
-  width: 702px;
-  height: 653.17px;
+export const FeaturedLogin = styled.div`
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  /* width: auto; */
+
+  /* width: 702px; */
+  /* height: 653.17px; */
   /* left: 1290px; */
   /* top: 214px; */
 
   /* transform: matrix(-1, 0, 0, 1, 0, 0); */
   /* position: absolute; */
   margin: 0 auto;
+
+  /* padding: 50px; */
+
+  img {
+    height: 90%;
+    margin-top: -20px;
+  }
 `
