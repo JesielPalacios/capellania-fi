@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
-import useUser from '../../../../core/hooks/useUser'
+import { useUser } from '../../../../core/hooks/{useUser}'
 import { routes } from '../../../../core/router/routes'
-// import { useUser } from '../../../core/hooks/User/useUser'
+// import { {useUser} } from '../../../core/hooks/User/{useUser}'
 // import { routes } from '../../../core/router/routes'
 import { HamburguerMenuIcon } from './components/HamburguerMenuIcon'
 import { Profile } from './components/Profile'
@@ -39,45 +39,45 @@ export const Sidebar = ({ onLogin }) => {
         <HamburguerMenuIcon showSidebar={showSidebar} />
       </div>
       <ul className="nav-list">
-          <>
-            <li
-              onClick={() => {
-                if (sidebar) showSidebar()
-              }}
-            >
-              <i className="bx bx-search"></i>
-              <input type="text" placeholder="Search..." />
-              <span className="tooltip">Search</span>
-            </li>
-            {routes.map(({ path, title, icon }, index) => {
-              return (
-                <>
-                  {title === 'Cerrar sesión' ? (
-                    <li key={index}>
-                      <NavLink to={path} onClick={handleClick}>
-                        <i className={icon}></i>
-                        <span className="links_name">{title}</span>
-                      </NavLink>
+        <>
+          <li
+            onClick={() => {
+              if (sidebar) showSidebar()
+            }}
+          >
+            <i className="bx bx-search"></i>
+            <input type="text" placeholder="Search..." />
+            <span className="tooltip">Search</span>
+          </li>
+          {routes.map(({ path, title, icon }, index) => {
+            return (
+              <>
+                {title === 'Cerrar sesión' ? (
+                  <li key={index}>
+                    <NavLink to={path} onClick={handleClick}>
+                      <i className={icon}></i>
+                      <span className="links_name">{title}</span>
+                    </NavLink>
+                    <span className="tooltip">{title}</span>
+                  </li>
+                ) : (
+                  <li key={index}>
+                    <NavLink
+                      to={path}
+                      activeStyle={{
+                        background: '#fff'
+                      }}
+                    >
+                      <i className={icon}></i>
+                      <span className="links_name">{title}</span>
                       <span className="tooltip">{title}</span>
-                    </li>
-                  ) : (
-                    <li key={index}>
-                      <NavLink
-                        to={path}
-                        activeStyle={{
-                          background: '#fff'
-                        }}
-                      >
-                        <i className={icon}></i>
-                        <span className="links_name">{title}</span>
-                        <span className="tooltip">{title}</span>
-                      </NavLink>
-                    </li>
-                  )}
-                </>
-              )
-            })}
-          </>
+                    </NavLink>
+                  </li>
+                )}
+              </>
+            )
+          })}
+        </>
         {/* {isLogged ? (
         ) : (
           <li>

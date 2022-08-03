@@ -6,7 +6,7 @@ import {
   Switch,
   Link
 } from 'react-router-dom'
-import useUser from '../../core/hooks/useUser'
+import { useUser } from '../../core/hooks/useUser'
 
 // Components
 import { Main } from '../Dashboard/Components/Main'
@@ -111,7 +111,7 @@ const ShowInput = (select, field, options, placeholder, type, height) => {
 export const NewInterview = () => {
   let match,
     { path, url } = useRouteMatch()
-  const { sidebar } = useUser()
+  const { sidebar } = { useUser }()
   const { interviewStep } = useParams()
   // const interviewStep = useParams()
   let flag

@@ -1,13 +1,13 @@
 import { gql, useMutation } from '@apollo/client'
 import { useContext } from 'react'
 import styled from 'styled-components'
-import Context from '../../core/context/UserContext'
+import { Context } from '../../core/context/UserContext'
 import { useInputValue } from '../../core/hooks/useInputValue'
 import { loginInfo } from '../NewInterview/data'
 import {
   FieldForm,
   FieldWrapper,
-  LabelForm,
+  LabelForm
 } from '../NewInterview/MainElements'
 import logo from '../../img/logo.png'
 import featured_login from '../../img/featured_login.svg'
@@ -46,9 +46,9 @@ export const Login = () => {
 
   return (
     <LoginContainer>
-      <Section flex={2} background='#FFFFFF'>
+      <Section flex={2} background="#FFFFFF">
         <form onSubmit={handleSubmit}>
-          <LogoImg src={logo} alt='' srcset='' />
+          <LogoImg src={logo} alt="logo" />
 
           <h1>Capellanía UNAC</h1>
           <h2>Bienvenido a su dashboard</h2>
@@ -83,12 +83,12 @@ export const Login = () => {
             )}
           </div>
 
-          <input type='submit' value='Iniciar sesión' />
+          <input type="submit" value="Iniciar sesión" />
         </form>
       </Section>
-      <Section flex={6} background='#FAFAFA'>
+      <Section flex={6} background="#FAFAFA">
         <FeaturedLogin>
-          <img src={featured_login} alt='' srcset='' />
+          <img src={featured_login} alt="featured_login" />
         </FeaturedLogin>
       </Section>
     </LoginContainer>

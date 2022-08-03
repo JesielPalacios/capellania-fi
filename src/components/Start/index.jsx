@@ -1,5 +1,5 @@
 import './StarElements.jsx'
-import useUser from '../../core/hooks/useUser'
+import { useUser } from '../../core/hooks/useUser'
 import { Main } from '../Dashboard/Components/Main'
 import { Widget } from '../Dashboard/Components/Widget/index'
 import { Featured } from '../Dashboard/Components/featured/index'

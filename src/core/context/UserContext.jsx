@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react'
 
 export const Context = createContext()
 
-export const UserContextProvider = ({ children }) => {
+const Provider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(() => {
     return window.sessionStorage.getItem('token')
   })
@@ -16,15 +16,13 @@ export const UserContextProvider = ({ children }) => {
     removeAuth: () => {
       setIsAuth(false)
       return window.sessionStorage.removeItem('token')
-    },
+    }
   }
 
   return <Context.Provider value={value}>{children}</Context.Provider>
 }
 
-// export default {
-//   UserContextProvider,
-//   Consumer: Context.Consumer,
-// }
-
-export default Context
+export default {
+  Provider,
+  Consumer: Context.Consumer
+}

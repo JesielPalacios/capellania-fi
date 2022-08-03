@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { NavLink, useRouteMatch } from 'react-router-dom'
-import useUser from '../../../../core/hooks/useUser'
+import { useUser } from '../../../../core/hooks/useUser'
 
 import { routes } from '../../../../core/router/routes'
 import { LogoImg, ToggleButton, ToggleIcon } from './SidebarElements'

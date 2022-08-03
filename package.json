@@ -41,7 +41,8 @@
     "dev6": "vite --open --host :3000",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "complexity": "npx code-complexity . --filter '**/*.js'  --limit 15 --sort score"
   },
   "eslintConfig": {
     "extends": [

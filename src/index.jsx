@@ -11,11 +11,12 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import reportWebVitals from './reportWebVitals'
 
 import { App } from './App.jsx'
+import Context from './core/context/UserContext'
 
 const client = new ApolloClient({
   // uri: 'https://flyby-gateway.herokuapp.com/',
-  // uri: 'http://localhost:4000',
-  uri: 'http://192.168.58.100:4000/',
+  uri: 'http://localhost:4000',
+  // uri: 'http://192.168.58.100:4000/',
   cache: new InMemoryCache()
 })
 
@@ -43,9 +44,11 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
+    <Context.Provider>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </Context.Provider>
   </React.StrictMode>,
   document.getElementById('app')
 )

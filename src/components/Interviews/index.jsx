@@ -1,5 +1,5 @@
 import { useRouteMatch, Link, Switch, Route, useParams } from 'react-router-dom'
-import useUser from '../../core/hooks/useUser'
+import { useUser } from '../../core/hooks/useUser'
 import { Main } from '../Dashboard/Components/Main'
 import { NewInterview } from '../NewInterview'
 

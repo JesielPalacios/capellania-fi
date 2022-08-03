@@ -35,7 +35,7 @@
 import { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-import useUser from '../../core/hooks/useUser'
+import { useUser } from '../../core/hooks/useUser'
 import { LoginMutation } from '../../core/graphql/container/LoginMutation'
 
 export const Login = () => {
@@ -46,7 +46,7 @@ export const Login = () => {
     event.preventDefault()
     onSubmit({
       email: email.value,
-      password: password.value,
+      password: password.value
     })
   }
 
@@ -69,15 +69,15 @@ export const Login = () => {
             <Helmet>
               <title>Petgram - Inicio de sesión</title>
               <meta
-                name='description'
-                content='A continuación, el formulario de inicio de sesión.'
+                name="description"
+                content="A continuación, el formulario de inicio de sesión."
               />
             </Helmet>
 
             <Form
               disabled={loading}
               error={errorMsg}
-              title='Iniciar sesión'
+              title="Iniciar sesión"
               onSubmit={onSubmit}
             ></Form>
           </div>
