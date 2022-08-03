@@ -3,13 +3,14 @@ import { useContext } from 'react'
 import styled from 'styled-components'
 import Context from '../../core/context/UserContext'
 import { useInputValue } from '../../core/hooks/useInputValue'
-import logo from '../../img/logo.png'
 import { loginInfo } from '../NewInterview/data'
 import {
   FieldForm,
   FieldWrapper,
-  LabelForm
+  LabelForm,
 } from '../NewInterview/MainElements'
+import logo from '../../img/logo.png'
+import featured_login from '../../img/featured_login.svg'
 
 const LOGIN = gql`
   mutation userLogin($email: String!, $password: String!) {
@@ -45,11 +46,11 @@ export const Login = () => {
 
   return (
     <LoginContainer>
-      <Section flex={2} background="#FFFFFF">
+      <Section flex={2} background='#FFFFFF'>
         <form onSubmit={handleSubmit}>
-          <img src={logo} alt="" srcset="" />
+          <LogoImg src={logo} alt='' srcset='' />
 
-          <h1>¡Hola!</h1>
+          <h1>Capellanía UNAC</h1>
           <h2>Bienvenido a su dashboard</h2>
           {/* <input
             // type='email'
@@ -82,39 +83,43 @@ export const Login = () => {
             )}
           </div>
 
-          <input type="submit" />
+          <input type='submit' value='Iniciar sesión' />
         </form>
       </Section>
-      <Section flex={6} background="#FAFAFA">
-        Aquí va la imagen
+      <Section flex={6} background='#FAFAFA'>
+        <div id='featuredLogin'>
+          <FeaturedLogin src={featured_login} alt='' srcset='' />
+        </div>
       </Section>
     </LoginContainer>
   )
 }
 
 export const LoginContainer = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
   /* min-height: 1024px; */
   display: flex;
   background: #fafafa;
+  position: relative;
 
   form {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: space-around;
+    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
-    padding: 50px;
+    /* padding: 50px; */
 
-    gap: 30px;
-  }
-
-  img {
-    width: 226px;
-    width: 306px;
-    /* height: 248px; */
+    /* gap: 30px; */
+    min-height: 90vh;
+    height: 1024px;
+    height: 100vh;
+    /* height: 1366px; */
   }
 
   h1 {
@@ -122,12 +127,15 @@ export const LoginContainer = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 44px;
+    font-size: 41px;
     line-height: 35px;
     /* identical to box height */
 
     color: #000000;
 
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    /* width: 100%; */
   }
 
   h2 {
@@ -139,14 +147,56 @@ export const LoginContainer = styled.div`
   }
 
   input[type='submit'] {
-    width: 448px;
-    height: 1112px;
+    width: 123px;
+    height: 51px;
+
+    /* background: #ffffff; */
+    /* border-radius: 10px; */
+    background: #f0f0f0;
+
+    border-radius: 10px;
+    border: none;
+
+    :hover {
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.14);
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.14);
+
+      background: #333;
+      color: #fff;
+    }
   }
 `
 
-const Wrapper = styled.div``
-
 const Section = styled.section`
   background: ${({ background }) => (background ? background : '#000000')};
-  ${({ flex }) => (flex ? `flex: ${flex}` : '')}
+  ${({ flex }) => (flex ? `flex: ${flex}` : '')}/* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; */
+  /* padding: 50px; */
+
+  /* #featuredLogin {
+    width: 100%;
+    background: green;
+  } */
+`
+
+export const LogoImg = styled.img`
+  width: 226px;
+  width: 306px;
+  width: 189px;
+  /* height: 248px; */
+`
+
+export const FeaturedLogin = styled.img`
+  width: 702px;
+  height: 653.17px;
+  /* left: 1290px; */
+  /* top: 214px; */
+
+  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+  /* position: absolute; */
+  margin: 0 auto;
 `
