@@ -24,9 +24,6 @@ const ErrorPage = React.lazy(() => import('./pages/ErrorPage'))
 
 export const AppRouter = () => {
   const { isAuth } = useContext(Context)
-  // const history = useHistory()
-
-  // if (isLogged) history.push('/dashboard')
 
   return (
     <Suspense fallback={<div />}>
@@ -39,18 +36,6 @@ export const AppRouter = () => {
           <Route path="/entrevistas">
             {isAuth ? <Dashboard2 /> : <LogIn />}
           </Route>
-          {/* <Route
-              path="/dashboard"
-              component={isLogged ? <Dashboard2 /> : <LogIn />}
-            />
-            <Route
-              path="/usuarios"
-              component={isLogged ? <Dashboard2 /> : <LogIn />}
-            />
-            <Route
-              path="/entrevistas"
-              component={isLogged ? <Dashboard2 /> : <LogIn />}
-            /> */}
           <Route path="/login">{isAuth ? <Dashboard2 /> : <LogIn />}</Route>
           <Route component={ErrorPage} />
         </Switch>

@@ -42,7 +42,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "complexity": "npx code-complexity . --filter '**/*.js'  --limit 15 --sort score"
+    "complexity": "npx code-complexity . --filter '**/*.js'  --limit 15 --sort score",
+    "dependencies": "npm i"
   },
   "eslintConfig": {
     "extends": [

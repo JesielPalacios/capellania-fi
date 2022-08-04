@@ -1,5 +1,5 @@
-import { gql, useMutation } from '@apollo/client'
-import { useContext } from 'react'
+  import { gql, useMutation } from '@apollo/client'
+import { useContext, useRef } from 'react'
 import styled from 'styled-components'
 import { Context } from '../../core/context/UserContext'
 import { useInputValue } from '../../core/hooks/useInputValue'
@@ -11,6 +11,7 @@ import {
 } from '../NewInterview/MainElements'
 import logo from '../../img/logo.png'
 import featured_login from '../../img/featured_login.svg'
+import { useHistory } from 'react-router-dom'
 
 const LOGIN = gql`
   mutation userLogin($email: String!, $password: String!) {
@@ -21,19 +22,29 @@ const LOGIN = gql`
 `
 
 export const Login = () => {
-  const { activateAuth } = useContext(Context)
+  const history = useHistory()
+  const { activateAuth, isAuth } = useContext(Context)
   const [login, { data, loading, error }] = useMutation(LOGIN)
   const email = useInputValue('')
   const password = useInputValue('')
 
+  let inputRef = useRef()
+
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
-
+  
+  console.log('--------------------------------------------------')
+  console.log('email')
+  console.log(email.value)
+  console.log('---------------------------------------------------')
+  console.log('password')
+  console.log(password.value)
+  console.log('---------------------------------------------------')
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    email.value = 'correo@correo.com'
-    password.value = 'Pt@707C3Kf@^'
+    // email.value = 'correo@correo.com'
+    // password.value = 'Pt@707C3Kf@^'
     login({ variables: { email: email.value, password: password.value } }).then(
       ({ data }) => {
         const { value } = data.login
@@ -42,6 +53,13 @@ export const Login = () => {
     )
     email.value = 'correo@correo.com'
     password.value = 'Pt@707C3Kf@^'
+    // email.value = ''
+    // password.value = ''
+    if (isAuth) {
+      history.push('/dashboard')
+    } else {
+      history.push('/login')
+    }
   }
 
   return (
@@ -68,6 +86,7 @@ export const Login = () => {
           <div>
             {loginInfo.map(
               ({ field, placeholder, large, type, fill, height }, index) => {
+                // console.log(inputRef)
                 return (
                   <FieldWrapper key={index} large={large} fill={fill}>
                     <LabelForm htmlFor={field}>{field}</LabelForm>
@@ -76,11 +95,22 @@ export const Login = () => {
                       placeholder={placeholder}
                       type={type}
                       height={height}
+                      onChange={(e) => password.onChang(e)}
+                      // ref={inputRef}
                     />
                   </FieldWrapper>
                 )
               }
             )}
+            <div className="opciones">
+              <div className="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <LabelForm htmlFor="checkbox"> Recordar contraseña</LabelForm>
+              </div>
+              <div>
+                <span>¿Reiniciar contraseña?</span>
+              </div>
+            </div>
           </div>
 
           <input type="submit" value="Iniciar sesión" />
@@ -103,6 +133,44 @@ export const LoginContainer = styled.div`
   position: relative;
 
   form {
+    .opciones {
+      font-family: 'Nunito';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      /* identical to box height */
+
+      /* Primary */
+
+      color: #605bff;
+    }
+
+    span {
+      font-family: 'Nunito';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      /* identical to box height */
+
+      /* Primary */
+
+      color: #605bff;
+    }
+
+    .checkbox {
+      font-family: 'Nunito';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      /* identical to box height */
+
+      /* Text */
+
+      color: #030229;
+    }
     /* margin: 0 auto; */
     display: flex;
     flex-direction: column;
@@ -163,6 +231,9 @@ export const LoginContainer = styled.div`
 
       background: #333;
       color: #fff;
+    }
+
+    input[type='checkbox'] {
     }
   }
 `

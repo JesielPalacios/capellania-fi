@@ -55,7 +55,7 @@ z-index: 1;
   padding-top: 20px;
 }
 
-.navigation ul li {
+.navigation ul li, .button {
   position: relative;
   list-style: none;
   width: 100%;
