@@ -1,5 +1,5 @@
-  import { gql, useMutation } from '@apollo/client'
-import { useContext, useRef } from 'react'
+import { gql, useMutation } from '@apollo/client'
+import { useContext } from 'react'
 import styled from 'styled-components'
 import { Context } from '../../core/context/UserContext'
 import { useInputValue } from '../../core/hooks/useInputValue'
@@ -28,39 +28,37 @@ export const Login = () => {
   const email = useInputValue('')
   const password = useInputValue('')
 
-  let inputRef = useRef()
-
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
-  
-  console.log('--------------------------------------------------')
-  console.log('email')
-  console.log(email.value)
-  console.log('---------------------------------------------------')
-  console.log('password')
-  console.log(password.value)
-  console.log('---------------------------------------------------')
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
     // email.value = 'correo@correo.com'
     // password.value = 'Pt@707C3Kf@^'
+    // console.log('--------------------------------------------------')
+    // console.log('email')
+    // console.log(email.value)
+    // console.log('---------------------------------------------------')
+    // console.log('password')
+    // console.log(password.value)
+    // console.log('---------------------------------------------------')
     login({ variables: { email: email.value, password: password.value } }).then(
       ({ data }) => {
         const { value } = data.login
         activateAuth(value)
       }
     )
-    email.value = 'correo@correo.com'
-    password.value = 'Pt@707C3Kf@^'
     // email.value = ''
     // password.value = ''
-    if (isAuth) {
-      history.push('/dashboard')
-    } else {
-      history.push('/login')
-    }
+    // if (isAuth) {
+    //   history.push('/dashboard')
+    // } else {
+    //   history.push('/login')
+    // }
   }
+
+  let nameRef
 
   return (
     <LoginContainer>
@@ -85,8 +83,15 @@ export const Login = () => {
 
           <div>
             {loginInfo.map(
-              ({ field, placeholder, large, type, fill, height }, index) => {
+              (
+                { field, placeholder, large, type, fill, height, name },
+                index
+              ) => {
                 // console.log(inputRef)
+
+                if (name === 'email') nameRef = email
+                else if (name === 'password') nameRef = password
+
                 return (
                   <FieldWrapper key={index} large={large} fill={fill}>
                     <LabelForm htmlFor={field}>{field}</LabelForm>
@@ -95,7 +100,8 @@ export const Login = () => {
                       placeholder={placeholder}
                       type={type}
                       height={height}
-                      onChange={(e) => password.onChang(e)}
+                      {...nameRef}
+                      // onChange={(e) => password.onChang(e)}
                       // ref={inputRef}
                     />
                   </FieldWrapper>
