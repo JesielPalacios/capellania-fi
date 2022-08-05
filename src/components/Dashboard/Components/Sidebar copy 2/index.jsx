@@ -1,5 +1,6 @@
-import { useRef, useState, useEffect } from 'react'
-import { NavLink, useRouteMatch } from 'react-router-dom'
+import { useRef, useState, useEffect, useContext } from 'react'
+import { NavLink, useHistory, useRouteMatch } from 'react-router-dom'
+import { Context } from '../../../../core/context/UserContext'
 import { useUser } from '../../../../core/hooks/useUser'
 
 import { routes } from '../../../../core/router/routes'
@@ -38,6 +39,9 @@ export const Sidebar = () => {
     }
   }, [])
 
+  const { removeAuth } = useContext(Context)
+  const history = useHistory(Context)
+
   return (
     <>
       <div className={sidebar ? 'navigation active' : 'navigation'}>
@@ -50,7 +54,10 @@ export const Sidebar = () => {
         <LogoImg
           src="img/logo-unac.png"
           sidebar={sidebar}
-          onClick={showSidebar}
+          onClick={() => {
+            history.push('/')
+            showSidebar()
+          }}
         />
         <ul ref={list}>
           {routes.map(({ label, icon, path }, index) => (
@@ -71,6 +78,17 @@ export const Sidebar = () => {
               </NavLink>
             </li>
           ))}
+          <li onClick={() => removeAuth()} className="button">
+            <b></b>
+            <b></b>
+            {/* <NavLink to={path}> */}
+            <NavLink to="/">
+              <span className="icon">
+                <ion-icon name="log-out-outline"></ion-icon>
+              </span>
+              <span className="tittle">Cerrar sessión</span>
+            </NavLink>
+          </li>
         </ul>
       </div>
     </>

@@ -92,17 +92,17 @@ export const routes = [
     icon: 'settings-outline',
     path: '/settings',
     notification: 3
-  },
+  }
   // {
   //   label: 'Iniciar sessión',
   //   icon: 'log-in-outline',
   //   path: '/login',
   //   notification: 0
   // },
-  {
-    label: 'Cerrar sessión',
-    icon: 'log-out-outline',
-    path: '/log-out',
-    notification: 1
-  }
+  // {
+  //   label: 'Cerrar sessión',
+  //   icon: 'log-out-outline',
+  //   path: '/log-out',
+  //   notification: 1
+  // }
 ]
