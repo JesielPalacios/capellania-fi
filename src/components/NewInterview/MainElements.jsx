@@ -175,6 +175,8 @@ export const InterviewContainer = styled.div`
   left: 6%;
   padding: 30px;
   background: #ffffff;
+  ${({ background }) =>
+    background ? `background: ${background};` : 'background: #ffffff;'}
   border-radius: 10px;
   margin-top: 130px;
   overflow: hidden;

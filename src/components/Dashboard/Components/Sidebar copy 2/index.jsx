@@ -40,7 +40,7 @@ export const Sidebar = () => {
   }, [])
 
   const { removeAuth } = useContext(Context)
-  const history = useHistory(Context)
+  // const history = useHistory(Context)
 
   return (
     <>
@@ -55,7 +55,7 @@ export const Sidebar = () => {
           src="img/logo-unac.png"
           sidebar={sidebar}
           onClick={() => {
-            history.push('/')
+            // history.push('/')
             showSidebar()
           }}
         />
@@ -82,7 +82,7 @@ export const Sidebar = () => {
             <b></b>
             <b></b>
             {/* <NavLink to={path}> */}
-            <NavLink to="/">
+            <NavLink to="/login">
               <span className="icon">
                 <ion-icon name="log-out-outline"></ion-icon>
               </span>

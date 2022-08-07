@@ -1,5 +1,5 @@
+import { useContext, useEffect } from 'react'
 import { gql, useMutation } from '@apollo/client'
-import { useContext } from 'react'
 import styled from 'styled-components'
 import { Context } from '../../core/context/UserContext'
 import { useInputValue } from '../../core/hooks/useInputValue'
@@ -34,8 +34,8 @@ export const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    // email.value = 'correo@correo.com'
-    // password.value = 'Pt@707C3Kf@^'
+    email.value = 'correo@correo.com'
+    password.value = 'Pt@707C3Kf@^'
     // console.log('--------------------------------------------------')
     // console.log('email')
     // console.log(email.value)
@@ -49,16 +49,46 @@ export const Login = () => {
         activateAuth(value)
       }
     )
+    // .then(() => {
+    //   if (isAuth) {
+    //     history.push('/dashboard')
+    //   } else {
+    //     history.push('/login')
+    //   }
+    // })
     // email.value = ''
     // password.value = ''
-    // if (isAuth) {
-    //   history.push('/dashboard')
-    // } else {
-    //   history.push('/login')
-    // }
+
+    //  if (isAuth) {
+    //       history.push('/dashboard')
+    //     } else {
+    //       history.push('/login')
+    //     }
+    //   }
   }
 
+  // if (isAuth) {
+
+  //   history.push('/dashboard')
+  // } else {
+  //   history.push('/login')
+  // }
+
   let nameRef
+
+  // useEffect(() => {
+  //   // if (isAuth) {
+  //   //   history.push('/dashboard')
+  //   // } else {
+  //   //   history.push('/login')
+  //   // }
+  //   console.log('first')
+  //   if (data.login) {
+  //     history.push('/dashboard')
+  //   } else {
+  //     history.push('/login')
+  //   }
+  // })
 
   return (
     <LoginContainer>

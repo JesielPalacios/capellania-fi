@@ -32,6 +32,8 @@ import {
 
 import searchSvg from '../../assets/svg/Search.svg'
 import { academicInfo, fields, trackingInfo } from './data'
+import { Context } from '../../core/context/UserContext'
+import { useContext } from 'react'
 
 const ShowInput = (select, field, options, placeholder, type, height) => {
   const customStyles = {
@@ -111,7 +113,7 @@ const ShowInput = (select, field, options, placeholder, type, height) => {
 export const NewInterview = () => {
   let match,
     { path, url } = useRouteMatch()
-  const { sidebar } = { useUser }()
+  const { sidebar } = useContext(Context)
   const { interviewStep } = useParams()
   // const interviewStep = useParams()
   let flag

@@ -1,4 +1,6 @@
-import { useRouteMatch, Switch, Route } from 'react-router-dom'
+import { useContext, useEffect } from 'react'
+import { useRouteMatch, Switch, Route, useHistory } from 'react-router-dom'
+import { Context } from '../../core/context/UserContext'
 import { useUser } from '../../core/hooks/useUser'
 import { Interviews } from '../Interviews'
 import { Dashboard } from '../Start'
@@ -9,6 +11,8 @@ import { DashboardContainer } from './DashboardElements'
 export const Dashboard2 = () => {
   const { sidebar } = useUser()
   let { path, url } = useRouteMatch()
+  const history = useHistory
+  const { isAuth } = useContext(Context)
 
   const show = () => {
     // switch (path) {
@@ -28,10 +32,28 @@ export const Dashboard2 = () => {
         return <Route path={`${path}`} component={Users} />
       case '/entrevistas':
         return <Route path={`${path}`} component={Interviews} />
-      default:
+      case '/entrevista':
+        return <Route path={`${path}`} component={Interviews} />
+      case '/login':
         return <Route path={`${path}`} component={Dashboard} />
+      default:
+        return ''
     }
   }
+
+  // useEffect(() => {
+  // if (isAuth) {
+  //   return history.push('/dashboard')
+  // } else {
+  //   return history.push('/login')
+  // }
+  // })
+
+  // if (isAuth) {
+  //   return history.push('/dashboard')
+  // } else {
+  //   return history.push('/login')
+  // }
 
   return (
     <DashboardContainer sidebar={sidebar}>
@@ -54,6 +76,7 @@ export const Dashboard2 = () => {
     </DashboardContainer>
   )
 }
+
 // import { useState } from 'react'
 // import { Route, Switch, useRouteMatch, Link } from 'react-router-dom'
 

@@ -1,19 +1,15 @@
-import React, { Suspense, useState, useContext } from 'react'
+import React, { Suspense, useContext } from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  useHistory,
-  Redirect
+  Switch
+  // HashRouter as Routing
 } from 'react-router-dom'
 
 // Styles
 import { GlobalStyle } from './styles/GlobalStyles'
-import { Sidebar } from './components/Dashboard/Components/Sidebar copy 2'
-import { DashboardContainer } from './components/Dashboard/DashboardElements'
 // import '../../styles/styles.css'
 import './styles/styles.css'
-import { Users } from './components/Users'
 import { Dashboard2 } from './components/Dashboard'
 import { Context } from './core/context/UserContext'
 
@@ -28,18 +24,26 @@ export const AppRouter = () => {
   return (
     <Suspense fallback={<div />}>
       <GlobalStyle />
-      <Router>
+      <Router basename="_#">
+        {/* <Routing basename="/_#"> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/dashboard">{isAuth ? <Dashboard2 /> : <LogIn />}</Route>
           <Route path="/usuarios">{isAuth ? <Dashboard2 /> : <LogIn />}</Route>
           <Route path="/entrevistas">
-            {isAuth ? <Dashboard2 /> : <LogIn />}
+            {isAuth ? <Dashboard2 /> : <LogIn />}{' '}
+          </Route>
+          <Route path="/entrevista">
+            {isAuth ? <Dashboard2 /> : <LogIn />}{' '}
           </Route>
           <Route path="/login">{isAuth ? <Dashboard2 /> : <LogIn />}</Route>
           <Route component={ErrorPage} />
         </Switch>
+        {/* </Routing> */}
       </Router>
     </Suspense>
   )
 }
+
+// https://www.google.com/search?q=routes+with+dash+on+react&oq=routes+with+dash+on+react&aqs=chrome..69i57.14101j0j1&sourceid=chrome&ie=UTF-8
+// https://stackoverflow.com/questions/50088100/matching-routes-with-hyphens-in-react-router

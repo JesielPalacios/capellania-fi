@@ -14,6 +14,7 @@ import {
 } from './NavbarElements'
 import { animateScroll as scroll } from 'react-scroll'
 import { Context } from '../../../../core/context/UserContext'
+// import { useHistory } from 'react-router-dom'
 
 export const Navbar = ({ toggle }) => {
   const { isAuth } = useContext(Context)
@@ -96,7 +97,10 @@ export const Navbar = ({ toggle }) => {
               </NavItem>
             </NavMenu>
             <NavBtn>
-              <NavBtnLink to={isAuth ? '/dashboard' : '/login'}>
+              <NavBtnLink
+                to={isAuth ? '/dashboard' : '/login'}
+                // onClick={() => history.push('/dashboard')}
+              >
                 {isAuth ? 'Ir a dashboard' : 'Iniciar sesión'}
               </NavBtnLink>
             </NavBtn>
