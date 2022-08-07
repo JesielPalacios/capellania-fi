@@ -3,6 +3,7 @@ import { useRouteMatch, Switch, Route, useHistory } from 'react-router-dom'
 import { Context } from '../../core/context/UserContext'
 import { useUser } from '../../core/hooks/useUser'
 import { Interviews } from '../Interviews'
+import { Login } from '../Login/index copy 6'
 import { Dashboard } from '../Start'
 import { Users } from '../Users'
 import { Sidebar } from './Components/Sidebar copy 2'
@@ -34,10 +35,18 @@ export const Dashboard2 = () => {
         return <Route path={`${path}`} component={Interviews} />
       case '/entrevista':
         return <Route path={`${path}`} component={Interviews} />
-      case '/login':
-        return <Route path={`${path}`} component={Dashboard} />
+      // case '/login':
+      //   // return <Route path={`${path}`} component={Dashboard} />
+      //   () => {
+      //     // isAuth ? <Dashboard /> : <Login />
+      //     if (isAuth) {
+      //       return history.push('/dashboard')
+      //     } else {
+      //       history.push('/login')
+      //     }
+      //   }
       default:
-        return ''
+        return <Route path={`${path}`} component={Dashboard} />
     }
   }
 

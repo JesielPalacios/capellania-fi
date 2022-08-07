@@ -94,7 +94,7 @@ export const Login = () => {
     <LoginContainer>
       <Section flex={2} background="#FFFFFF">
         <form onSubmit={handleSubmit}>
-          <LogoImg src={logo} alt="logo" />
+          <LogoImg src={logo} alt="logo" onClick={() => history.push('/')} />
 
           <h1>Capellanía UNAC</h1>
           <h2>Bienvenido a su dashboard</h2>
@@ -295,6 +295,13 @@ export const LogoImg = styled.img`
   width: 306px;
   width: 189px;
   /* height: 248px; */
+  cursor: pointer;
+
+  :hover {
+    background: rgba(47, 128, 237, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
 `
 
 export const FeaturedLogin = styled.div`

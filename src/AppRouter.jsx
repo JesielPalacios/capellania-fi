@@ -30,12 +30,8 @@ export const AppRouter = () => {
           <Route exact path="/" component={Home} />
           <Route path="/dashboard">{isAuth ? <Dashboard2 /> : <LogIn />}</Route>
           <Route path="/usuarios">{isAuth ? <Dashboard2 /> : <LogIn />}</Route>
-          <Route path="/entrevistas">
-            {isAuth ? <Dashboard2 /> : <LogIn />}{' '}
-          </Route>
-          <Route path="/entrevista">
-            {isAuth ? <Dashboard2 /> : <LogIn />}{' '}
-          </Route>
+          <Route path="/entrevistas">{isAuth ? <Dashboard2 /> : <LogIn />}</Route>
+          <Route path="/entrevista">{isAuth ? <Dashboard2 /> : <LogIn />}</Route>
           <Route path="/login">{isAuth ? <Dashboard2 /> : <LogIn />}</Route>
           <Route component={ErrorPage} />
         </Switch>
