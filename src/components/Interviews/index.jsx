@@ -1,46 +1,18 @@
-import { gql, useQuery } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 import { useRouteMatch, Link, Switch, Route, useParams } from 'react-router-dom'
+import { GET_INTERVIEWS } from '../../core/graphql/queries/interviewsQueries'
 import { useUser } from '../../core/hooks/useUser'
 import { Main } from '../Dashboard/Components/Main'
 import { NewInterview } from '../NewInterview'
 import { InterviewContainer, InterviewForm } from '../NewInterview/MainElements'
 import { Interview } from './components/Interview'
 
-const GET_INTERVIEWS = gql`
-  {
-    interviews {
-      _id
-      idInterview
-      topic
-      topicDescription
-      actionsDescription
-      referralDepartment
-      userCreate
-      userUpdate
-      # userCreate {
-      #   name
-      # }
-      # userUpdate {
-      #   name
-      # }
-      __typename
-    }
-  }
-`
 export const Interviews = () => {
-  // The `path` lets us build <Route> paths that are
-  // relative to the parent route, while the `url` lets
-  // us build relative links.
   let { path, url } = useRouteMatch()
   const { sidebar } = useUser()
-
-  // const { activateAuth, isAuth } = useContext(Context)
   const { data, loading, error } = useQuery(GET_INTERVIEWS)
 
-  // useEffect(() => {
-  //   console.log(data)
-  // }, [])
-  // console.log(data)
+  let { interviewId } = useParams()
 
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
@@ -50,7 +22,7 @@ export const Interviews = () => {
       <Route exact path={path}>
         <Main title={'Entrevistas'} sidebar={sidebar}>
           <Link to={`${url}/crear-entrevista`}>Crear una entrevista nueva</Link>
-          {/* <h2>Entrevistas</h2>
+          <h2>Entrevistas</h2>
           <ul>
             <li>
               <Link to={`${url}/crear-entrevista`}>
@@ -69,7 +41,7 @@ export const Interviews = () => {
             <li>
               <Link to={`${url}/3`}>Bla bla bla</Link>
             </li>
-          </ul> */}
+          </ul>
           <InterviewContainer background="none">
             <InterviewForm>
               {data.interviews.map((dataInterview, index) => (
@@ -86,10 +58,8 @@ export const Interviews = () => {
       </Route>
 
       <Route path={`${path}/:interviewId`}>
-        {/* <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
-          <h2>Entrevista #{interviewId}</h2> */}
-        <Main title={`Entrevista #...`} sidebar={sidebar}>
-          <h2>Entrevista #...</h2>
+        <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
+          <h2>Entrevista #{interviewId}</h2>
           {/* Create a componnet here for the intervie profile page  */}
         </Main>
       </Route>

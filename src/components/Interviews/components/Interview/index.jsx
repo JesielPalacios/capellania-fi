@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Interview = ({
@@ -12,7 +12,10 @@ export const Interview = ({
   userUpdate,
   __typename
 }) => {
-  // console.log(props)
+  let { interviewId } = useParams()
+  let useParamsObject = useParams()
+  console.log(interviewId)
+  console.log(useParamsObject)
 
   return (
     <InterviewContainer>
