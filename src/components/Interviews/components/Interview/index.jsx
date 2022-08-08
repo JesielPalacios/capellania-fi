@@ -43,3 +43,6 @@ export const InterviewContainer = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 `
+
+// jueves sala 2
+// viernes 8 a 9

@@ -33,9 +33,6 @@ export const Interviews = () => {
   // us build relative links.
   let { path, url } = useRouteMatch()
   const { sidebar } = useUser()
-  let { interviewId } = useParams()
-  let useParamsObject = useParams()
-  console.log(useParamsObject)
 
   // const { activateAuth, isAuth } = useContext(Context)
   const { data, loading, error } = useQuery(GET_INTERVIEWS)
@@ -52,6 +49,7 @@ export const Interviews = () => {
     <Switch>
       <Route exact path={path}>
         <Main title={'Entrevistas'} sidebar={sidebar}>
+          <Link to={`${url}/crear-entrevista`}>Crear una entrevista nueva</Link>
           {/* <h2>Entrevistas</h2>
           <ul>
             <li>
@@ -74,8 +72,8 @@ export const Interviews = () => {
           </ul> */}
           <InterviewContainer background="none">
             <InterviewForm>
-              {data.interviews.map((dataInterview) => (
-                <Interview {...dataInterview} />
+              {data.interviews.map((dataInterview, index) => (
+                <Interview key={index} {...dataInterview} />
               ))}
             </InterviewForm>
           </InterviewContainer>
@@ -88,9 +86,10 @@ export const Interviews = () => {
       </Route>
 
       <Route path={`${path}/:interviewId`}>
-        <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
-          {/* {console.log(interviewId)} */}
-          <h2>Entrevista #{interviewId}</h2>
+        {/* <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
+          <h2>Entrevista #{interviewId}</h2> */}
+        <Main title={`Entrevista #...`} sidebar={sidebar}>
+          <h2>Entrevista #...</h2>
           {/* Create a componnet here for the intervie profile page  */}
         </Main>
       </Route>
