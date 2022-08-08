@@ -8,11 +8,12 @@ import { InterviewContainer, InterviewForm } from '../NewInterview/MainElements'
 import { Interview } from './components/Interview'
 
 export const Interviews = () => {
-  let { path, url } = useRouteMatch()
   const { sidebar } = useUser()
   const { data, loading, error } = useQuery(GET_INTERVIEWS)
 
+  let { path, url } = useRouteMatch()
   let { interviewId } = useParams()
+  console.log(interviewId)
 
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
@@ -22,14 +23,6 @@ export const Interviews = () => {
       <Route exact path={path}>
         <Main title={'Entrevistas'} sidebar={sidebar}>
           <Link to={`${url}/crear-entrevista`}>Crear una entrevista nueva</Link>
-          <h2>Entrevistas</h2>
-          <ul>
-            <li>
-              <Link to={`${url}/crear-entrevista`}>
-                Crear una entrevista nueva
-              </Link>
-            </li>
-          </ul>
           <h3>A continuación una lista de todas las entrevistas.</h3>
           <ul>
             <li>
@@ -52,10 +45,7 @@ export const Interviews = () => {
         </Main>
       </Route>
 
-      {/* Interviews Router */}
-      <Route path={`${path}/crear-entrevista`}>
-        <NewInterview />
-      </Route>
+      <Route path={`${path}/crear-entrevista`} component={NewInterview} />
 
       <Route path={`${path}/:interviewId`}>
         <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>

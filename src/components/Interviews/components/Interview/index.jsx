@@ -1,4 +1,5 @@
-import { Link, useParams } from 'react-router-dom'
+import { useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Interview = ({
@@ -12,10 +13,7 @@ export const Interview = ({
   userUpdate,
   __typename
 }) => {
-  let { interviewId } = useParams()
-  let useParamsObject = useParams()
-  console.log(interviewId)
-  console.log(useParamsObject)
+  let { path, url } = useRouteMatch()
 
   return (
     <InterviewContainer>
@@ -32,6 +30,7 @@ export const Interview = ({
       </ul>
 
       <Link to={`/entrevista/${idInterview}`}>Ver detalles</Link>
+      {/* <Link to={`${path.slice(0, 11)}/${idInterview}`}>Ver detalles</Link> */}
     </InterviewContainer>
   )
 }

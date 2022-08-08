@@ -1,9 +1,6 @@
-import { useContext, useEffect } from 'react'
-import { useRouteMatch, Switch, Route, useHistory } from 'react-router-dom'
-import { Context } from '../../core/context/UserContext'
+import { useRouteMatch, Switch, Route } from 'react-router-dom'
 import { useUser } from '../../core/hooks/useUser'
 import { Interviews } from '../Interviews'
-import { Login } from '../Login/index copy 6'
 import { Dashboard } from '../Start'
 import { Users } from '../Users'
 import { Sidebar } from './Components/Sidebar copy 2'
@@ -11,9 +8,7 @@ import { DashboardContainer } from './DashboardElements'
 
 export const Dashboard2 = () => {
   const { sidebar } = useUser()
-  let { path, url } = useRouteMatch()
-  const history = useHistory
-  const { isAuth } = useContext(Context)
+  let { path } = useRouteMatch()
 
   const show = () => {
     switch (path) {
@@ -39,3 +34,4 @@ export const Dashboard2 = () => {
     </DashboardContainer>
   )
 }
+g
