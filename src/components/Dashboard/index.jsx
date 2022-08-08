@@ -1,5 +1,6 @@
 import { useRouteMatch, Switch, Route } from 'react-router-dom'
 import { useUser } from '../../core/hooks/useUser'
+import { Interview } from '../Interview'
 import { Interviews } from '../Interviews'
 import { Dashboard } from '../Start'
 import { Users } from '../Users'
@@ -19,7 +20,7 @@ export const Dashboard2 = () => {
       case '/entrevistas':
         return <Route path={path} component={Interviews} />
       case '/entrevista':
-        return <Route path={path} component={Interviews} />
+        return <Route path={`${path}/:interviewId`} component={Interview} />
 
       default:
         return <Route path={path} component={Dashboard} />
