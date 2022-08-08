@@ -30,6 +30,7 @@ export const Interview = ({
       </ul>
 
       <Link to={`/entrevista/${idInterview}`}>Ver detalles</Link>
+      {/* <Link to={`${path}/${idInterview}`}>Ver detalles</Link> */}
       {/* <Link to={`${path.slice(0, 11)}/${idInterview}`}>Ver detalles</Link> */}
     </InterviewContainer>
   )

@@ -19,7 +19,7 @@ export const Dashboard2 = () => {
       case '/entrevistas':
         return <Route path={path} component={Interviews} />
       case '/entrevista':
-        return <Route path={`${path}/:interviewId`} component={Interviews} />
+        return <Route path={path} component={Interviews} />
 
       default:
         return <Route path={path} component={Dashboard} />
@@ -34,4 +34,3 @@ export const Dashboard2 = () => {
     </DashboardContainer>
   )
 }
-g
