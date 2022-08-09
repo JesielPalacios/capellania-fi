@@ -25,8 +25,8 @@ export const GET_INTERVIEWS = gql`
 `
 
 export const GET_INTERVIEW = gql`
-  query Interview($interviewId: String!) {
-    interview(interviewId: $interviewId) {
+  query getInterviewById($idInterview: String) {
+    interview(idInterview: $idInterview) {
       _id
       idInterview
       topic
@@ -46,4 +46,8 @@ export const GET_INTERVIEW = gql`
       __typename
     }
   }
+  // Variables
+  // {
+  //   "id": "3b7c28a0-114d-11ed-950c-3de3b7805b14"
+  // }
 `

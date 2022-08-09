@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Main } from '../Dashboard/Components/Main'
 import { useUser } from '../../core/hooks/useUser'
-import { GET_INTERVIEWS } from '../../core/graphql/queries/interviewsQueries'
+import { GET_INTERVIEW } from '../../core/graphql/queries/interviewsQueries'
 
 export const Interview = () => {
   const { sidebar } = useUser()
@@ -12,8 +12,8 @@ export const Interview = () => {
   let { interviewId } = useParams()
   // console.log(interviewId)
 
-  const { data, loading, error } = useQuery(GET_INTERVIEWS, {
-    pollInterval: 2000,
+  const { data, loading, error } = useQuery(GET_INTERVIEW, {
+    // pollInterval: 2000,
     variables: { interviewId }
   })
   console.log(data)
