@@ -46,8 +46,9 @@ export const GET_INTERVIEW = gql`
       __typename
     }
   }
-  // Variables
-  // {
-  //   "id": "3b7c28a0-114d-11ed-950c-3de3b7805b14"
-  // }
 `
+
+// Variables
+// {
+//   "id": "3b7c28a0-114d-11ed-950c-3de3b7805b14"
+// }
