@@ -45,7 +45,11 @@
     "preview": "vite preview",
     "start": "vite preview",
     "complexity": "npx code-complexity . --filter '**/*.js'  --limit 15 --sort score",
-    "dependencies": "npm i"
+    "dependencies": "npm i",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "vite": "^3.0.4"
   },
   "eslintConfig": {
     "extends": [
@@ -64,11 +68,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.0.0",
-    "vite": "^3.0.4"
   }
 }
