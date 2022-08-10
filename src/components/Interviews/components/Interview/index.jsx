@@ -9,17 +9,43 @@ export const Interview = ({
   topicDescription,
   actionsDescription,
   referralDepartment,
+  createdAt,
+  updatedAt,
   userCreate,
   userUpdate,
   __typename
 }) => {
   let { path, url } = useRouteMatch()
 
+  createdAt = new Date(createdAt)
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }
+
+  const [month, day, year] = [
+    createdAt.getMonth(),
+    createdAt.getDate(),
+    createdAt.getFullYear()
+  ]
+  const [hour, minutes, seconds] = [
+    createdAt.getHours(),
+    createdAt.getMinutes(),
+    createdAt.getSeconds()
+  ]
+
+  // Usando métodos internos
+  let start = new Date()
+  let timeAgo = createdAt.getTime() - start.getTime()  // tiempo transcurrido en milisegundos
+  console.log(timeAgo)
   return (
     <InterviewContainer>
       <ul>
         {/* <li>{_id}</li> */}
         {/* <li>{idInterview}</li> */}
+        Fecha: {day+1} - {month+1} - {year}
         <li>Tema: {topic}</li>
         <li>Descripción: {topicDescription}</li>
         <li>Acciones: {actionsDescription}</li>

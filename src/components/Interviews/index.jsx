@@ -14,7 +14,7 @@ export const Interviews = () => {
 
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
-
+console.log(data)
   return (
     <Switch>
       <Route exact path={path}>
