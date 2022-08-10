@@ -34,7 +34,6 @@
   },
   "scripts": {
     "started": "react-scripts start",
-    "start1": "ifconfig",
     "build1": "react-scripts build",
     "test1": "react-scripts test",
     "eject1": "react-scripts eject",
@@ -44,11 +43,16 @@
     "dev4": "vite --open --host 3000",
     "dev5": "vite --open --host localhost:3000",
     "dev6": "vite --open --host :3000",
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "complexity": "npx code-complexity . --filter '**/*.js'  --limit 15 --sort score",
-    "dependencies": "npm i"
+    "dependencies": "npm i",
+    "heroku-login": "heroku login",
+    "heroku-logs": "heroku logs --tail --app capellania-unac",
+    "heroku-open": "heroku open -a capellania-unac",
+    "ifconfig": "ifconfig",
+    "ipconfig": "ipconfig"
   },
   "eslintConfig": {
     "extends": [
