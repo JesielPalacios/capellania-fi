@@ -43,7 +43,7 @@
     "dev4": "vite --open --host 3000",
     "dev5": "vite --open --host localhost:3000",
     "dev6": "vite --open --host :3000",
-    "start": "vite",
+    "start": "vite --port $PORT",
     "build": "vite build",
     "preview": "vite preview",
     "complexity": "npx code-complexity . --filter '**/*.js'  --limit 15 --sort score",
