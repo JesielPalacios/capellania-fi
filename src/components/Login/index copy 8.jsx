@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { gql, useMutation } from '@apollo/client'
 import styled from 'styled-components'
 import { Context } from '../../core/context/UserContext'
@@ -14,10 +14,23 @@ import featured_login from '../../img/featured_login.svg'
 import { useHistory } from 'react-router-dom'
 import { LOGIN } from '../../core/graphql/queries/loginQuery'
 
-export const Login = () => {
+const NewHOC = (props) => {
+  const [login, { data, loading, error }] = useMutation(LOGIN)
+  return class extends React.Component {
+    render() {
+      return (
+        <div>
+          
+        </div>
+      )
+    }
+  }
+}
+
+const Movie = ({login, data, loading, error }) => {
   const history = useHistory()
   const { activateAuth, isAuth } = useContext(Context)
-  const [login, { data, loading, error }] = useMutation(LOGIN)
+  // const [login, { data, loading, error }] = useMutation(LOGIN)
   const email = useInputValue('')
   const password = useInputValue('')
 
@@ -29,60 +42,14 @@ export const Login = () => {
 
     email.value = 'correo@correo.com'
     password.value = 'Pt@707C3Kf@^'
-    // console.log('--------------------------------------------------')
-    // console.log('email')
-    // console.log(email.value)
-    // console.log('---------------------------------------------------')
-    // console.log('password')
-    // console.log(password.value)
-    // console.log('---------------------------------------------------')
     login({ variables: { email: email.value, password: password.value } }).then(
       ({ data }) => {
         const { value } = data.login
         activateAuth(value)
       }
     )
-    // .then(() => {
-    //   if (isAuth) {
-    //     history.push('/dashboard')
-    //   } else {
-    //     history.push('/login')
-    //   }
-    // })
-    // email.value = ''
-    // password.value = ''
-
-    //  if (isAuth) {
-    //       history.push('/dashboard')
-    //     } else {
-    //       history.push('/login')
-    //     }
-    //   }
   }
-
-  // if (isAuth) {
-
-  //   history.push('/dashboard')
-  // } else {
-  //   history.push('/login')
-  // }
-
   let nameRef
-
-  // useEffect(() => {
-  //   // if (isAuth) {
-  //   //   history.push('/dashboard')
-  //   // } else {
-  //   //   history.push('/login')
-  //   // }
-  //   console.log('first')
-  //   if (data.login) {
-  //     history.push('/dashboard')
-  //   } else {
-  //     history.push('/login')
-  //   }
-  // })
-
   return (
     <LoginContainer>
       <Section flex={2} background="#FFFFFF">
@@ -151,6 +118,16 @@ export const Login = () => {
         </FeaturedLogin>
       </Section>
     </LoginContainer>
+  )
+}
+
+const NewComponent = NewHOC(Movie)
+
+export const Login = () => {
+  return (
+    <div>
+      <NewComponent name="Kill Bill" />
+    </div>
   )
 }
 

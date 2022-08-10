@@ -1,3 +1,4 @@
+import { useRouteMatch } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -12,7 +13,7 @@ export const Interview = ({
   userUpdate,
   __typename
 }) => {
-  // console.log(props)
+  let { path, url } = useRouteMatch()
 
   return (
     <InterviewContainer>
@@ -29,6 +30,8 @@ export const Interview = ({
       </ul>
 
       <Link to={`/entrevista/${idInterview}`}>Ver detalles</Link>
+      {/* <Link to={`${path}/${idInterview}`}>Ver detalles</Link> */}
+      {/* <Link to={`${path.slice(0, 11)}/${idInterview}`}>Ver detalles</Link> */}
     </InterviewContainer>
   )
 }
@@ -43,3 +46,6 @@ export const InterviewContainer = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 `
+
+// jueves sala 2
+// viernes 8 a 9
