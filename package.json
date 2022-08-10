@@ -29,7 +29,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "started": "react-scripts start",
     "start1": "ifconfig",
     "build1": "react-scripts build",
     "test1": "react-scripts test",
@@ -43,6 +43,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "start": "vite preview",
     "complexity": "npx code-complexity . --filter '**/*.js'  --limit 15 --sort score",
     "dependencies": "npm i"
   },
