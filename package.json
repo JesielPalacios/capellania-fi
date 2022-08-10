@@ -33,7 +33,7 @@
     "vite": "^3.0.4"
   },
   "scripts": {
-    "started": "react-scripts start",
+    "start1": "react-scripts start",
     "build1": "react-scripts build",
     "test1": "react-scripts test",
     "eject1": "react-scripts eject",
