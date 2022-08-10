@@ -34,7 +34,7 @@
   },
   "scripts": {
     "start1": "react-scripts start",
-    "build1": "react-scripts build",
+    "build11": "react-scripts build",
     "test1": "react-scripts test",
     "eject1": "react-scripts eject",
     "dev1": "vite --open",
