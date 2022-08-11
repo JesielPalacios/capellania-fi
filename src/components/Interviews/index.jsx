@@ -2,10 +2,11 @@ import { useQuery } from '@apollo/client'
 import { useRouteMatch, Link, Switch, Route } from 'react-router-dom'
 import { useUser } from '../../core/hooks/useUser'
 import { Main } from '../Dashboard/Components/Main'
-import { Interviews } from './components/Interview'
+import { Interview } from './components/Interview'
 import { NewInterview } from '../NewInterview'
 import { InterviewContainer, InterviewForm } from '../NewInterview/MainElements'
 import { GET_INTERVIEWS } from './graphql-queries'
+import { Card } from './components/Interview/Interview.styles copy'
 
 export const Interviews = () => {
   let { path, url } = useRouteMatch()
@@ -21,11 +22,11 @@ export const Interviews = () => {
         <Main title={'Entrevistas'} sidebar={sidebar}>
           <Link to={`${url}/crear-entrevista`}>Crear una entrevista nueva</Link>
           <InterviewContainer background="none">
-            <InterviewForm>
+            <Card>
               {data.interviews.map((dataInterview, index) => (
                 <Interview key={index} {...dataInterview} />
               ))}
-            </InterviewForm>
+            </Card>
           </InterviewContainer>
         </Main>
       </Route>

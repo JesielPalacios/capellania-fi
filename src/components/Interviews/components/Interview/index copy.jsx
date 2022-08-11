@@ -9,9 +9,9 @@ import useUser from "../../core/hooks/useUser";
 import { Main } from "../Dashboard/Components/Main";
 import { NewInterview } from "../NewInterview";
 
-import { Action, Area, Card, Content, Crear, Img } from "./Interview.styles";
+import { Action, Area, Card, Content, Crear, Img } from "./Interview.styles copy";
 
-export const Interviews = ({
+export const Interview = ({
   _id,
   idInterview,
   topic,
@@ -31,7 +31,7 @@ export const Interviews = ({
       <Route exact path={path}>
         <Main title={"Entrevistas"} sidebar={sidebar}>
           <Crear>
-            <Link to={`${url}/crear-entrevista`}>
+            <Link to={`${url}/crear-entrevista`} component={NewInterview}>
               Crear una entrevista nueva
             </Link>
           </Crear>
