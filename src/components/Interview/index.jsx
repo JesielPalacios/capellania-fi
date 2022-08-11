@@ -38,26 +38,17 @@ export const Interview = () => {
   // } = interview
 
   // // const fecha = createdAt.slice(0, 10)
-  let dia, mes, anio
-
-  const setData = async () => {
-    anio = await data.interview.createdAt.slice(0, 4)
-    mes = await data.interview.createdAt.slice(6, 7)
-    dia = await data.interview.createdAt.slice(9, 10)
-  }
-
-  useEffect(() => {
-    setData()
-  }, [setData])
 
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
+  if (!data) return 'No hay nada...'
 
   return (
     <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
       <InterviewContainer>
-        Fecha de creación: {data.interview.createdAt.slice(0, 4)} - {mes} -{' '}
-        {anio}
+        Fecha de creación: {data.interview.createdAt.slice(0, 4)} -{' '}
+        {data.interview.createdAt.slice(6, 7)} -{' '}
+        {data.interview.createdAt.slice(9, 10)}
         <br />
       </InterviewContainer>
     </Main>
