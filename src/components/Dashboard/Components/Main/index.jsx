@@ -1,4 +1,5 @@
 import {
+  Header,
   MainContainer,
   SectionTittle
 } from '../../../NewInterview/MainElements'
@@ -6,10 +7,10 @@ import {
 export const Main = ({ children, sidebar, title }) => {
   return (
     <MainContainer id="main" sidebar={sidebar}>
-      <div>
+      <Header>
         <SectionTittle>{title}</SectionTittle>
         {/* <button>Hola</button> */}
-      </div>{' '}
+      </Header>{' '}
       {children}
     </MainContainer>
   )

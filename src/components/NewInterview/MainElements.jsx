@@ -14,21 +14,29 @@ export const MainContainer = styled.section`
     width: 100%;
     flex: 1;
     background: #fff;
-    border: 1px solid #000;
   } */
+  /* border: 1px solid #000; */
   position: relative;
   overflow: hidden;
 `
 
-export const SectionTittle = styled.h1`
+export const Header = styled.div`
+  width: 100%;
+  width: auto;
+  height: 50px;
+  border: 5px;
+  /* border: 1px solid #00800088; */
   position: absolute;
-  width: 318px;
-  height: 33px;
-  left: 248px;
-  left: 30px;
   top: 40px;
   top: 30px;
   top: 20px;
+  left: 248px;
+  left: 30px;
+`
+
+export const SectionTittle = styled.h1`
+  /* width: 318px; */
+  /* height: 33px; */
 
   font-family: 'Nunito';
   font-style: normal;
@@ -274,6 +282,10 @@ export const FieldForm = styled.input`
   padding: 10px;
   margin-top: 5px;
   border-radius: 10px;
+
+  :focus {
+    background: white;
+  }
 `
 
 export const SelectForm = styled.select`

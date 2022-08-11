@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { Main } from '../Dashboard/Components/Main'
 import { useUser } from '../../core/hooks/useUser'
 import { GET_INTERVIEW } from '../Interviews/graphql-queries'
+import { useEffect } from 'react'
 
 export const Interview = () => {
   const { sidebar } = useUser()
@@ -21,10 +22,53 @@ export const Interview = () => {
   console.log('data')
   console.log(data)
 
+  // let { interview } = data
+  // let {
+  //   _id,
+  //   idInterview,
+  //   topic,
+  //   topicDescription,
+  //   actionsDescription,
+  //   referralDepartment,
+  //   createdAt,
+  //   updatedAt,
+  //   userCreate,
+  //   userUpdate,
+  //   __typename
+  // } = interview
+
+  // // const fecha = createdAt.slice(0, 10)
+  let dia, mes, anio
+
+  const setData = async () => {
+    anio = await data.interview.createdAt.slice(0, 4)
+    mes = await data.interview.createdAt.slice(6, 7)
+    dia = await data.interview.createdAt.slice(9, 10)
+  }
+
+  useEffect(() => {
+    setData()
+  }, [setData])
+
+  if (loading) return 'Submitting...'
+  if (error) return `Submission error! ${error.message}`
+
   return (
     <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
-      <h2>Entrevista #{interviewId}</h2>
-      Create a componnet here for the interview profile page
+      <InterviewContainer>
+        Fecha de creación: {data.interview.createdAt.slice(0, 4)} - {mes} -{' '}
+        {anio}
+        <br />
+      </InterviewContainer>
     </Main>
   )
 }
+
+export const InterviewContainer = styled.div`
+  margin: 30px;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid #00800088; */
+  line-height: 33px;
+`
