@@ -6,6 +6,7 @@ import { Interview } from './components/Interview'
 import { NewInterview } from '../NewInterview'
 import { InterviewContainer, InterviewForm } from '../NewInterview/MainElements'
 import { GET_INTERVIEWS } from './graphql-queries'
+import styled from 'styled-components'
 
 export const Interviews = () => {
   let { path, url } = useRouteMatch()
@@ -14,12 +15,14 @@ export const Interviews = () => {
 
   if (loading) return 'Submitting...'
   if (error) return `Submission error! ${error.message}`
-console.log(data)
+  console.log(data)
   return (
     <Switch>
       <Route exact path={path}>
         <Main title={'Entrevistas'} sidebar={sidebar}>
-          <Link to={`${url}/crear-entrevista`}>Crear una entrevista nueva</Link>
+          <LinkRouter to={`${url}/crear-entrevista`}>
+            <span>Crear una entrevista nueva</span>
+          </LinkRouter>
           <InterviewContainer background="none">
             <InterviewForm>
               {data.interviews.map((dataInterview, index) => (
@@ -34,3 +37,23 @@ console.log(data)
     </Switch>
   )
 }
+
+const LinkRouter = styled(Link)`
+  position: absolute;
+  top: 30px;
+  right: 46px;
+  text-decoration: none;
+
+  /* width: 165px; */
+  height: 50px;
+  width: 250px;
+  background: #605bff;
+  border-radius: 10px;
+  /* text-align: center; */
+  /* display: flex; */
+  /* align-items: center; */
+
+  /* span {
+    margin: 0 auto;
+  } */
+`

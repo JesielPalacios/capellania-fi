@@ -102,10 +102,15 @@ export const Interview = () => {
   if (!data) return 'No hay nada...'
 
   return (
-    <Main title={`Entrevista #${interviewId}`} sidebar={sidebar}>
+    <Main
+      title={`Entrevista - ID: ${interviewId}`}
+      sidebar={sidebar}
+      style={{ color: '#5B93FF' }}
+    >
       <InterviewContainer>
         <div style={{ 'margin-top': '20px', 'margin-bottom': '10px' }}>
-          Fecha de creación: {data.interview.createdAt.slice(9, 10)} -{' '}
+          <span style={{ color: '#5B93FF' }}>Fecha de creación:</span>{' '}
+          {data.interview.createdAt.slice(9, 10)} -{' '}
           {data.interview.createdAt.slice(6, 7)} -{' '}
           {data.interview.createdAt.slice(0, 4)}
         </div>
@@ -116,13 +121,19 @@ export const Interview = () => {
           <div className="top">
             <h2>Tipo problemática / tema</h2>
             {/* {data.interview.topic} */}
-            {showTopic(data.interview.topic)}
+            <div> {showTopic(data.interview.topic)} </div>
           </div>
           <div className="top">
             <h2>Descripción de la problemática</h2>
             <div className="scroll-y-400px">
+              <div>{data.interview.topicDescription}</div>
+            </div>
+          </div>
+          <div className="top">
+            <h2>Acciones a tomar</h2>
+            <div className="scroll-y-400px">
               <div>
-                {data.interview.topicDescription}
+                {data.interview.actionsDescription}
                 {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
                 debitis officia quam, ratione labore quae distinctio ipsam,
                 minus explicabo eveniet perferendis, assumenda aut! At animi
@@ -149,65 +160,6 @@ export const Interview = () => {
                 ea eius quam modi maxime. Magni, ab itaque tempore officiis
                 ullam ipsam. Earum,voluptatem. */}
                 {/* acaascasc */}
-              </div>
-            </div>
-          </div>
-          <div className="top">
-            <h2>Acciones a tomar</h2>
-            <div className="scroll-y-400px">
-              <div>
-                {data.interview.actionsDescription}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-                debitis officia quam, ratione labore quae distinctio ipsam,
-                minus explicabo eveniet perferendis, assumenda aut! At animi
-                laudantium earum ipsam aliquam dignissimos accusantium tenetur
-                laboriosam expedita. Illo rem quas laboriosam pariatur?
-                Reprehenderit quaerat quod rem repellendus nam aut, perferendis
-                labore. Maxime nihil earum odit sed libero maiores, ea
-                architecto aliquam est tempora et error dicta vel in sequi ipsum
-                quas sint velit corrupti! Neque quo culpa necessitatibus itaque
-                laboriosam voluptatum molestiae unde veritatis quos, beatae
-                asperiores tempora pariatur alias at ut perspiciatis a
-                exercitationem? Nesciunt vitae error doloribus eligendi
-                voluptatem, quod fuga eius totam minus at accusamus sequi
-                laudantium, porro quos nulla. Autem, debitis totam? Quis
-                nesciunt voluptatum id assumenda et modi laborum provident
-                voluptates illo quo quae, quisquam sed adipisci vero vel atque
-                praesentium soluta nisi, rem sequi delectus recusandae rerum
-                perspiciatis! Maiores quas odit magnam deleniti dolor eius vero
-                ex beatae assumenda debitis temporibus ipsam culpa numquam
-                minima corporis consequatur sit dolorum repellendus, accusamus
-                officiis doloribus cupiditate. Aliquam molestias placeat
-                cupiditate laboriosam laborum natus odit, fugit cum iste
-                blanditiis alias voluptatibus ab, aut accusantium officiis! Non
-                ea eius quam modi maxime. Magni, ab itaque tempore officiis
-                ullam ipsam. Earum,voluptatem.
-                {/* acaascasc */}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-                debitis officia quam, ratione labore quae distinctio ipsam,
-                minus explicabo eveniet perferendis, assumenda aut! At animi
-                laudantium earum ipsam aliquam dignissimos accusantium tenetur
-                laboriosam expedita. Illo rem quas laboriosam pariatur?
-                Reprehenderit quaerat quod rem repellendus nam aut, perferendis
-                labore. Maxime nihil earum odit sed libero maiores, ea
-                architecto aliquam est tempora et error dicta vel in sequi ipsum
-                quas sint velit corrupti! Neque quo culpa necessitatibus itaque
-                laboriosam voluptatum molestiae unde veritatis quos, beatae
-                asperiores tempora pariatur alias at ut perspiciatis a
-                exercitationem? Nesciunt vitae error doloribus eligendi
-                voluptatem, quod fuga eius totam minus at accusamus sequi
-                laudantium, porro quos nulla. Autem, debitis totam? Quis
-                nesciunt voluptatum id assumenda et modi laborum provident
-                voluptates illo quo quae, quisquam sed adipisci vero vel atque
-                praesentium soluta nisi, rem sequi delectus recusandae rerum
-                perspiciatis! Maiores quas odit magnam deleniti dolor eius vero
-                ex beatae assumenda debitis temporibus ipsam culpa numquam
-                minima corporis consequatur sit dolorum repellendus, accusamus
-                officiis doloribus cupiditate. Aliquam molestias placeat
-                cupiditate laboriosam laborum natus odit, fugit cum iste
-                blanditiis alias voluptatibus ab, aut accusantium officiis! Non
-                ea eius quam modi maxime. Magni, ab itaque tempore officiis
-                ullam ipsam. Earum,voluptatem.
               </div>
             </div>
           </div>
@@ -254,6 +206,11 @@ export const InterviewContainer = styled.div`
     /* Text */
 
     color: #030229;
+    color: #5b93ff;
+  }
+
+  h3 {
+    color: #5b93ff;
   }
 
   .top {
