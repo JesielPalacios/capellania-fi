@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import { useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { Action, Area, Card, Content, Img } from "./Interview.styles copy";
 
 export const Interview = ({
   _id,
@@ -10,36 +12,58 @@ export const Interview = ({
   referralDepartment,
   userCreate,
   userUpdate,
-  __typename
+  __typename,
 }) => {
-  // console.log(props)
+  let { path, url } = useRouteMatch();
 
   return (
-    <InterviewContainer>
-      <ul>
-        {/* <li>{_id}</li> */}
-        {/* <li>{idInterview}</li> */}
-        <li>Tema: {topic}</li>
-        <li>Descripción: {topicDescription}</li>
-        <li>Acciones: {actionsDescription}</li>
-        <li>Departamento de remisión: {referralDepartment}</li>
-        {/* <li>{userCreate}</li> */}
-        {/* <li>{userUpdate}</li> */}
-        {/* <li>{__typename}</li> */}
-      </ul>
+    <Card>
+      <Area>
+        <Img src="../../src/assets/img/FotoX.png" alt="beneficiario" />
+        <Content>
+          <h3>{topic}</h3>
+          <h4>35 años</h4>
+          <h4>3214567890</h4>
+          <h4>{referralDepartment}</h4>
+          <h5>{actionsDescription}</h5>
+          <p>{topicDescription}</p>
+        </Content>
+      </Area>
+      <div>
+        <Action to={`/entrevista/${idInterview}`}>Ver mas</Action>
+      </div>
+    </Card>
 
-      <Link to={`/entrevista/${idInterview}`}>Ver detalles</Link>
-    </InterviewContainer>
-  )
-}
+    // <InterviewContainer>
+    //   <ul>
+    //     {/* <li>{_id}</li> */}
+    //     {/* <li>{idInterview}</li> */}
+    //     <li>Tema: {topic}</li>
+    //     <li>Descripción: {topicDescription}</li>
+    //     <li>Acciones: {actionsDescription}</li>
+    //     <li>Departamento de remisión: {referralDepartment}</li>
+    //     {/* <li>{userCreate}</li> */}
+    //     {/* <li>{userUpdate}</li> */}
+    //     {/* <li>{__typename}</li> */}
+    //   </ul>
 
-export const InterviewContainer = styled.div`
-  background: rgba(47, 128, 237, 0.1);
-  border-radius: 14px;
-  width: 344px;
-  width: 323px;
-  height: 165px;
+    //   <Link to={`/entrevista/${idInterview}`}>Ver detalles</Link>
+    //   {/* <Link to={`${path}/${idInterview}`}>Ver detalles</Link> */}
+    //   {/* <Link to={`${path.slice(0, 11)}/${idInterview}`}>Ver detalles</Link> */}
+    // </InterviewContainer>
+  );
+};
 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-`
+// export const InterviewContainer = styled.div`
+//   background: rgba(47, 128, 237, 0.1);
+//   border-radius: 14px;
+//   width: 344px;
+//   width: 323px;
+//   height: 165px;
+
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//   border-radius: 10px;
+// `;
+
+// jueves sala 2
+// viernes 8 a 9
