@@ -71,7 +71,7 @@ export const Interview = ({
         return 'Violacion'
 
       default:
-        return 'Academico_Universitario'
+        return 'Académico - Universitario'
     }
   }
 
@@ -145,6 +145,7 @@ export const InterviewContainer = styled.div`
     /* width: 90px; */
 
     width: 30%;
+    /* width: 40px; */
     border-radius: 50%;
   }
 `
