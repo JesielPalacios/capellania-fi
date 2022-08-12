@@ -41,16 +41,17 @@ export const Login = () => {
   let nameRef
 
   if (loading) return 'Conectando...'
-  // if (error) return `Submission error! ${error.message}`
-  if (error) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      // text: 'Something went wrong!',
-      text: `Submission error! ${error.message}`
-      // footer: '<a href="">Why do I have this issue?</a>'
-    })
-  }
+  if (error)
+    return `Submission error! ${error.message}, reinicie la página e ingrese sus credenciales correctas. Esta vista se está desarrollando aún, gracias por su comprensión.`
+  // if (error) {
+  //   Swal.fire({
+  //     icon: 'error',
+  //     title: 'Oops...',
+  //     // text: 'Something went wrong!',
+  //     text: `Submission error! ${error.message}`
+  //     // footer: '<a href="">Why do I have this issue?</a>'
+  //   })
+  // }
 
   data &&
     Swal.fire(
