@@ -50,10 +50,32 @@ const LinkRouter = styled(Link)`
   background: #605bff;
   border-radius: 10px;
   /* text-align: center; */
-  /* display: flex; */
-  /* align-items: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   /* span {
     margin: 0 auto;
   } */
+
+  /*  */
+
+  /* width: 123px; */
+  /* height: 51px; */
+
+  /* background: #ffffff; */
+  /* border-radius: 10px; */
+  background: #f0f0f0;
+
+  border-radius: 10px;
+  border: none;
+  color: #000;
+
+  :hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.14);
+
+    background: #333;
+    color: #fff;
+  }
 `

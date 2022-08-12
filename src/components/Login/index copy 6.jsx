@@ -13,75 +13,51 @@ import logo from '../../img/logo.png'
 import featured_login from '../../img/featured_login.svg'
 import { useHistory } from 'react-router-dom'
 import { LOGIN } from '../../core/graphql/queries/loginQuery'
+import Swal from 'sweetalert2'
 
 export const Login = () => {
   const history = useHistory()
   const { activateAuth, isAuth } = useContext(Context)
-  const [login, { data, loading, error }] = useMutation(LOGIN)
+  let [login, { data, loading, error }] = useMutation(LOGIN)
   const email = useInputValue('')
   const password = useInputValue('')
-
-  if (loading) return 'Submitting...'
-  if (error) return `Submission error! ${error.message}`
+  // const email = useInputValue('luis.angel@capellaniaunacc.com')
+  // const password = useInputValue('Pt@707C3Kf@^')
 
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    email.value = 'correo@correo.com'
-    password.value = 'Pt@707C3Kf@^'
-    // console.log('--------------------------------------------------')
-    // console.log('email')
-    // console.log(email.value)
-    // console.log('---------------------------------------------------')
-    // console.log('password')
-    // console.log(password.value)
-    // console.log('---------------------------------------------------')
+    // email.value = 'correo@correo.com'
+    // password.value = 'Pt@707C3Kf@^'
     login({ variables: { email: email.value, password: password.value } }).then(
       ({ data }) => {
         const { value } = data.login
         activateAuth(value)
       }
     )
-    // .then(() => {
-    //   if (isAuth) {
-    //     history.push('/dashboard')
-    //   } else {
-    //     history.push('/login')
-    //   }
-    // })
-    // email.value = ''
-    // password.value = ''
-
-    //  if (isAuth) {
-    //       history.push('/dashboard')
-    //     } else {
-    //       history.push('/login')
-    //     }
-    //   }
+    // error = false
   }
-
-  // if (isAuth) {
-
-  //   history.push('/dashboard')
-  // } else {
-  //   history.push('/login')
-  // }
 
   let nameRef
 
-  // useEffect(() => {
-  //   // if (isAuth) {
-  //   //   history.push('/dashboard')
-  //   // } else {
-  //   //   history.push('/login')
-  //   // }
-  //   console.log('first')
-  //   if (data.login) {
-  //     history.push('/dashboard')
-  //   } else {
-  //     history.push('/login')
-  //   }
-  // })
+  if (loading) return 'Conectando...'
+  // if (error) return `Submission error! ${error.message}`
+  if (error) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      // text: 'Something went wrong!',
+      text: `Submission error! ${error.message}`
+      // footer: '<a href="">Why do I have this issue?</a>'
+    })
+  }
+
+  data &&
+    Swal.fire(
+      '!Bienvenido señor usuario!',
+      'Se ha logueado exitosamente!',
+      'success'
+    )
 
   return (
     <LoginContainer>
@@ -91,18 +67,8 @@ export const Login = () => {
 
           <h1>Capellanía UNAC</h1>
           <h2>Bienvenido a su dashboard</h2>
-          {/* <input
-            // type='email'
-            placeholder="Email"
-            {...email}
-            onChange={(e) => email.onChang(e)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            {...password}
-            onChange={(e) => password.onChang(e)}
-          /> */}
+
+          {/* {console.log(error)} */}
 
           <div>
             {loginInfo.map(
@@ -110,8 +76,6 @@ export const Login = () => {
                 { field, placeholder, large, type, fill, height, name },
                 index
               ) => {
-                // console.log(inputRef)
-
                 if (name === 'email') nameRef = email
                 else if (name === 'password') nameRef = password
 
@@ -124,8 +88,6 @@ export const Login = () => {
                       type={type}
                       height={height}
                       {...nameRef}
-                      // onChange={(e) => password.onChang(e)}
-                      // ref={inputRef}
                     />
                   </FieldWrapper>
                 )
@@ -142,7 +104,11 @@ export const Login = () => {
             </div>
           </div>
 
-          <input type="submit" value="Iniciar sesión" />
+          <input
+            type="submit"
+            value="Iniciar sesión"
+            // disabled={error}
+          />
         </form>
       </Section>
       <Section flex={6} background="#FAFAFA">

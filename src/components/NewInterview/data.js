@@ -1163,13 +1163,13 @@ export const loginInfo = [
   {
     field: 'Correo',
     placeholder: 'Su correo electrónico aquí ',
-    type: 'text',
+    type: 'email',
     name: 'email'
   },
   {
     field: 'Contraseña',
     placeholder: 'Su contraseña electrónico aquí. ',
-    type: 'text',
+    type: 'password',
     name: 'password'
   }
 ]
